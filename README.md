@@ -27,5 +27,5 @@ A brief description of your project, its purpose, and what it aims to achieve.
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/yourprojectname.git
-cd yourprojectname
+git clone https://github.com/lbd-hfut/Computing-Platform.git
+cd Computing-Platform

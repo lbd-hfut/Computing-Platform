@@ -125,6 +125,10 @@ config = {
 
 ```
 
+### Parameter Description
+
+The parameters `patience_adam`, `patience_lbfgs`, `delta_warm_adam`, `delta_warm_lbfgs`, `delta_train_adam` and `delta_train_lbfgs` are set to prevent overfitting during the PINN-DIC calculation. During the `warm up` phase, if the absolute change in the loss during the Adam optimization is less than `delta_warm_adam` for `patience_adam` generations in a row, the `Adam` optimization process during the `warm up` phase will be terminated early. The same conditions apply to the `L-BFGS` optimization process during the `warm up` phase, as well as the `Adam` and `L-BFGS` optimization processes during the `train` phase. This avoids continuing training when the loss has stabilized, thus preventing overfitting.
+
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.

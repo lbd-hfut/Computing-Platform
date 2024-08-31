@@ -9,13 +9,14 @@ config = {
     "weight_decay": 3e-2,
     "layers": [2, 50, 50, 50, 2],
     "scale": [[1,1]]*5+[[10,10]]*5,
-    "warm_adam_epoch": 500,
-    "warm_bfgs_epoch": 500,
-    "train_adam_epoch": 500,
-    "train_bfgs_epoch": 500,
+    "warm_adam_epoch": 0,
+    "warm_bfgs_epoch": 200,
+    "train_adam_epoch": 0,
+    "train_bfgs_epoch": 200,
     "patience_adam": 10,
-    "patience_lbfgs": 10,
-    "delta_adam": 0.001,
-    "delta_lbfgs": 0.0005,
-    "epoch": 0
+    "patience_lbfgs": 5,
+    "delta_adam": 0.01,
+    "delta_lbfgs": 0.01,
+    "epoch": 0,
+    "print_feq": 10
 }

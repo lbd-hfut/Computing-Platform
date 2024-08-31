@@ -15,7 +15,7 @@ class EarlyStopping:
         if self.best_loss is None:
             self.best_loss = val_loss
             self.save_checkpoint(val_loss, model, optimizer)
-        elif val_loss > self.best_loss + self.delta:
+        elif self.best_loss < val_loss + self.delta:
             self.counter += 1
             if self.counter >= self.patience:
                 self.early_stop = True

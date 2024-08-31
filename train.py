@@ -98,8 +98,8 @@ if __name__ == '__main__':
         
         print(f"Calculate the {i:3d}-th deformed image start:")
         print("warm up:")
-        early_stop_adam.path  = f"./weights/checkpoint/example{i:4d}_warm_adam.pth"
-        early_stop_lbfgs.path = f"./weights/checkpoint/example{i:4d}_warm_lbfgs.pth"
+        early_stop_adam.path  = f"./weights/checkpoint/example{i+1:04d}_warm_adam.pth"
+        early_stop_lbfgs.path = f"./weights/checkpoint/example{i+1:04d}_warm_lbfgs.pth"
         optimizer_adam.param_groups[0]['lr'] = config['warm_lr']
         if config['warm_adam_epoch'] != 0:
             print("warm adam start:")
@@ -111,7 +111,7 @@ if __name__ == '__main__':
                 optimizer_adam.step()
                 config['epoch'] += 1
                 early_stop_adam(mae, model, optimizer_adam)
-                if config['epoch']%100 == 1:
+                if config['epoch']%config['print_feq'] == 1:
                     epoch =  config['epoch'] 
                     print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
                 if early_stop_adam.early_stop:
@@ -121,19 +121,22 @@ if __name__ == '__main__':
         if config['warm_bfgs_epoch'] > config['max_iter']:
             print("warm lbfgs start:") 
             for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
-                loss, mae = closure1(model, XY_roi, XY, RG, DG, ROI, config['scale'][i])
-                optimizer_lbfgs.step(closure1)
-                if config['epoch']%100 == 1:
-                    epoch =  config['epoch'] 
-                    print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+                def closure1_wrapper():
+                    loss, mae = closure1(model, XY_roi, XY, RG, DG, ROI, config['scale'][i])
+                    if config['epoch']%config['print_feq'] == 1:
+                        epoch =  config['epoch'] 
+                        print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+                    return loss
+                loss = closure1_wrapper()
+                optimizer_lbfgs.step(closure1_wrapper)
                 if early_stop_lbfgs.early_stop:
                     print("warm lbfgs early stopping")
                     early_stop_lbfgs.Reset()
                     break
         
         print("train:")
-        early_stop_adam.path  = f"./weights/checkpoint/example{i:4d}_train_adam.pth"
-        early_stop_lbfgs.path = f"./weights/checkpoint/example{i:4d}_train_lbfgs.pth"
+        early_stop_adam.path  = f"./weights/checkpoint/example{i:04d}_train_adam.pth"
+        early_stop_lbfgs.path = f"./weights/checkpoint/example{i:04d}_train_lbfgs.pth"
         if config['train_adam_epoch'] != 0:
             print("train adam start:")
             optimizer_adam.param_groups[0]['lr'] = config['train_lr']
@@ -145,7 +148,7 @@ if __name__ == '__main__':
                 optimizer_adam.step()
                 config['epoch'] += 1
                 early_stop_adam(mae, model)
-                if config['epoch']%100 == 1:
+                if config['epoch']%config['print_feq'] == 1:
                     epoch =  config['epoch'] 
                     print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
                 if early_stop_adam.early_stop:
@@ -155,19 +158,28 @@ if __name__ == '__main__':
         if config['train_bfgs_epoch'] > config['max_iter']:
             print("warm lbfgs start:") 
             for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
-                loss, mae = closure2(model, XY_roi, XY, RG, DG, ROI, config['scale'][i])
-                optimizer_lbfgs.step(closure2)
-                if config['epoch']%100 == 1:
-                    epoch =  config['epoch'] 
-                    print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+                def closure2_wrapper():
+                    loss, mae = closure2(model, XY_roi, XY, RG, DG, ROI, config['scale'][i])
+                    if config['epoch']%config['print_feq'] == 1:
+                        epoch =  config['epoch']
+                        print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+                    return loss
+                loss= closure2_wrapper()
+                optimizer_lbfgs.step(closure2_wrapper)
                 if early_stop_lbfgs.early_stop:
                     print("train lbfgs early stopping")
                     early_stop_lbfgs.Reset()
                     break
-        print("---------------------*---------------------")
-        save_checkpoint(model, optimizer_adam, optimizer_lbfgs, epoch, loss, config['model_path']+f"model{i+1:4d}.pth")
+        print("-------------*-------------")
+        
         model.eval()
         UV = model(Ixy)
+        loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, config['scale'][i])
+        save_checkpoint(
+            model, optimizer_adam, optimizer_lbfgs, config['epoch'], 
+            mae, config['model_path']+f"model{i+1:04d}.pth"
+            )
+        
         coords = XY_roi
         U = torch.zeros_like(RG).to(device)
         V = torch.zeros_like(RG).to(device)
@@ -176,7 +188,7 @@ if __name__ == '__main__':
         V[y_coords, x_coords] = UV[:, 1] * config['scale'][i][1]
         u = U.cpu().detach().numpy()
         v = V.cpu().detach().numpy()
-        uv[i,0,:,:] = u, uv[i,1,:,:] = v
+        uv[i,0,:,:] = u; uv[i,1,:,:] = v
         to_matlab(config['data_path'], 'result', uv)
         
         

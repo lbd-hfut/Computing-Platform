@@ -1,0 +1,21 @@
+config = {
+    "print_freq": 100,
+    "checkpoint_path": "./weights/checkpoint/",
+    "model_path": "./weights/models/",
+    "data_path": './data/train/',
+    "warm_lr": 0.001,
+    "train_lr": 0.0005,
+    "max_iter": 20,
+    "weight_decay": 3e-2,
+    "layers": [2, 50, 50, 50, 2],
+    "scale": [[1,1]]*5+[[10,10]]*5,
+    "warm_adam_epoch": 500,
+    "warm_bfgs_epoch": 500,
+    "train_adam_epoch": 500,
+    "train_bfgs_epoch": 500,
+    "patience_adam": 10,
+    "patience_lbfgs": 10,
+    "delta_adam": 0.001,
+    "delta_lbfgs": 0.0005,
+    "epoch": 0
+}

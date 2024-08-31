@@ -57,6 +57,8 @@ python train.py
 python plot_fig.py
 ```
 
+Then a subfolder named "`to matlab`" will be generated in the `image data folder` to store the solved displacement field data and the corresponding displacement field cloud map. These files can be directly imported into MATLAB for further processing and analysis.
+
 ## Features
 
 - **Physics-Informed Neural Networks (PINN) Integration**: Our method, PINN-DIC, leverages Physics-Informed Neural Networks to solve the Digital Image Correlation (DIC) problem, combining the strengths of deep learning with the principles of physics.

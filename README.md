@@ -39,7 +39,15 @@ To use this project, follow the instructions below.
 
 - Please place the reference image, deformed image, and ROI image into any subfolder within the `data` directory. The ROI image can be created by running the `utils/select_roi.py` script, which allows users to manually select the ROI in either a circular or rectangular shape based on their needs. For more complex ROI shapes, you can use the built-in Windows `mspaint` software. In MSPaint, paint the ROI area white and cover any obvious white spots in the background with black.
 
-![avatar](./picture/1.png)
+![mspaint image](mspaint.png)
+
+- Please name the reference image, deformed image, and ROI image in the following format:
+  * Reference image: The file name starts with the letter `"r"` followed by a number (e.g. `r0000.bmp`).
+  * Deformed image: The file name starts with the letter `"d"` followed by a number (e.g. `d0001.bmp, d0002.bmp`).
+  * ROI image: The file name starts with `"mask"` followed by a number (e.g. `mask0003.bmp`).
+
+The numbers in the file name should be in order, and the file extension can be .bmp, .JPG, or .png.
+
 
 ### Running the Application
 
@@ -86,6 +94,40 @@ Computing-Platform/
 ├── train.py             # Script to train the model and solve displacement
 └── plot_fig.py          # Script to plot and save displacement figures
 ```
+
+## Configuration
+
+Before starting the solution, the user needs to set the solution-related parameters in advance.
+``` python
+config = {
+    "checkpoint_path": "./weights/checkpoint/",   # Path where model checkpoints are saved
+    "model_path": "./weights/models/",            # Path where the trained model is saved
+    "data_path": './data/train/',                 # Path to the training data
+    "warm_lr": 0.001,                             # Learning rate for the warm-up phase
+    "train_lr": 0.0005,                           # Learning rate for the training phase
+    "max_iter": 20,                               # Maximum number of iterations
+    "weight_decay": 3e-2,                         # Weight decay to prevent overfitting
+    "layers": [2, 50, 50, 50, 2],                 # Configuration of the neural network layers
+    "scale": [[1,10]]*5,                          # Scaling factor for the network layers
+    "warm_adam_epoch": 200,                       # Number of epochs for Adam optimizer during warm-up
+    "warm_bfgs_epoch": 200,                       # Number of epochs for BFGS optimizer during warm-up
+    "train_adam_epoch": 200,                      # Number of epochs for Adam optimizer during training
+    "train_bfgs_epoch": 200,                      # Number of epochs for BFGS optimizer during training
+    "patience_adam": 10,                          # Early stopping patience for Adam optimizer
+    "patience_lbfgs": 10,                         # Early stopping patience for L-BFGS optimizer
+    "delta_warm_adam": 1,                         # Early stopping loss falling threshold for Adam during warm-up
+    "delta_warm_lbfgs": 0.01,                     # Early stopping loss falling threshold for L-BFGS during warm-up
+    "delta_train_adam": 0.01,                     # Early stopping loss falling threshold for Adam during training
+    "delta_train_lbfgs": 0.005,                   # Early stopping loss falling threshold for L-BFGS during training
+    "epoch": 0,                                   # Current training epoch
+    "print_feq": 10                               # Frequency of logging during training
+}
+
+```
+
+### Parameter Description
+
+The parameters `patience_adam`, `patience_lbfgs`, `delta_warm_adam`, `delta_warm_lbfgs`, `delta_train_adam` and `delta_train_lbfgs` are set to prevent overfitting during the PINN-DIC calculation. During the `warm up` phase, if the absolute change in the loss during the Adam optimization is less than `delta_warm_adam` for `patience_adam` generations in a row, the `Adam` optimization process during the `warm up` phase will be terminated early. The same conditions apply to the `L-BFGS` optimization process during the `warm up` phase, as well as the `Adam` and `L-BFGS` optimization processes during the `train` phase. This avoids continuing training when the loss has stabilized, thus preventing overfitting.
 
 ## License
 

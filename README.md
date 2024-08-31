@@ -95,6 +95,36 @@ Computing-Platform/
 └── plot_fig.py          # Script to plot and save displacement figures
 ```
 
+## Configuration
+
+Before starting the solution, the user needs to set the solution-related parameters in advance.
+``` python
+config = {
+    "checkpoint_path": "./weights/checkpoint/",   # Path where model checkpoints are saved
+    "model_path": "./weights/models/",            # Path where the trained model is saved
+    "data_path": './data/train/',                 # Path to the training data
+    "warm_lr": 0.001,                             # Learning rate for the warm-up phase
+    "train_lr": 0.0005,                           # Learning rate for the training phase
+    "max_iter": 20,                               # Maximum number of iterations
+    "weight_decay": 3e-2,                         # Weight decay to prevent overfitting
+    "layers": [2, 50, 50, 50, 2],                 # Configuration of the neural network layers
+    "scale": [[1,10]]*5,                          # Scaling factor for the network layers
+    "warm_adam_epoch": 200,                       # Number of epochs for Adam optimizer during warm-up
+    "warm_bfgs_epoch": 200,                       # Number of epochs for BFGS optimizer during warm-up
+    "train_adam_epoch": 200,                      # Number of epochs for Adam optimizer during training
+    "train_bfgs_epoch": 200,                      # Number of epochs for BFGS optimizer during training
+    "patience_adam": 10,                          # Early stopping patience for Adam optimizer
+    "patience_lbfgs": 10,                         # Early stopping patience for L-BFGS optimizer
+    "delta_warm_adam": 1,                         # Early stopping loss falling threshold for Adam during warm-up
+    "delta_warm_lbfgs": 0.01,                     # Early stopping loss falling threshold for L-BFGS during warm-up
+    "delta_train_adam": 0.01,                     # Early stopping loss falling threshold for Adam during training
+    "delta_train_lbfgs": 0.005,                   # Early stopping loss falling threshold for L-BFGS during training
+    "epoch": 0,                                   # Current training epoch
+    "print_feq": 10                               # Frequency of logging during training
+}
+
+```
+
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.

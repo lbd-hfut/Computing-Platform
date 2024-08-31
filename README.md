@@ -9,8 +9,8 @@ A brief description of your project, its purpose, and what it aims to achieve.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Project Structure](#project-structure)
 - [Features](#features)
+- [Project Structure](#project-structure)
 - [Configuration](#configuration)
 - [Examples](#examples)
 - [Contributing](#contributing)
@@ -35,6 +35,10 @@ cd Computing-Platform
 
 To use this project, follow the instructions below.
 
+### Prepare the Dataset to be solved
+
+- Please place the reference image, deformed image, and ROI image into any subfolder within the `data` directory. The ROI image can be created by running the `utils/select_roi.py` script, which allows users to manually select the ROI in either a circular or rectangular shape based on their needs. For more complex ROI shapes, you can use the built-in Windows `MSPaint` software. In MSPaint, paint the ROI area white and cover any obvious white spots in the background with black.
+
 ### Running the Application
 
 First, select the deep learning parameters in the `configs/config.py` file, then you can run the main application script with the following command:
@@ -43,6 +47,24 @@ First, select the deep learning parameters in the `configs/config.py` file, then
 python train.py
 python plot_fig.py
 ```
+
+## Features
+
+- **Physics-Informed Neural Networks (PINN) Integration**: Our method, PINN-DIC, leverages Physics-Informed Neural Networks to solve the Digital Image Correlation (DIC) problem, combining the strengths of deep learning with the principles of physics.
+  
+- **No Manual Parameter Setting**: Unlike traditional Subset-DIC, our approach does not require manual parameter tuning, making the process more efficient and user-friendly.
+
+- **Point-by-Point Full-Field Solution**: The PINN-DIC method solves the displacement field for the entire image domain point-by-point, providing a comprehensive analysis of the deformation field.
+
+- **High Accuracy in Non-Uniform Field Measurements**: Our method achieves higher accuracy, particularly in scenarios involving non-uniform deformation fields, making it suitable for complex experimental setups.
+
+- **Precise Handling of Irregular Boundaries**: The PINN-DIC method excels in solving images with irregular boundaries, offering high precision in boundary deformation measurements.
+
+- **No Need for Training Datasets**: Unlike supervised learning DIC methods, PINN-DIC does not require pre-existing datasets for training, allowing for immediate application to a wide range of problems.
+
+- **Lightweight Neural Network Architecture**: The method uses a simple fully connected neural network, which is more lightweight than those used in unsupervised learning DIC, leading to faster computations and higher accuracy.
+
+- **Ease of Integration**: The PINN-DIC method is designed to be easily integrated with other numerical inversion techniques, enhancing its versatility and applicability in various fields.
 
 ## Project Structure
 

@@ -1,4 +1,4 @@
-# Project Name
+# Computing-Platform: PINN-DIC
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.7%2B-blue.svg)](https://www.python.org/downloads/)
@@ -9,8 +9,8 @@ A brief description of your project, its purpose, and what it aims to achieve.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Features](#features)
 - [Project Structure](#project-structure)
+- [Features](#features)
 - [Configuration](#configuration)
 - [Examples](#examples)
 - [Contributing](#contributing)
@@ -37,7 +37,7 @@ To use this project, follow the instructions below.
 
 ### Running the Application
 
-First, select the deep learning parameters in the `configs/config.py` file,then you can run the main application script with the following command:
+First, select the deep learning parameters in the `configs/config.py` file, then you can run the main application script with the following command:
 
 ```bash
 python train.py

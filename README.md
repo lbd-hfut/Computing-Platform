@@ -37,11 +37,34 @@ To use this project, follow the instructions below.
 
 ### Running the Application
 
-First, select the deep learning parameters in the 'configs/config.py' file,then you can run the main application script with the following command:
+First, select the deep learning parameters in the `configs/config.py` file,then you can run the main application script with the following command:
 
 ```bash
 python train.py
 python plot_fig.py
 ```
 
+## Project Structure
 
+```bash
+Computing-Platform/
+├── configs/             # Configuration files for the project
+├── data/                # Data and scripts for data processing
+├── docs/                # Documentation and related resources
+├── demos/               # Demo scripts showcasing example usage
+├── layers/              # Custom layers and loss functions
+├── logs/                # Logging output and training logs
+├── utils/               # Utility scripts and helper functions
+├── weights/             # Model weights and checkpoints
+├── LICENSE              # License file for the project
+├── README.md            # Project overview and usage instructions
+├── requirements.txt     # List of Python dependencies
+├── train.py             # Script to train the model and solve displacement
+└── plot_fig.py          # Script to plot and save displacement figures
+```
+
+## Contact
+
+Boda Li, School of Ocean and Civil Engineering, Shanghai Jiao Tong University, Shanghai 200240, China.
+
+Email: `leebda_sjtu@sjtu.edu.cn`

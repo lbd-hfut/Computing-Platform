@@ -12,6 +12,7 @@ A brief description of your project, its purpose, and what it aims to achieve.
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Configuration](#configuration)
+- [Examples](#examples)
 - [License](#license)
 - [Contact](#contact)
 

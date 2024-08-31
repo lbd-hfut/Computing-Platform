@@ -147,7 +147,7 @@ if __name__ == '__main__':
                 loss.backward()
                 optimizer_adam.step()
                 config['epoch'] += 1
-                early_stop_adam(mae, model)
+                early_stop_adam(mae, model, optimizer_adam)
                 if config['epoch']%config['print_feq'] == 1:
                     epoch =  config['epoch'] 
                     print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")

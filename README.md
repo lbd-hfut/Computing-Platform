@@ -13,7 +13,6 @@ A brief description of your project, its purpose, and what it aims to achieve.
 - [Project Structure](#project-structure)
 - [Configuration](#configuration)
 - [Examples](#examples)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
@@ -128,6 +127,19 @@ config = {
 ### Parameter Description
 
 The parameters `patience_adam`, `patience_lbfgs`, `delta_warm_adam`, `delta_warm_lbfgs`, `delta_train_adam` and `delta_train_lbfgs` are set to prevent overfitting during the PINN-DIC calculation. During the `warm up` phase, if the absolute change in the loss during the Adam optimization is less than `delta_warm_adam` for `patience_adam` generations in a row, the `Adam` optimization process during the `warm up` phase will be terminated early. The same conditions apply to the `L-BFGS` optimization process during the `warm up` phase, as well as the `Adam` and `L-BFGS` optimization processes during the `train` phase. This avoids continuing training when the loss has stabilized, thus preventing overfitting.
+
+## Examples
+
+### Analysis of Displacement Field in a Diametrically Compressed Circular Ring Using PINN-DIC
+
+The figure below shows the experimental results of using PINN-DIC to analyze the displacement field of a diametrically compressed circular ring specimen. The results are compared with those obtained using two different Subset-DIC boundary handling methods. As illustrated, the PINN-DIC method accurately resolves the displacement field across the entire domain, even for specimens with irregular boundaries. In contrast, the Subset-DIC methods either fail to determine the displacements at boundary points or produce less accurate results.
+
+![Comparison of Displacement Field Analysis](example_circle.png)
+- **(a)** Specimen loading diagram
+- **(b)** Deformed and reference speckle images
+- **(c)** Calculation region (ROI)
+- **(d)** Comparison of resolved results
+
 
 ## License
 

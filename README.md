@@ -39,6 +39,8 @@ To use this project, follow the instructions below.
 
 - Please place the reference image, deformed image, and ROI image into any subfolder within the `data` directory. The ROI image can be created by running the `utils/select_roi.py` script, which allows users to manually select the ROI in either a circular or rectangular shape based on their needs. For more complex ROI shapes, you can use the built-in Windows `mspaint` software. In MSPaint, paint the ROI area white and cover any obvious white spots in the background with black.
 
+![avatar](./picture/1.png)
+
 ### Running the Application
 
 First, select the deep learning parameters in the `configs/config.py` file, then you can run the main application script with the following command:

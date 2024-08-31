@@ -39,7 +39,15 @@ To use this project, follow the instructions below.
 
 - Please place the reference image, deformed image, and ROI image into any subfolder within the `data` directory. The ROI image can be created by running the `utils/select_roi.py` script, which allows users to manually select the ROI in either a circular or rectangular shape based on their needs. For more complex ROI shapes, you can use the built-in Windows `mspaint` software. In MSPaint, paint the ROI area white and cover any obvious white spots in the background with black.
 
-![avatar](./picture/1.png)
+![mspaint image](mspaint.png)
+
+- Please name the reference image, deformed image, and ROI image in the following format:
+  * Reference image: The file name starts with the letter `"r"` followed by a number (e.g. `r0000.bmp`).
+  * Deformed image: The file name starts with the letter `"d"` followed by a number (e.g. `d0001.bmp, d0002.bmp`).
+  * ROI image: The file name starts with `"mask"` followed by a number (e.g. `mask0003.bmp`).
+
+The numbers in the file name should be in order, and the file extension can be .bmp, .JPG, or .png.
+
 
 ### Running the Application
 

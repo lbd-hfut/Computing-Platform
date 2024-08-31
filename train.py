@@ -53,10 +53,10 @@ optimizer_adam = torch.optim.Adam(
     model.parameters(), lr=config['warm_lr'],  eps=1e-8)
 
 early_stop_adam = EarlyStopping(
-        patience=config['patience_adam'], delta=config['delta_adam'], 
+        patience=config['patience_adam'], delta=config['delta_warm_adam'], 
         path='./weights/checkpoint/checkpoint_adam.pth')
 early_stop_lbfgs = EarlyStopping(
-        patience=config['patience_lbfgs'], delta=config['delta_adam'], 
+        patience=config['patience_lbfgs'], delta=config['delta_warm_lbfgs'], 
         path='./weights/checkpoint/checkpoint_lbfgs.pth')
 
 def closure1(model, XY_roi, XY, Iref, Idef, ROI, scale):
@@ -96,10 +96,12 @@ if __name__ == '__main__':
         DG = DG[0].to(device)
         model.train()
         
-        print(f"Calculate the {i:3d}-th deformed image start:")
+        print(f"Calculate the {i+1:04d}-th deformed image start:")
         print("warm up:")
         early_stop_adam.path  = f"./weights/checkpoint/example{i+1:04d}_warm_adam.pth"
         early_stop_lbfgs.path = f"./weights/checkpoint/example{i+1:04d}_warm_lbfgs.pth"
+        early_stop_adam.delta = config['delta_warm_adam']
+        early_stop_lbfgs.delta = config['delta_warm_lbfgs']
         optimizer_adam.param_groups[0]['lr'] = config['warm_lr']
         if config['warm_adam_epoch'] != 0:
             print("warm adam start:")
@@ -137,6 +139,8 @@ if __name__ == '__main__':
         print("train:")
         early_stop_adam.path  = f"./weights/checkpoint/example{i:04d}_train_adam.pth"
         early_stop_lbfgs.path = f"./weights/checkpoint/example{i:04d}_train_lbfgs.pth"
+        early_stop_adam.delta = config['delta_train_adam']
+        early_stop_lbfgs.delta = config['delta_train_lbfgs']
         if config['train_adam_epoch'] != 0:
             print("train adam start:")
             optimizer_adam.param_groups[0]['lr'] = config['train_lr']

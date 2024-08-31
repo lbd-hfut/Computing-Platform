@@ -39,20 +39,3 @@ class EarlyStopping:
         self.best_loss = None
         self.early_stop = False
         self.best_model = None
-        
-
-
-# # 使用 EarlyStopping
-# early_stopping = EarlyStopping(patience=10, delta=0.01)
-
-# for epoch in range(epochs):
-#     # 训练代码...
-#     val_loss = compute_validation_loss()
-#     # 检查是否需要早停
-#     early_stopping(val_loss, model)
-#     if early_stopping.early_stop:
-#         print("Early stopping")
-#         break
-
-# # 加载最佳模型
-# model.load_state_dict(early_stopping.best_model)

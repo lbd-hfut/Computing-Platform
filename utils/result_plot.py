@@ -5,7 +5,7 @@ import os
 from utils import zero_to_nan, sub_matrix
 import scipy.io as io
 
-def result_plot(u, v, u_min=0, u_max=1, v_min=0, v_max=1,string='',layout = [1,2], WH=[5,4]):
+def result_plot(u, v, u_min=0, u_max=1, v_min=0, v_max=1,string='',layout = [1,2], WH=[5,4], save_dir=None, filename=None):
     u = zero_to_nan(u); v = zero_to_nan(v)
     plt.figure(figsize=(WH[0]*layout[1], WH[1]*layout[0]), dpi=200)
     normu = matplotlib.colors.Normalize(vmin=u_min, vmax=u_max)
@@ -20,8 +20,16 @@ def result_plot(u, v, u_min=0, u_max=1, v_min=0, v_max=1,string='',layout = [1,2
     plt.colorbar()
     plt.axis('off')
     plt.title("Train: v predicted"+string, fontsize=10)
+    # Save the figure if save directory and filename are provided
+    if save_dir and filename:
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
+        file_path = os.path.join(save_dir, filename)
+        plt.savefig(file_path, bbox_inches='tight')
+        print(f"Figure saved to {file_path}")
+    plt.show()
     
-def contourf_plot(u, v, N, u_min=0, u_max=1, v_min=0, v_max=1,string='',layout = [1,2], WH=[4,4]):
+def contourf_plot(u, v, N, u_min=0, u_max=1, v_min=0, v_max=1,string='',layout = [1,2], WH=[4,4], save_dir=None, filename=None):
     u = sub_matrix(u); v = sub_matrix(v);
     u_sub1 = np.flip(u, axis=0)
     v_sub1 = np.flip(v, axis=0)
@@ -36,8 +44,16 @@ def contourf_plot(u, v, N, u_min=0, u_max=1, v_min=0, v_max=1,string='',layout =
     c2 = ax2.contourf(IX, IY, v_sub1, N, cmap='jet')
     plt.colorbar(c2, ax=ax2, orientation='vertical')
     ax2.axis('off'); c2.set_clim(v_min, v_max)
+    # Save the figure if save directory and filename are provided
+    if save_dir and filename:
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
+        file_path = os.path.join(save_dir, filename)
+        plt.savefig(file_path, bbox_inches='tight')
+        print(f"Figure saved to {file_path}")
+    plt.show()
     
-def error_plot(u_error, v_error, u_min=1, u_max=0, v_min=0, v_max=1, string='',layout = [1,2], WH=[4,4]):
+def error_plot(u_error, v_error, u_min=1, u_max=0, v_min=0, v_max=1, string='',layout = [1,2], WH=[4,4], save_dir=None, filename=None):
     u_error = zero_to_nan(u_error); v_error = zero_to_nan(v_error)
     plt.figure(figsize=(WH[0]*layout[1], WH[1]*layout[0]), dpi=200)
     normu = matplotlib.colors.Normalize(umin=u_min, umax=u_max)
@@ -52,6 +68,14 @@ def error_plot(u_error, v_error, u_min=1, u_max=0, v_min=0, v_max=1, string='',l
     plt.colorbar()
     plt.axis('off')
     plt.title("Error of v"+string, fontsize=10)
+    # Save the figure if save directory and filename are provided
+    if save_dir and filename:
+        if not os.path.exists(save_dir):
+            os.makedirs(save_dir)
+        file_path = os.path.join(save_dir, filename)
+        plt.savefig(file_path, bbox_inches='tight')
+        print(f"Figure saved to {file_path}")
+    plt.show()
     
 def to_matlab(path, filename, uv):
     if not os.path.exists(path+'to_matlab'):

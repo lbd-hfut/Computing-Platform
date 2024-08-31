@@ -37,7 +37,7 @@ To use this project, follow the instructions below.
 
 ### Prepare the Dataset to be solved
 
-- Please place the reference image, deformed image, and ROI image into any subfolder within the `data` directory. The ROI image can be created by running the `utils/select_roi.py` script, which allows users to manually select the ROI in either a circular or rectangular shape based on their needs. For more complex ROI shapes, you can use the built-in Windows `MSPaint` software. In MSPaint, paint the ROI area white and cover any obvious white spots in the background with black.
+- Please place the reference image, deformed image, and ROI image into any subfolder within the `data` directory. The ROI image can be created by running the `utils/select_roi.py` script, which allows users to manually select the ROI in either a circular or rectangular shape based on their needs. For more complex ROI shapes, you can use the built-in Windows `mspaint` software. In MSPaint, paint the ROI area white and cover any obvious white spots in the background with black.
 
 ### Running the Application
 

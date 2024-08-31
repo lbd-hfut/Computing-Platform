@@ -63,6 +63,10 @@ Computing-Platform/
 └── plot_fig.py          # Script to plot and save displacement figures
 ```
 
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
 ## Contact
 
 Boda Li, School of Ocean and Civil Engineering, Shanghai Jiao Tong University, Shanghai 200240, China.

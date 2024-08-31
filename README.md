@@ -29,3 +29,14 @@ A brief description of your project, its purpose, and what it aims to achieve.
 ```bash
 git clone https://github.com/lbd-hfut/Computing-Platform.git
 cd Computing-Platform
+
+## Usage
+
+To use this project, follow the instructions below.
+
+### Running the Application
+
+You can run the main application script with the following command:
+
+```bash
+python main.py --input <input_file> --output <output_file>

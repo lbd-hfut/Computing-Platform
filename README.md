@@ -1,5 +1,7 @@
 # Computing-Platform: PINN-DIC
 
+The PINN-DIC computing platform is a solution for Digital Image Correlation (DIC) problems based on Physics Informed Neural Networks (PINN). This platform aims to provide an efficient and accurate method for image displacement field analysis by combining deep learning techniques with physical principles.
+
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.7%2B-blue.svg)](https://www.python.org/downloads/)
 

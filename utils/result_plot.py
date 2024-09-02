@@ -81,3 +81,18 @@ def to_matlab(path, filename, uv):
     if not os.path.exists(path+'to_matlab'):
         os.mkdir(path+'to_matlab')
     io.savemat(path+'to_matlab/'+filename+'.mat',{'uv':uv})
+    
+def to_txt(path, filename, xyuv):
+    if not os.path.exists(path+'to_matlab'):
+        os.mkdir(path+'to_matlab')
+    output_file_path = path+'to_matlab/'+filename+'.txt'
+    
+    N, _, _ = xyuv.shape
+    with open(output_file_path, 'w') as f:
+        f.write("The first and second columns represent the pixel coordinates x, y. "
+                "The third and fourth columns represent the displacement values u, v\n\n")
+        f.write("\n")
+        for i in range(N):
+            f.write(f"this is the {i+1}-th solution\n")
+            np.savetxt(f, xyuv[i], fmt='%.5f')
+            f.write("\n")

@@ -18,7 +18,7 @@ from EarlyStop import EarlyStopping
 from FCNN import DNN
 from utils import save_checkpoint
 from readData import lbdDataset, collate_fn
-from result_plot import to_matlab
+from result_plot import to_matlab, to_txt
 
 from configs.config import config
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -89,7 +89,9 @@ if __name__ == '__main__':
     print(f"Simple FCN has {count_parameters(model):,} trainable parameters")
     
     H, L = RG.shape; N = len(train_loader)
-    uv = np.zeros((N, 2, H, L))
+    total = XY_roi.shape[0]
+    uv = torch.zeros((N, 2, H, L))
+    xyuv = torch.zeros((N, total, 4))
     
     print("train start")
     for i, DG in enumerate(train_loader):
@@ -183,17 +185,22 @@ if __name__ == '__main__':
             model, optimizer_adam, optimizer_lbfgs, config['epoch'], 
             mae, config['model_path']+f"model{i+1:04d}.pth"
             )
+        UV[:, 0] = UV[:, 0] * config['scale'][i][0]
+        UV[:, 1] = UV[:, 1] * config['scale'][i][1]
         
         coords = XY_roi
         U = torch.zeros_like(RG).to(device)
         V = torch.zeros_like(RG).to(device)
         y_coords, x_coords = coords[:, 0], coords[:, 1]
-        U[y_coords, x_coords] = UV[:, 0] * config['scale'][i][0]
-        V[y_coords, x_coords] = UV[:, 1] * config['scale'][i][1]
-        u = U.cpu().detach().numpy()
-        v = V.cpu().detach().numpy()
-        uv[i,0,:,:] = u; uv[i,1,:,:] = v
-        to_matlab(config['data_path'], 'result', uv)
+        U[y_coords, x_coords] = UV[:, 0]
+        V[y_coords, x_coords] = UV[:, 1]
+        uv[i,0,:,:] = U; uv[i,1,:,:] = V
+        xyuv[i,:,0:2] = coords; xyuv[i,:,2:4] = UV
+    
+    uv = uv.cpu().detach().numpy()
+    xyuv = xyuv.cpu().detach().numpy()
+    to_matlab(config['data_path'], 'result', uv)
+    to_txt(config['data_path'], 'result', xyuv)
         
         
         

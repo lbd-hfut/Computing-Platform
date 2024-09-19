@@ -43,6 +43,30 @@ class DNN(torch.nn.Module):
         
         return x
     
+    # Freeze Specified Layers
+    def freeze_layers(self, layer_names):
+        for name, param in self.named_parameters():
+            if any(layer in name for layer in layer_names):
+                param.requires_grad = False
+                print(f"Layer {name} has been frozen.")
+
+    # Modify Specified Layers
+    def modify_output_layer(self, new_output_size):
+        self.output_size = new_output_size
+        self.output_layer = nn.Linear(self.width[-1], self.output_size)
+        print(f"Output layer modified to output {new_output_size} units.")
+    
+    # Set He Kaiming initialization, only applied to the specified layers
+    def set_kaiming_initialization(self):
+        nn.init.kaiming_normal_(self.hidden_layers[-1], nonlinearity='relu')
+        if self.hidden_layers[-1].bias is not None:
+            nn.init.constant_(self.hidden_layers[-1].bias, 0)
+        nn.init.kaiming_normal_(self.output_layer.weight, nonlinearity='relu')
+        if self.output_layer.bias is not None:
+            nn.init.constant_(self.output_layer.bias, 0)
+
+
+    
 
 
 

@@ -1,13 +1,13 @@
 config = {
     "checkpoint_path": "./weights/checkpoint/",
     "model_path": "./weights/models/",
-    "data_path": './data/train/',
+    "data_path": './data/train1/',
     "warm_lr": 0.001,
     "train_lr": 0.0005,
     "max_iter": 20,
     "weight_decay": 3e-2,
     "layers": [2, 50, 50, 50, 2],
-    "scale": [[1,1]]*5+[[10,10]]*5,
+    "scale": [[1,1]]*10,
     "warm_adam_epoch": 200,
     "warm_bfgs_epoch": 200,
     "train_adam_epoch": 200,
@@ -19,5 +19,6 @@ config = {
     "delta_train_adam": 0.01,
     "delta_train_lbfgs": 0.005,
     "epoch": 0,
-    "print_feq": 10
+    "print_feq": 10,
+    "Batchframes": 5
 }

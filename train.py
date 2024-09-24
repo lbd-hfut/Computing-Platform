@@ -149,7 +149,7 @@ if __name__ == '__main__':
             for iter in range(config['train_adam_epoch']):
                 optimizer_adam.zero_grad()
                 UV = model(Ixy)
-                loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, config['scale'][i])
+                loss, mae = criterion_train(UV, XY_roi, XY, RG, DG, ROI, config['scale'][i])
                 loss.backward()
                 optimizer_adam.step()
                 config['epoch'] += 1

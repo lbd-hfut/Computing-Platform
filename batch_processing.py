@@ -116,7 +116,7 @@ def train_stage(i, XY_roi, XY, RG, DG, ROI):
         for iter in range(config['train_adam_epoch']):
             optimizer_adam.zero_grad()
             UV = model(Ixy)
-            loss, mae = criterion_warmup(
+            loss, mae = criterion_train(
                 UV, XY_roi, XY, RG, DG, ROI, config['scale'][i]
                 )
             loss.backward()

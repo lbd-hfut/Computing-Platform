@@ -6,6 +6,7 @@ import sys
 import math
 sys.path.append("./layers")
 sys.path.append("./utils")
+from scipy.io import loadmat
 
 from criterion import criterion_warmup, criterion_train
 from EarlyStop import EarlyStopping
@@ -53,6 +54,11 @@ early_stop_lbfgs = EarlyStopping(
         patience=config['patience_lbfgs'], delta=config['delta_warm_lbfgs'], 
         path='./weights/checkpoint/checkpoint_lbfgs.pth')
 
+if not os.path.exists(config['data_path']+'scale_information/'+'SCALE.mat'):
+    raise ValueError("please run scale_list.py firstly")
+else:
+    SCALE = loadmat(config['data_path']+'scale_information/'+'SCALE.mat')
+
 def closure1(model, XY_roi, XY, Iref, Idef, ROI, scale):
     optimizer_lbfgs.zero_grad()
     UV = model(Ixy)
@@ -78,7 +84,7 @@ def warm_up(i, XY_roi, XY, RG, DG, ROI):
             optimizer_adam.zero_grad()
             UV = model(Ixy)
             loss, mae = criterion_warmup(
-                UV, XY_roi, XY, RG, DG, ROI, config['scale'][i]
+                UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
                 )
             loss.backward()
             optimizer_adam.step()
@@ -96,7 +102,7 @@ def warm_up(i, XY_roi, XY, RG, DG, ROI):
         for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
             def closure1_wrapper():
                 loss, mae = closure1(
-                    model, XY_roi, XY, RG, DG, ROI, config['scale'][i]
+                    model, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
                     )
                 if config['epoch']%config['print_feq'] == 1:
                     epoch =  config['epoch'] 
@@ -117,7 +123,7 @@ def train_stage(i, XY_roi, XY, RG, DG, ROI):
             optimizer_adam.zero_grad()
             UV = model(Ixy)
             loss, mae = criterion_train(
-                UV, XY_roi, XY, RG, DG, ROI, config['scale'][i]
+                UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
                 )
             loss.backward()
             optimizer_adam.step()
@@ -135,7 +141,7 @@ def train_stage(i, XY_roi, XY, RG, DG, ROI):
         for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
             def closure2_wrapper():
                 loss, mae = closure2(
-                    model, XY_roi, XY, RG, DG, ROI, config['scale'][i]
+                    model, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
                     )
                 if config['epoch']%config['print_feq'] == 1:
                     epoch =  config['epoch']
@@ -164,13 +170,13 @@ def set_early_stop_train(num):
 def predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv):
     model.eval()
     UV = model(Ixy)
-    loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, config['scale'][i])
+    loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
     save_checkpoint(
         model, optimizer_adam, optimizer_lbfgs, config['epoch'], 
         mae, config['model_path']+f"model{i+1:04d}.pth"
         )
-    UV[:, 0] = UV[:, 0] * config['scale'][i][0]
-    UV[:, 1] = UV[:, 1] * config['scale'][i][1]
+    UV[:, 0] = UV[:, 0] * SCALE['scale'][i][0]
+    UV[:, 1] = UV[:, 1] * SCALE['scale'][i][1]
     
     coords = XY_roi
     U = torch.zeros_like(RG).to(device)
@@ -183,7 +189,7 @@ def predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv):
     return uv, xyuv
 
 if __name__ == '__main__':
-    
+        
     img_dataset = lbdDataset(config['data_path'])
     RG, ROI, XY, XY_roi, Ixy = img_dataset.data_collect(device)
     train_loader = torch.utils.data.DataLoader(

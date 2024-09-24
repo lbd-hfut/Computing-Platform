@@ -3,6 +3,7 @@ import torch
 import numpy as np
 import random
 import sys
+from scipy.io import loadmat
 sys.path.append("./layers")
 sys.path.append("./utils")
 
@@ -80,6 +81,11 @@ def closure2(model, XY_roi, XY, Iref, Idef, ROI, scale):
      
 if __name__ == '__main__':
     
+    if not os.path.exists(config['data_path']+'scale_information/'+'SCALE.mat'):
+        raise ValueError("please run scale_list.py firstly")
+    else:
+        SCALE = loadmat(config['data_path']+'scale_information/'+'SCALE.mat')
+        
     img_dataset = lbdDataset(config['data_path'])
     RG, ROI, XY, XY_roi, Ixy = img_dataset.data_collect(device)
     train_loader = torch.utils.data.DataLoader(
@@ -96,8 +102,9 @@ if __name__ == '__main__':
     print("train start")
     for i, DG in enumerate(train_loader):
         DG = DG[0].to(device)
+        config['epoch'] = 0
         model.train()
-        
+        model.unfreeze_and_initialize()
         print(f"Calculate the {i+1:04d}-th deformed image start:")
         print("warm up:")
         early_stop_adam.path  = f"./weights/checkpoint/example{i+1:04d}_warm_adam.pth"
@@ -110,7 +117,7 @@ if __name__ == '__main__':
             for iter in range(config['warm_adam_epoch']):
                 optimizer_adam.zero_grad()
                 UV = model(Ixy)
-                loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, config['scale'][i])
+                loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
                 loss.backward()
                 optimizer_adam.step()
                 config['epoch'] += 1
@@ -126,7 +133,7 @@ if __name__ == '__main__':
             print("warm lbfgs start:") 
             for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
                 def closure1_wrapper():
-                    loss, mae = closure1(model, XY_roi, XY, RG, DG, ROI, config['scale'][i])
+                    loss, mae = closure1(model, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
                     if config['epoch']%config['print_feq'] == 1:
                         epoch =  config['epoch'] 
                         print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
@@ -149,7 +156,7 @@ if __name__ == '__main__':
             for iter in range(config['train_adam_epoch']):
                 optimizer_adam.zero_grad()
                 UV = model(Ixy)
-                loss, mae = criterion_train(UV, XY_roi, XY, RG, DG, ROI, config['scale'][i])
+                loss, mae = criterion_train(UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
                 loss.backward()
                 optimizer_adam.step()
                 config['epoch'] += 1
@@ -165,7 +172,7 @@ if __name__ == '__main__':
             print("warm lbfgs start:") 
             for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
                 def closure2_wrapper():
-                    loss, mae = closure2(model, XY_roi, XY, RG, DG, ROI, config['scale'][i])
+                    loss, mae = closure2(model, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
                     if config['epoch']%config['print_feq'] == 1:
                         epoch =  config['epoch']
                         print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
@@ -180,13 +187,13 @@ if __name__ == '__main__':
         
         model.eval()
         UV = model(Ixy)
-        loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, config['scale'][i])
+        loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
         save_checkpoint(
             model, optimizer_adam, optimizer_lbfgs, config['epoch'], 
             mae, config['model_path']+f"model{i+1:04d}.pth"
             )
-        UV[:, 0] = UV[:, 0] * config['scale'][i][0]
-        UV[:, 1] = UV[:, 1] * config['scale'][i][1]
+        UV[:, 0] = UV[:, 0] * SCALE['scale'][i][0]
+        UV[:, 1] = UV[:, 1] * SCALE['scale'][i][1]
         
         coords = XY_roi
         U = torch.zeros_like(RG).to(device)

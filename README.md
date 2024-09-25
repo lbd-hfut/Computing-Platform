@@ -38,7 +38,7 @@ To use this project, follow the instructions below.
 
 - Please place the reference image, deformed image, and ROI image into any subfolder within the `data` directory. The ROI image can be created by running the `utils/select_roi.py` script, which allows users to manually select the ROI in either a circular or rectangular shape based on their needs. For more complex ROI shapes, you can use the built-in Windows `mspaint` software. In MSPaint, paint the ROI area white and cover any obvious white spots in the background with black.
 
-![mspaint image](mspaint.png)
+![mspaint image](guide/mspaint.png)
 
 - Please name the reference image, deformed image, and ROI image in the following format:
   * Reference image: The file name starts with the letter `"r"` followed by a number (e.g. `r0000.bmp`).
@@ -136,7 +136,7 @@ The parameters `patience_adam`, `patience_lbfgs`, `delta_warm_adam`, `delta_warm
 
 The figure below shows the experimental results of using PINN-DIC to analyze the displacement field of a diametrically compressed circular ring specimen. The results are compared with those obtained using two different Subset-DIC boundary handling methods. As illustrated, the PINN-DIC method accurately resolves the displacement field across the entire domain, even for specimens with irregular boundaries. In contrast, the Subset-DIC methods either fail to determine the displacements at boundary points or produce less accurate results.
 
-![Comparison of Displacement Field Analysis](example_circle.png)
+![Comparison of Displacement Field Analysis](guide/example_circle.png)
 - **(a)** Specimen loading diagram
 - **(b)** Deformed and reference speckle images
 - **(c)** Calculation region (ROI)

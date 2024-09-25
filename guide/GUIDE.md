@@ -121,6 +121,7 @@ Computing-Platform/
 cd ~/work/Computing-Platform/
 
 # 2. 运行 scale_list.py，获取该算例中最大位移尺度
+尺度列表保存在图像文件夹下的子文件夹 scale_information
 python scale_list.py
 
 # 3. 运行 train.py，计算位移场

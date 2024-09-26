@@ -78,6 +78,8 @@ if __name__ == '__main__':
             N, C, H, W = variable_data.shape
             for index in Compute_list:
                 i = index - 1
+		if i > N:
+                    break
                 u = variable_data[i,0,:,:]; v = variable_data[i,1,:,:]
                 
                 Exx, Eyy, Exy = Strain_from_Displacement_Subset(u, v, roi, 1, 3)
@@ -99,7 +101,7 @@ if __name__ == '__main__':
                         Exx, Eyy, Exy,
                         Exxmin, Exxmax, Eyymin, Eyymax, Exymin, Exymax,
                         string='', layout = [3,1], WH=[5,4], 
-                        save_dir=directory, filename=f'example{i+1:04d}_plot.png'
+                        save_dir=directory, filename=strain{i+1:04d}_plot.png'
                         )
             
         else:

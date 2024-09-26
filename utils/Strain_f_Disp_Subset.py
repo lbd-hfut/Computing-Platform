@@ -116,9 +116,9 @@ def Strain_from_Displacement_Subset(u, v, flag, step, SmoothLen):
 # u = np.zeros((H,L))
 # v = np.ones((H,L))
 # flag = np.ones((H,L))
-u = np.array([[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]])
-v = np.array([[1,1,1,1],[3,3,3,3],[5,5,5,5],[7,7,7,7]])
-flag = np.ones((4,4))
-step = 1
-SmoothLen = 3
-Ex, Ey, Exy = Strain_from_Displacement_Subset(u, v, flag, step, SmoothLen)
+# u = np.array([[1,2,3,4],[1,2,3,4],[1,2,3,4],[1,2,3,4]])
+# v = np.array([[1,1,1,1],[3,3,3,3],[5,5,5,5],[7,7,7,7]])
+# flag = np.ones((4,4))
+# step = 1
+# SmoothLen = 3
+# Ex, Ey, Exy = Strain_from_Displacement_Subset(u, v, flag, step, SmoothLen)

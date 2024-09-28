@@ -1,6 +1,6 @@
 import os
 import numpy as np
-from scipy.io import loadmat
+from scipy.io import loadmat, savemat
 import sys
 import matplotlib.pyplot as plt
 import matplotlib
@@ -52,6 +52,29 @@ def strain_plot(
         print(f"Strain Figure saved to {file_path}")
     plt.show()
 
+def strain_to_matlab(path, strain):
+    if not os.path.exists(path+'to_matlab'):
+        os.mkdir(path+'to_matlab')
+    savemat(path+'to_matlab/'+'strain'+'.mat',{'strain':strain})
+    
+def strain_to_txt(path, filename, strain):
+    if not os.path.exists(path+'to_matlab'):
+        os.mkdir(path+'to_matlab')
+    output_file_path = path+'to_matlab/'+ 'strain' +'.txt'
+    
+    N, _, _ = strain.shape
+    with open(output_file_path, 'w') as f:
+        f.write("The first and second columns represent the pixel coordinates x, y. "
+                "The third and fourth columns represent the displacement values u, v\n\n")
+        f.write("\n")
+        for i in range(N):
+            f.write(f"this is the {i+1}-th solution\n")
+            np.savetxt(f, strain[i], fmt='%.5f')
+            f.write("\n")
+
+
+
+
 
 if __name__ == '__main__':
     directory = config['data_path'] +'to_matlab'
@@ -76,9 +99,11 @@ if __name__ == '__main__':
         if 'uv' in data:
             variable_data = data['uv']
             N, C, H, W = variable_data.shape
+            starin = np.zeros((len(Compute_list), 3, H, W))
+            ii = 0
             for index in Compute_list:
                 i = index - 1
-		if i > N:
+                if i > N:
                     break
                 u = variable_data[i,0,:,:]; v = variable_data[i,1,:,:]
                 
@@ -101,8 +126,11 @@ if __name__ == '__main__':
                         Exx, Eyy, Exy,
                         Exxmin, Exxmax, Eyymin, Eyymax, Exymin, Exymax,
                         string='', layout = [3,1], WH=[5,4], 
-                        save_dir=directory, filename=strain{i+1:04d}_plot.png'
+                        save_dir=directory, filename=f'strain{i+1:04d}_plot.png'
                         )
+                starin[ii,0,:,:] = Exx; starin[ii,1,:,:] = Eyy; starin[ii,2,:,:] = Exy
+                ii = ii + 1
+                strain_to_matlab(config['data_path'], starin)
             
         else:
             print("The variable 'uv' does not exist in the .mat file.")

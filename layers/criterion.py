@@ -7,8 +7,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 def criterion_warmup(UV, XY_roi, XY, Iref, Idef, ROI, scale):
     # Adjust the shape of the vector to match the shape of the image
     coords = XY_roi
-    U = torch.zeros_like(Iref).to(device)
-    V = torch.zeros_like(Iref).to(device)
+    U = torch.zeros_like(Iref)
+    V = torch.zeros_like(Iref)
     y_coords, x_coords = coords[:, 0], coords[:, 1]
     U[y_coords, x_coords] = UV[:, 0] * scale[0]
     V[y_coords, x_coords] = UV[:, 1] * scale[1]
@@ -18,6 +18,7 @@ def criterion_warmup(UV, XY_roi, XY, Iref, Idef, ROI, scale):
     u = -U/(target_width/2); v = -V/(target_height/2)
     uv_displacement = torch.stack((u, v), dim=2).unsqueeze(0)
     X_new = XY + uv_displacement
+    # print(f"Iref: {Iref.shape}; Idef: {X_new.shape}")
     new_Idef = F.grid_sample(Iref.view(1, 1, target_height, target_width), 
                                 X_new.view(1, target_height, target_width, 2), 
                                 mode='bilinear', align_corners=True)
@@ -33,8 +34,8 @@ def criterion_warmup(UV, XY_roi, XY, Iref, Idef, ROI, scale):
 def criterion_train(UV, XY_roi, XY, Iref, Idef, ROI, scale):
     # Adjust the shape of the vector to match the shape of the image
     coords = XY_roi
-    U = torch.zeros_like(Iref).to(device)
-    V = torch.zeros_like(Iref).to(device)
+    U = torch.zeros_like(Iref)
+    V = torch.zeros_like(Iref)
     y_coords, x_coords = coords[:, 0], coords[:, 1]
     U[y_coords, x_coords] = UV[:, 0] * scale[0]
     V[y_coords, x_coords] = UV[:, 1] * scale[1]
@@ -59,8 +60,8 @@ def criterion_train(UV, XY_roi, XY, Iref, Idef, ROI, scale):
 def criterion_warmup_lgd(UV, XY_roi, XY, Iref, Idef, ROI, scale):
     # Adjust the shape of the vector to match the shape of the image
     coords = XY_roi
-    U = torch.zeros_like(Iref).to(device)
-    V = torch.zeros_like(Iref).to(device)
+    U = torch.zeros_like(Iref)
+    V = torch.zeros_like(Iref)
     y_coords, x_coords = coords[:, 0], coords[:, 1]
     U[y_coords, x_coords] = UV[:, 0] * scale[0]
     V[y_coords, x_coords] = UV[:, 1] * scale[1]
@@ -88,8 +89,8 @@ def criterion_warmup_lgd(UV, XY_roi, XY, Iref, Idef, ROI, scale):
 def criterion_train_lgd(UV, XY_roi, XY, Iref, Idef, ROI, scale):
     # Adjust the shape of the vector to match the shape of the image
     coords = XY_roi
-    U = torch.zeros_like(Iref).to(device)
-    V = torch.zeros_like(Iref).to(device)
+    U = torch.zeros_like(Iref)
+    V = torch.zeros_like(Iref)
     y_coords, x_coords = coords[:, 0], coords[:, 1]
     U[y_coords, x_coords] = UV[:, 0] * scale[0]
     V[y_coords, x_coords] = UV[:, 1] * scale[1]

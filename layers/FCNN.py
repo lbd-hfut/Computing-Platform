@@ -11,11 +11,19 @@ class DNN(torch.nn.Module):
         
         # Define input layer
         self.input_layer = nn.Linear(self.input_size, self.width[0])
+        self.input_ln = nn.LayerNorm(self.width[0])
         
-        # Define hidden layers (MLP)
-        self.hidden_layers = nn.ModuleList(
-            [nn.Linear(self.width[i], self.width[i+1]) for i in range(self.num_layers-1)]
-            )
+        # # Define hidden layers (MLP)
+        # self.hidden_layers = nn.ModuleList(
+        #     [nn.Linear(self.width[i], self.width[i+1]) for i in range(self.num_layers-1)]
+        #     )
+        
+        # Define hidden layers (MLP)  
+        self.hidden_layers = nn.ModuleList()  
+        self.hidden_lns = nn.ModuleList()  
+        for i in range(self.num_layers-1):  
+            self.hidden_layers.append(nn.Linear(self.width[i], self.width[i+1]))  
+            self.hidden_lns.append(nn.LayerNorm(self.width[i+1]))
         
         # Define output layer
         self.output_layer = nn.Linear(self.width[-1], self.output_size)
@@ -27,15 +35,17 @@ class DNN(torch.nn.Module):
     def forward(self, x):
         # Input layer
         x = self.input_layer(x)
-        x = 5 * self.a[0] * x
+        x = self.input_ln(x)
+        # x = 5 * self.a[0] * x
         x = torch.tanh(x)
         # Hidden layers (MLP)
         for i in range(self.num_layers-1):
             x = self.hidden_layers[i](x)
-            x = 5 * self.a[i + 1] * x
+            # x = self.hidden_lns[i](x)
+            # x = 5 * self.a[i + 1] * x
             x = torch.tanh(x)
         # Output layer
-        x = 5 * self.a[-1] * x
+        # x = 5 * self.a[-1] * x
         x = self.output_layer(x)
         return x
     

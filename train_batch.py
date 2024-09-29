@@ -175,8 +175,8 @@ def predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv):
         model, optimizer_adam, optimizer_lbfgs, config['epoch'], 
         mae, config['model_path']+f"model{i+1:04d}.pth"
         )
-    UV[:, 0] = UV[:, 0] * SCALE['scale'][i][0]
-    UV[:, 1] = UV[:, 1] * SCALE['scale'][i][1]
+    UV[:, 0] = UV[:, 0] * SCALE['scale'][i][0] + SCALE['scale'][i][2]
+    UV[:, 1] = UV[:, 1] * SCALE['scale'][i][1] + SCALE['scale'][i][3]
     
     coords = XY_roi
     U = torch.zeros_like(RG).to(device)
@@ -186,6 +186,16 @@ def predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv):
     V[y_coords, x_coords] = UV[:, 1]
     uv[i,0,:,:] = U; uv[i,1,:,:] = V
     xyuv[i,:,0:2] = coords; xyuv[i,:,2:4] = UV
+    return uv, xyuv
+
+def frame_calculate(i, DG, uv, xyuv):
+    print(f"Calculate the {i+1:04d}-th deformed image start:")
+    model.train()
+    print("warm up:"); set_early_stop_warmup(i)
+    warm_up(i, XY_roi, XY, RG, DG, ROI)
+    print("train:"); set_early_stop_train(i)
+    train_stage(i, XY_roi, XY, RG, DG, ROI)
+    uv, xyuv = predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv)
     return uv, xyuv
 
 if __name__ == '__main__':
@@ -214,49 +224,25 @@ if __name__ == '__main__':
             DG = DGlist[-1].to(device)
             model.unfreeze_and_initialize()
             i = batch*batchframes + len(DGlist) - 1
-            print(f"Calculate the {i+1:04d}-th deformed image start:")
-            model.train()
-            print("warm up:"); set_early_stop_warmup(i)
-            warm_up(i, XY_roi, XY, RG, DG, ROI)
-            print("train:"); set_early_stop_train(i)
-            train_stage(i, XY_roi, XY, RG, DG, ROI)
-            uv, xyuv = predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+            uv, xyuv = frame_calculate(i, DG, uv, xyuv)
             print("-------------*-------------")
             for j, DG in enumerate(DGlist[:-1]):
                 DG = DG.to(device)
                 model.freeze_layers(); # model.set_kaiming_initialization()
                 i = batch*batchframes + j
-                print(f"Calculate the {i+1:04d}-th deformed image start:")
-                model.train()
-                print("warm up:"); set_early_stop_warmup(i)
-                warm_up(i, XY_roi, XY, RG, DG, ROI)
-                print("train:"); set_early_stop_train(i)
-                train_stage(i, XY_roi, XY, RG, DG, ROI)
-                uv, xyuv = predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+                uv, xyuv = frame_calculate(i, DG, uv, xyuv)
                 print("-------------*-------------")
         else:
             DG = DGlist[batchframes//2].to(device)
             model.unfreeze_and_initialize()
             i = batch*batchframes + batchframes//2
-            print(f"Calculate the {i+1:04d}-th deformed image start:")
-            model.train()
-            print("warm up:"); set_early_stop_warmup(i)
-            warm_up(i, XY_roi, XY, RG, DG, ROI)
-            print("train:"); set_early_stop_train(i)
-            train_stage(i, XY_roi, XY, RG, DG, ROI)
-            uv, xyuv = predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+            uv, xyuv = frame_calculate(i, DG, uv, xyuv)
             print("-------------*-------------")
             for j in frames_list:
                 DG = DGlist[j].to(device)
                 model.freeze_layers(); # model.set_kaiming_initialization()
                 i = batch*batchframes + j
-                print(f"Calculate the {i+1:04d}-th deformed image start:")
-                model.train()
-                print("warm up:"); set_early_stop_warmup(i)
-                warm_up(i, XY_roi, XY, RG, DG, ROI)
-                print("train:"); set_early_stop_train(i)
-                train_stage(i, XY_roi, XY, RG, DG, ROI)
-                uv, xyuv = predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+                uv, xyuv = frame_calculate(i, DG, uv, xyuv)
                 print("-------------*-------------")
     uv = uv.cpu().detach().numpy()
     xyuv = xyuv.cpu().detach().numpy()

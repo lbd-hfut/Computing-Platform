@@ -197,8 +197,8 @@ def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
         model, optimizer_adam, optimizer_lbfgs, config['epoch'], 
         mae, config['model_path']+f"model{i+1:04d}.pth"
         )
-    UV[:, 0] = UV[:, 0] * SCALE['scale'][i][0]
-    UV[:, 1] = UV[:, 1] * SCALE['scale'][i][1]
+    UV[:, 0] = UV[:, 0] * SCALE['scale'][i][0] + SCALE['scale'][i][2]
+    UV[:, 1] = UV[:, 1] * SCALE['scale'][i][1] + SCALE['scale'][i][3]
     
     coords = XY_roi
     U = torch.zeros_like(RG).to(device)

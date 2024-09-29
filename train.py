@@ -7,13 +7,6 @@ from scipy.io import loadmat
 sys.path.append("./layers")
 sys.path.append("./utils")
 
-# from layers.criterion import criterion_warmup, criterion_train
-# from layers.EarlyStop import EarlyStopping
-# from layers.FCNN import DNN
-# from utils.utils import save_checkpoint
-# from utils.readData import lbdDataset, collate_fn
-# from utils.result_plot import to_matlab
-
 from criterion import criterion_warmup, criterion_train
 from EarlyStop import EarlyStopping
 from FCNN import DNN
@@ -77,7 +70,127 @@ def closure2(model, XY_roi, XY, Iref, Idef, ROI, scale):
     config['epoch'] += 1
     early_stop_lbfgs(mae, model, optimizer_lbfgs)
     return loss, mae
+
+def warm_up(i, XY_roi, XY, RG, DG, ROI):
+    if config['warm_adam_epoch'] != 0:
+        print("warm adam start:")
+        for iter in range(config['warm_adam_epoch']):
+            optimizer_adam.zero_grad()
+            UV = model(Ixy)
+            loss, mae = criterion_warmup(
+                UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
+                )
+            loss.backward()
+            optimizer_adam.step()
+            config['epoch'] += 1
+            early_stop_adam(mae, model, optimizer_adam)
+            if config['epoch']%config['print_feq'] == 1:
+                epoch =  config['epoch'] 
+                print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+            if early_stop_adam.early_stop:
+                print("warm adam early stopping")
+                early_stop_adam.Reset()
+                break
+    if config['warm_bfgs_epoch'] > config['max_iter']:
+        print("warm lbfgs start:") 
+        for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
+            def closure1_wrapper():
+                loss, mae = closure1(
+                    model, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
+                    )
+                if config['epoch']%config['print_feq'] == 1:
+                    epoch =  config['epoch'] 
+                    print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+                return loss
+            loss = closure1_wrapper()
+            optimizer_lbfgs.step(closure1_wrapper)
+            if early_stop_lbfgs.early_stop:
+                print("warm lbfgs early stopping")
+                early_stop_lbfgs.Reset()
+                break
+            
+def train_stage(i, XY_roi, XY, RG, DG, ROI):
+    if config['train_adam_epoch'] != 0:
+        print("train adam start:")
+        optimizer_adam.param_groups[0]['lr'] = config['train_lr']
+        for iter in range(config['train_adam_epoch']):
+            optimizer_adam.zero_grad()
+            UV = model(Ixy)
+            loss, mae = criterion_train(
+                UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
+                )
+            loss.backward()
+            optimizer_adam.step()
+            config['epoch'] += 1
+            early_stop_adam(mae, model, optimizer_adam)
+            if config['epoch']%config['print_feq'] == 1:
+                epoch =  config['epoch'] 
+                print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+            if early_stop_adam.early_stop:
+                print("train adam early stopping")
+                early_stop_adam.Reset()
+                break
+    if config['train_bfgs_epoch'] > config['max_iter']:
+        print("warm lbfgs start:") 
+        for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
+            def closure2_wrapper():
+                loss, mae = closure2(
+                    model, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
+                    )
+                if config['epoch']%config['print_feq'] == 1:
+                    epoch =  config['epoch']
+                    print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+                return loss
+            loss= closure2_wrapper()
+            optimizer_lbfgs.step(closure2_wrapper)
+            if early_stop_lbfgs.early_stop:
+                print("train lbfgs early stopping")
+                early_stop_lbfgs.Reset()
+                break
+
+def set_early_stop_warmup(num):
+    early_stop_adam.path  = f"./weights/checkpoint/example{num+1:04d}_warm_adam.pth"
+    early_stop_lbfgs.path = f"./weights/checkpoint/example{num+1:04d}_warm_lbfgs.pth"
+    early_stop_adam.delta = config['delta_warm_adam']
+    early_stop_lbfgs.delta = config['delta_warm_lbfgs']
+    optimizer_adam.param_groups[0]['lr'] = config['warm_lr']
     
+def set_early_stop_train(num):
+    early_stop_adam.path  = f"./weights/checkpoint/example{num:04d}_train_adam.pth"
+    early_stop_lbfgs.path = f"./weights/checkpoint/example{num:04d}_train_lbfgs.pth"
+    early_stop_adam.delta = config['delta_train_adam']
+    early_stop_lbfgs.delta = config['delta_train_lbfgs']
+    
+def predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv):
+    model.eval()
+    UV = model(Ixy)
+    loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
+    save_checkpoint(
+        model, optimizer_adam, optimizer_lbfgs, config['epoch'], 
+        mae, config['model_path']+f"model{i+1:04d}.pth"
+        )
+    UV[:, 0] = UV[:, 0] * SCALE['scale'][i][0] + SCALE['scale'][i][2]
+    UV[:, 1] = UV[:, 1] * SCALE['scale'][i][1] + SCALE['scale'][i][3]
+    
+    coords = XY_roi
+    U = torch.zeros_like(RG).to(device)
+    V = torch.zeros_like(RG).to(device)
+    y_coords, x_coords = coords[:, 0], coords[:, 1]
+    U[y_coords, x_coords] = UV[:, 0]
+    V[y_coords, x_coords] = UV[:, 1]
+    uv[i,0,:,:] = U; uv[i,1,:,:] = V
+    xyuv[i,:,0:2] = coords; xyuv[i,:,2:4] = UV
+    return uv, xyuv
+
+def frame_calculate(i, DG, uv, xyuv):
+    print(f"Calculate the {i+1:04d}-th deformed image start:")
+    model.train()
+    print("warm up:"); set_early_stop_warmup(i)
+    warm_up(i, XY_roi, XY, RG, DG, ROI)
+    print("train:"); set_early_stop_train(i)
+    train_stage(i, XY_roi, XY, RG, DG, ROI)
+    uv, xyuv = predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+    return uv, xyuv 
      
 if __name__ == '__main__':
     
@@ -102,108 +215,10 @@ if __name__ == '__main__':
     print("train start")
     for i, DG in enumerate(train_loader):
         DG = DG[0].to(device)
-        config['epoch'] = 0
-        model.train()
         model.unfreeze_and_initialize()
-        print(f"Calculate the {i+1:04d}-th deformed image start:")
-        print("warm up:")
-        early_stop_adam.path  = f"./weights/checkpoint/example{i+1:04d}_warm_adam.pth"
-        early_stop_lbfgs.path = f"./weights/checkpoint/example{i+1:04d}_warm_lbfgs.pth"
-        early_stop_adam.delta = config['delta_warm_adam']
-        early_stop_lbfgs.delta = config['delta_warm_lbfgs']
-        optimizer_adam.param_groups[0]['lr'] = config['warm_lr']
-        if config['warm_adam_epoch'] != 0:
-            print("warm adam start:")
-            for iter in range(config['warm_adam_epoch']):
-                optimizer_adam.zero_grad()
-                UV = model(Ixy)
-                loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
-                loss.backward()
-                optimizer_adam.step()
-                config['epoch'] += 1
-                early_stop_adam(mae, model, optimizer_adam)
-                if config['epoch']%config['print_feq'] == 1:
-                    epoch =  config['epoch'] 
-                    print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
-                if early_stop_adam.early_stop:
-                    print("warm adam early stopping")
-                    early_stop_adam.Reset()
-                    break
-        if config['warm_bfgs_epoch'] > config['max_iter']:
-            print("warm lbfgs start:") 
-            for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
-                def closure1_wrapper():
-                    loss, mae = closure1(model, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
-                    if config['epoch']%config['print_feq'] == 1:
-                        epoch =  config['epoch'] 
-                        print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
-                    return loss
-                loss = closure1_wrapper()
-                optimizer_lbfgs.step(closure1_wrapper)
-                if early_stop_lbfgs.early_stop:
-                    print("warm lbfgs early stopping")
-                    early_stop_lbfgs.Reset()
-                    break
-        
-        print("train:")
-        early_stop_adam.path  = f"./weights/checkpoint/example{i:04d}_train_adam.pth"
-        early_stop_lbfgs.path = f"./weights/checkpoint/example{i:04d}_train_lbfgs.pth"
-        early_stop_adam.delta = config['delta_train_adam']
-        early_stop_lbfgs.delta = config['delta_train_lbfgs']
-        if config['train_adam_epoch'] != 0:
-            print("train adam start:")
-            optimizer_adam.param_groups[0]['lr'] = config['train_lr']
-            for iter in range(config['train_adam_epoch']):
-                optimizer_adam.zero_grad()
-                UV = model(Ixy)
-                loss, mae = criterion_train(UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
-                loss.backward()
-                optimizer_adam.step()
-                config['epoch'] += 1
-                early_stop_adam(mae, model, optimizer_adam)
-                if config['epoch']%config['print_feq'] == 1:
-                    epoch =  config['epoch'] 
-                    print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
-                if early_stop_adam.early_stop:
-                    print("train adam early stopping")
-                    early_stop_adam.Reset()
-                    break
-        if config['train_bfgs_epoch'] > config['max_iter']:
-            print("warm lbfgs start:") 
-            for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
-                def closure2_wrapper():
-                    loss, mae = closure2(model, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
-                    if config['epoch']%config['print_feq'] == 1:
-                        epoch =  config['epoch']
-                        print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
-                    return loss
-                loss= closure2_wrapper()
-                optimizer_lbfgs.step(closure2_wrapper)
-                if early_stop_lbfgs.early_stop:
-                    print("train lbfgs early stopping")
-                    early_stop_lbfgs.Reset()
-                    break
+        config['epoch'] = 0
+        uv, xyuv = frame_calculate(i, DG, uv, xyuv)
         print("-------------*-------------")
-        
-        model.eval()
-        UV = model(Ixy)
-        loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
-        save_checkpoint(
-            model, optimizer_adam, optimizer_lbfgs, config['epoch'], 
-            mae, config['model_path']+f"model{i+1:04d}.pth"
-            )
-        UV[:, 0] = UV[:, 0] * SCALE['scale'][i][0]
-        UV[:, 1] = UV[:, 1] * SCALE['scale'][i][1]
-        
-        coords = XY_roi
-        U = torch.zeros_like(RG).to(device)
-        V = torch.zeros_like(RG).to(device)
-        y_coords, x_coords = coords[:, 0], coords[:, 1]
-        U[y_coords, x_coords] = UV[:, 0]
-        V[y_coords, x_coords] = UV[:, 1]
-        uv[i,0,:,:] = U; uv[i,1,:,:] = V
-        xyuv[i,:,0:2] = coords; xyuv[i,:,2:4] = UV
-    
     uv = uv.cpu().detach().numpy()
     xyuv = xyuv.cpu().detach().numpy()
     to_matlab(config['data_path'], 'result', uv)

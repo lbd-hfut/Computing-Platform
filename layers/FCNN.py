@@ -69,26 +69,59 @@ class DNN(torch.nn.Module):
             nn.init.constant_(self.output_layer.bias, 0)
 
     # Unfreeze all layers and apply He Kaiming initialization
-    def unfreeze_and_initialize(self):
+    def unfreeze_and_initialize(self, init_type='xavier'):
         # Unfreeze all layers
         for param in self.parameters():
             if not param.requires_grad:
                 param.requires_grad = True
-        self.a = nn.Parameter(torch.tensor([0.2] * (self.num_layers + 2)))
         
-        # Apply He Kaiming initialization to input layer, hidden layers, and output layer
-        nn.init.kaiming_normal_(self.input_layer.weight, nonlinearity='relu')
-        if self.input_layer.bias is not None:
-            nn.init.constant_(self.input_layer.bias, 0)
+        # Apply selected initialization
+        if init_type == 'kaiming':
+            # Apply He Kaiming initialization to input layer, hidden layers, and output layer
+            nn.init.kaiming_normal_(self.input_layer.weight, nonlinearity='relu')
+            if self.input_layer.bias is not None:
+                nn.init.constant_(self.input_layer.bias, 0)
+            
+            for layer in self.hidden_layers:
+                nn.init.kaiming_normal_(layer.weight, nonlinearity='relu')
+                if layer.bias is not None:
+                    nn.init.constant_(layer.bias, 0)
+            
+            nn.init.kaiming_normal_(self.output_layer.weight, nonlinearity='relu')
+            if self.output_layer.bias is not None:
+                nn.init.constant_(self.output_layer.bias, 0)
+                
+            # # Initialize LayerNorm parameters
+            # for ln in self.hidden_lns:
+            #     nn.init.kaiming_normal_(ln.weight)
+            #     if ln.bias is not None:
+            #         nn.init.constant_(ln.bias, 0)
+    
+        elif init_type == 'xavier':
+            # Apply Xavier initialization to input layer, hidden layers, and output layer
+            nn.init.xavier_normal_(self.input_layer.weight)
+            if self.input_layer.bias is not None:
+                nn.init.constant_(self.input_layer.bias, 0)
+            
+            for layer in self.hidden_layers:
+                nn.init.xavier_normal_(layer.weight)
+                if layer.bias is not None:
+                    nn.init.constant_(layer.bias, 0)
+            
+            nn.init.xavier_normal_(self.output_layer.weight)
+            if self.output_layer.bias is not None:
+                nn.init.constant_(self.output_layer.bias, 0)
+                
+            # # Initialize LayerNorm parameters
+            # for ln in self.hidden_lns:
+            #     nn.init.xavier_normal_(ln.weight)
+            #     if ln.bias is not None:
+            #         nn.init.constant_(ln.bias, 0)
         
-        for layer in self.hidden_layers:
-            nn.init.kaiming_normal_(layer.weight, nonlinearity='relu')
-            if layer.bias is not None:
-                nn.init.constant_(layer.bias, 0)
-        
-        nn.init.kaiming_normal_(self.output_layer.weight, nonlinearity='relu')
-        if self.output_layer.bias is not None:
-            nn.init.constant_(self.output_layer.bias, 0)
+        # Initialize LayerNorm parameters
+        for ln in self.hidden_lns:
+            nn.init.ones_(ln.weight)  # 初始化为1
+            nn.init.zeros_(ln.bias)   # 初始化为0
     
 
 

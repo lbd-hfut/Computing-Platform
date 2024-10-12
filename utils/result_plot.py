@@ -27,7 +27,7 @@ def result_plot(u, v, u_min=0, u_max=1, v_min=0, v_max=1,string='',layout = [1,2
         file_path = os.path.join(save_dir, filename)
         plt.savefig(file_path, bbox_inches='tight')
         print(f"Figure saved to {file_path}")
-    plt.show()
+    plt.close()  # Close the figure if not showing
     
 def contourf_plot(u, v, N, u_min=0, u_max=1, v_min=0, v_max=1,string='',layout = [1,2], WH=[4,4], save_dir=None, filename=None):
     u = sub_matrix(u); v = sub_matrix(v);
@@ -51,7 +51,7 @@ def contourf_plot(u, v, N, u_min=0, u_max=1, v_min=0, v_max=1,string='',layout =
         file_path = os.path.join(save_dir, filename)
         plt.savefig(file_path, bbox_inches='tight')
         print(f"Figure saved to {file_path}")
-    plt.show()
+    plt.close()  # Close the figure if not showing
     
 def error_plot(u_error, v_error, u_min=1, u_max=0, v_min=0, v_max=1, string='',layout = [1,2], WH=[4,4], save_dir=None, filename=None):
     u_error = zero_to_nan(u_error); v_error = zero_to_nan(v_error)
@@ -75,7 +75,7 @@ def error_plot(u_error, v_error, u_min=1, u_max=0, v_min=0, v_max=1, string='',l
         file_path = os.path.join(save_dir, filename)
         plt.savefig(file_path, bbox_inches='tight')
         print(f"Figure saved to {file_path}")
-    plt.show()
+    plt.close()  # Close the figure if not showing
     
 def to_matlab(path, filename, uv):
     if not os.path.exists(path+'to_matlab'):

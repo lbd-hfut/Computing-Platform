@@ -109,7 +109,7 @@ ENV/
 
 # input data, saved log, checkpoints
 data/
-input/
+input/gi
 saved/
 datasets/
 

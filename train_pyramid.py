@@ -278,6 +278,7 @@ if __name__ == '__main__':
             scale_factor_list = [4, 2, 1]
             pyramid_calculate(i, DG, scale_factor_list, uv, xyuv)
             print("-------------*-------------")
+            torch.cuda.empty_cache()
             for j, DG in enumerate(DGlist[:-1]):
                 model[0].unfreeze_and_initialize(init_type='xavier')
                 model[1].unfreeze_and_initialize(init_type='xavier')
@@ -288,6 +289,7 @@ if __name__ == '__main__':
                 scale_factor_list = [1]
                 pyramid_calculate(i, DG, scale_factor_list, uv, xyuv)
                 print("-------------*-------------")
+                torch.cuda.empty_cache()
         else:
             DG = DGlist[batchframes//2]
             model[0].unfreeze_and_initialize(init_type='xavier')
@@ -299,6 +301,7 @@ if __name__ == '__main__':
             scale_factor_list = [4, 2, 1]
             pyramid_calculate(i, DG, scale_factor_list, uv, xyuv)
             print("-------------*-------------")
+            torch.cuda.empty_cache()
             for j in frames_list:
                 DG = DGlist[j]
                 model[0].unfreeze_and_initialize(init_type='xavier')
@@ -310,6 +313,7 @@ if __name__ == '__main__':
                 scale_factor_list = [1]
                 pyramid_calculate(i, DG, scale_factor_list, uv, xyuv)
                 print("-------------*-------------")
+                torch.cuda.empty_cache()
     uv = uv.cpu().detach().numpy()
     xyuv = xyuv.cpu().detach().numpy()
     to_matlab(config['data_path'], 'result', uv)

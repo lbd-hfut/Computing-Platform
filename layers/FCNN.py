@@ -29,7 +29,7 @@ class DNN(torch.nn.Module):
     def forward(self, x):
         # Input layer
         x = self.input_layer(x)
-        x = self.input_ln(x)
+        # x = self.input_ln(x)
         # x = 5 * self.a[0] * x
         x = torch.tanh(x)
         # Hidden layers (MLP)
@@ -37,7 +37,7 @@ class DNN(torch.nn.Module):
             x = self.hidden_layers[i](x)
             # x = self.hidden_lns[i](x)
             # x = 5 * self.a[i + 1] * x
-            x = torch.tanh(x)
+            x = torch.relu(x)
         # Output layer
         # x = 5 * self.a[-1] * x
         x = self.output_layer(x)

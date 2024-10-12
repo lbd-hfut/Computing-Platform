@@ -19,5 +19,5 @@ config = {
     "delta_train_lbfgs": 0.01,
     "epoch": 0,
     "print_feq": 10,
-    "Batchframes": 1
+    "Batchframes": 7
 }

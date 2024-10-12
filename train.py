@@ -48,7 +48,7 @@ model[1].get_optimizer(config)
 
 
 
-def closure1(model, XY_roi, XY, Iref, Idef, ROI, scale, i):
+def closure1(model, Ixy, XY_roi, XY, Iref, Idef, ROI, scale, i):
     model[0].optimizer_lbfgs.zero_grad()
     model[1].optimizer_lbfgs.zero_grad()
     U = model[0](Ixy); V = model[1](Ixy)
@@ -60,7 +60,7 @@ def closure1(model, XY_roi, XY, Iref, Idef, ROI, scale, i):
     model[1].Earlystop(mae, model[1], i , config['epoch'])
     return loss, mae
 
-def closure2(model, XY_roi, XY, Iref, Idef, ROI, scale, i):
+def closure2(model, Ixy, XY_roi, XY, Iref, Idef, ROI, scale, i):
     model[0].optimizer_lbfgs.zero_grad()
     model[1].optimizer_lbfgs.zero_grad()
     U = model[0](Ixy); V = model[1](Ixy)
@@ -72,7 +72,7 @@ def closure2(model, XY_roi, XY, Iref, Idef, ROI, scale, i):
     model[1].Earlystop(mae, model[1], i , config['epoch'])
     return loss, mae
 
-def warm_up(i, XY_roi, XY, RG, DG, ROI):
+def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
     if config['warm_adam_epoch'] != 0:
         model[0].Earlystop_set(config['patience_adam'], config['delta_warm_adam'])
         model[1].Earlystop_set(config['patience_adam'], config['delta_warm_adam'])
@@ -104,7 +104,7 @@ def warm_up(i, XY_roi, XY, RG, DG, ROI):
         for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
             def closure1_wrapper():
                 loss, mae = closure1(
-                    model, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i], i
+                    model, Ixy, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i], i
                     )
                 if config['epoch']%config['print_feq'] == 1:
                     epoch =  config['epoch'] 
@@ -117,7 +117,7 @@ def warm_up(i, XY_roi, XY, RG, DG, ROI):
                 print("warm lbfgs early stopping")
                 break
             
-def train_stage(i, XY_roi, XY, RG, DG, ROI):
+def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
     if config['train_adam_epoch'] != 0:
         model[0].optimizer_adam.param_groups[0]['lr'] = config['train_lr']
         model[1].optimizer_adam.param_groups[0]['lr'] = config['train_lr']
@@ -151,7 +151,7 @@ def train_stage(i, XY_roi, XY, RG, DG, ROI):
         for iter in range(config['train_bfgs_epoch']//config['max_iter']):
             def closure2_wrapper():
                 loss, mae = closure2(
-                    model, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i], i
+                    model, Ixy, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i], i
                     )
                 if config['epoch']%config['print_feq'] == 1:
                     epoch =  config['epoch']
@@ -164,10 +164,11 @@ def train_stage(i, XY_roi, XY, RG, DG, ROI):
                 print("train lbfgs early stopping")
                 break
 
-def predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv):
+def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
     model[0].eval()
     model[1].eval()
-    U = model[0](Ixy); V = model[1](Ixy)
+    with torch.no_grad():
+        U = model[0](Ixy); V = model[1](Ixy)
     UV = torch.cat((U, V), dim=1)
     loss, mae = criterion_warmup(UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i])
     save_checkpoint(
@@ -187,15 +188,15 @@ def predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv):
     xyuv[i,:,0:2] = coords; xyuv[i,:,2:4] = UV
     return uv, xyuv
 
-def frame_calculate(i, DG, uv, xyuv):
+def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
     print(f"Calculate the {i+1:04d}-th deformed image start:")
     model[0].train()
     model[1].train()
     print("warm up:")
-    warm_up(i, XY_roi, XY, RG, DG, ROI)
+    warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI)
     print("train:")
-    train_stage(i, XY_roi, XY, RG, DG, ROI)
-    uv, xyuv = predict_stage(i, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+    train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI)
+    uv, xyuv = predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv)
     return uv, xyuv 
      
 if __name__ == '__main__':
@@ -213,12 +214,13 @@ if __name__ == '__main__':
     xyuv = torch.zeros((N, total, 4))
     
     print("train start")
-    for i, DG in enumerate(train_loader):
-        DG = DG[0].to(device)
+    for i, DG_list in enumerate(train_loader):
+        DG = DG_list[0].to(device)
         model[0].unfreeze_and_initialize()
         model[1].unfreeze_and_initialize()
         config['epoch'] = 0
-        uv, xyuv = frame_calculate(i, DG, uv, xyuv)
+        uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+        torch.cuda.empty_cache()
         print("-------------*-------------")
     uv = uv.cpu().detach().numpy()
     xyuv = xyuv.cpu().detach().numpy()

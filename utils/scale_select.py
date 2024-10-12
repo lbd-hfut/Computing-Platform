@@ -108,8 +108,8 @@ def match_plot(data, reference_img_path, deformed_img_path, save_dir=None, filen
         file_path = os.path.join(save_dir, filename)
         plt.savefig(file_path, bbox_inches='tight', dpi=300)
         print(f"Figure saved to {file_path}")
-
-    plt.show()
+    plt.close()  # Close the figure if not showing 
+    
     
     
     

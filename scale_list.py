@@ -4,6 +4,9 @@ import numpy as np
 import sys
 import math
 import scipy.io as io
+import matplotlib  
+matplotlib.use('Agg')
+
 sys.path.append("./layers")
 sys.path.append("./utils")
 

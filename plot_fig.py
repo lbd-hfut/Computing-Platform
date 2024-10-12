@@ -7,6 +7,8 @@ sys.path.append("./layers")
 sys.path.append("./utils")
 from config import config
 from result_plot import result_plot, contourf_plot, error_plot
+import matplotlib  
+matplotlib.use('Agg')
 
 if __name__ == '__main__':
     directory = config['data_path'] +'to_matlab'

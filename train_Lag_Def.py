@@ -202,7 +202,7 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
                     print("train lbfgs early stopping")
                     break
 
-def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
+def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
     model[0].eval()
     model[1].eval()
     with torch.no_grad():
@@ -222,11 +222,11 @@ def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
     y_coords, x_coords = coords[:, 0], coords[:, 1]
     U[y_coords, x_coords] = UV[:, 0]
     V[y_coords, x_coords] = UV[:, 1]
-    uv[i,0,:,:] = U; uv[i,1,:,:] = V
-    xyuv[i,:,0:2] = coords; xyuv[i,:,2:4] = UV
+    uv[j,0,:,:] = U; uv[j,1,:,:] = V
+    xyuv[j,:,0:2] = coords; xyuv[j,:,2:4] = UV
     return uv, xyuv
 
-def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
+def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
     print(f"Calculate the {i+1:04d}-th deformed image start:")
     model[0].train()
     model[1].train()
@@ -234,7 +234,7 @@ def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
     warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI)
     print("train:")
     train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI)
-    uv, xyuv = predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+    uv, xyuv = predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j)
     return uv, xyuv 
 
 if __name__ == '__main__':
@@ -252,62 +252,62 @@ if __name__ == '__main__':
     frames_list.remove(batchframes//2)
     H, L = RG.shape; N = len(img_dataset)
     total = XY_roi.shape[0]
-    uv = torch.zeros((N, 2, H, L))
-    xyuv = torch.zeros((N, total, 4))
     BATCH = math.floor(N / batchframes)
     
     print("train start")
     
     for batch, DGlist in enumerate(train_loader):
         if batch == BATCH:
+            uv = torch.zeros((len(DGlist), 2, H, L))
+            xyuv = torch.zeros((len(DGlist), total, 4))
             DG = DGlist[-1].to(device)
             model[0].unfreeze_and_initialize(init_type='xavier')
             model[1].unfreeze_and_initialize(init_type='xavier')
-            # model[0].perturbation(perturbation_scale=0.001)
-            # model[1].perturbation(perturbation_scale=0.001) 
             i = batch*batchframes + len(DGlist) - 1
             config['epoch'] = 0
-            uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+            uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, len(DGlist)-1)
             print("-------------*-------------")
             torch.cuda.empty_cache()
             for j, DG in enumerate(DGlist[:-1]):
                 DG = DG.to(device)
-                # model[0].unfreeze_and_initialize(init_type='xavier')
-                # model[1].unfreeze_and_initialize(init_type='xavier')
                 model[0].perturbation(perturbation_scale=0.001)
                 model[1].perturbation(perturbation_scale=0.001) 
                 i = batch*batchframes + j
                 config['epoch'] = 0
-                uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+                uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j)
                 print("-------------*-------------")
                 torch.cuda.empty_cache()
+            uv = uv.cpu().detach().numpy()
+            xyuv = xyuv.cpu().detach().numpy()
+            to_matlab(config['data_path'], f'mat{batch*batchframes+1:03d}-{batch*batchframes+len(DGlist):03d}', uv)
+            to_txt(config['data_path'], f'txt{batch*batchframes+1:03d}-{batch*batchframes+len(DGlist):03d}', xyuv)
+            torch.cuda.empty_cache()
         else:
+            uv = torch.zeros((len(DGlist), 2, H, L))
+            xyuv = torch.zeros((len(DGlist), total, 4))
             DG = DGlist[batchframes//2].to(device)
             model[0].unfreeze_and_initialize(init_type='xavier')
-            model[1].unfreeze_and_initialize(init_type='xavier')
-            # model[0].perturbation(perturbation_scale=0.001)
-            # model[1].perturbation(perturbation_scale=0.001)                     
+            model[1].unfreeze_and_initialize(init_type='xavier')                  
             i = batch*batchframes + batchframes//2
             config['epoch'] = 0
-            uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+            uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, batchframes//2)
             print("-------------*-------------")
             torch.cuda.empty_cache()
             for j in frames_list:
                 DG = DGlist[j].to(device)
-                # model[0].unfreeze_and_initialize(init_type='xavier')
-                # model[1].unfreeze_and_initialize(init_type='xavier')
                 model[0].perturbation(perturbation_scale=0.001)
                 model[1].perturbation(perturbation_scale=0.001) 
                 i = batch*batchframes + j
                 config['epoch'] = 0
-                uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+                uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j)
                 print("-------------*-------------")
                 torch.cuda.empty_cache()
-    uv = uv.cpu().detach().numpy()
-    xyuv = xyuv.cpu().detach().numpy()
-    to_matlab(config['data_path'], 'result', uv)
-    to_txt(config['data_path'], 'result', xyuv)
-        
+            uv = uv.cpu().detach().numpy()
+            xyuv = xyuv.cpu().detach().numpy()
+            to_matlab(config['data_path'], f'mat{batch*batchframes+1:03d}-{batch*batchframes+len(DGlist):03d}', uv)
+            to_txt(config['data_path'], f'txt{batch*batchframes+1:03d}-{batch*batchframes+len(DGlist):03d}', xyuv)
+            torch.cuda.empty_cache()
+                
         
         
         

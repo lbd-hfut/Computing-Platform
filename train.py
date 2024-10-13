@@ -164,7 +164,7 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
                 print("train lbfgs early stopping")
                 break
 
-def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
+def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
     model[0].eval()
     model[1].eval()
     with torch.no_grad():
@@ -184,11 +184,11 @@ def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
     y_coords, x_coords = coords[:, 0], coords[:, 1]
     U[y_coords, x_coords] = UV[:, 0]
     V[y_coords, x_coords] = UV[:, 1]
-    uv[i,0,:,:] = U; uv[i,1,:,:] = V
-    xyuv[i,:,0:2] = coords; xyuv[i,:,2:4] = UV
+    uv[j,0,:,:] = U; uv[j,1,:,:] = V
+    xyuv[j,:,0:2] = coords; xyuv[j,:,2:4] = UV
     return uv, xyuv
 
-def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
+def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
     print(f"Calculate the {i+1:04d}-th deformed image start:")
     model[0].train()
     model[1].train()
@@ -196,7 +196,7 @@ def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):
     warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI)
     print("train:")
     train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI)
-    uv, xyuv = predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+    uv, xyuv = predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j)
     return uv, xyuv 
      
 if __name__ == '__main__':
@@ -215,17 +215,20 @@ if __name__ == '__main__':
     
     print("train start")
     for i, DG_list in enumerate(train_loader):
+        uv = torch.zeros((1, 2, H, L))
+        xyuv = torch.zeros((1, total, 4))
         DG = DG_list[0].to(device)
         model[0].unfreeze_and_initialize()
         model[1].unfreeze_and_initialize()
         config['epoch'] = 0
-        uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv)
+        uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, 0)
         torch.cuda.empty_cache()
         print("-------------*-------------")
-    uv = uv.cpu().detach().numpy()
-    xyuv = xyuv.cpu().detach().numpy()
-    to_matlab(config['data_path'], 'result', uv)
-    to_txt(config['data_path'], 'result', xyuv)
+        uv = uv.cpu().detach().numpy()
+        xyuv = xyuv.cpu().detach().numpy()
+        to_matlab(config['data_path'], f'mat{i+1:03d}', uv)
+        to_txt(config['data_path'], f'txt{i+1:03d}', xyuv)
+        torch.cuda.empty_cache()
         
         
         

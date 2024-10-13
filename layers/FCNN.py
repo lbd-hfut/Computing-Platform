@@ -1,5 +1,6 @@
 import torch
 import torch.nn as nn
+import sys
 
 class DNN(torch.nn.Module):
     def __init__(self, layers):
@@ -95,12 +96,6 @@ class DNN(torch.nn.Module):
             nn.init.kaiming_normal_(self.output_layer.weight, nonlinearity='relu')
             if self.output_layer.bias is not None:
                 nn.init.constant_(self.output_layer.bias, 0)
-                
-            # # Initialize LayerNorm parameters
-            # for ln in self.hidden_lns:
-            #     nn.init.kaiming_normal_(ln.weight)
-            #     if ln.bias is not None:
-            #         nn.init.constant_(ln.bias, 0)
     
         elif init_type == 'xavier':
             # Apply Xavier initialization to input layer, hidden layers, and output layer
@@ -116,12 +111,6 @@ class DNN(torch.nn.Module):
             nn.init.xavier_normal_(self.output_layer.weight)
             if self.output_layer.bias is not None:
                 nn.init.constant_(self.output_layer.bias, 0)
-                
-            # # Initialize LayerNorm parameters
-            # for ln in self.hidden_lns:
-            #     nn.init.xavier_normal_(ln.weight)
-            #     if ln.bias is not None:
-            #         nn.init.constant_(ln.bias, 0)
         
         # Initialize LayerNorm parameters
         for ln in self.hidden_lns:
@@ -193,6 +182,8 @@ class DNN(torch.nn.Module):
         self.optimizer_adam = torch.optim.Adam(
             self.parameters(), lr=config['warm_lr'],  eps=1e-8, weight_decay=config['weight_decay'])
         
-
+    def set_scheduler(self):
+        self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(self.optimizer_adam, T_max=20, eta_min=1e-6)
+        
 
 

@@ -8,28 +8,39 @@ import scipy.io as sio
 
 class lbdDataset(Dataset):
     def __init__(self, train_root):
-        # read refence img
-        self.rfimage_files = np.array([x.path for x in os.scandir(train_root)
+        # # read refence img
+        # self.rfimage_files = np.array([x.path for x in os.scandir(train_root)
+        #                      if (x.name.endswith(".bmp") or
+        #                      x.name.endswith(".png") or 
+        #                      x.name.endswith(".JPG")) and 
+        #                          x.name.startswith("r")])
+        # # self.rfimage = self.open_image(self.rfimage_files[0])
+        
+        # # read deformed img
+        # self.dfimage_files = np.array([x.path for x in os.scandir(train_root)
+        #                              if (x.name.endswith(".bmp") or
+        #                              x.name.endswith(".png") or 
+        #                              x.name.endswith(".JPG")) and 
+        #                                  x.name.startswith("d")])
+        # self.dfimage_files.sort()
+        
+        # # read ROI img
+        # self.mask_files = np.array([x.path for x in os.scandir(train_root)
+        #                              if (x.name.endswith(".bmp") or
+        #                              x.name.endswith(".png") or 
+        #                              x.name.endswith(".JPG")) and
+        #                              x.name.startswith("mask")])
+        
+        image_files = np.array([x.path for x in os.scandir(train_root)
                              if (x.name.endswith(".bmp") or
                              x.name.endswith(".png") or 
-                             x.name.endswith(".JPG")) and 
-                                 x.name.startswith("r")])
-        # self.rfimage = self.open_image(self.rfimage_files[0])
+                             x.name.endswith(".JPG"))])
+        image_files.sort()
         
-        # read deformed img
-        self.dfimage_files = np.array([x.path for x in os.scandir(train_root)
-                                     if (x.name.endswith(".bmp") or
-                                     x.name.endswith(".png") or 
-                                     x.name.endswith(".JPG")) and 
-                                         x.name.startswith("d")])
-        self.dfimage_files.sort()
+        self.rfimage_files = [image_files[0]]
+        self.mask_files = [image_files[-1]]
+        self.dfimage_files = image_files[1:-1]
         
-        # read ROI img
-        self.mask_files = np.array([x.path for x in os.scandir(train_root)
-                                     if (x.name.endswith(".bmp") or
-                                     x.name.endswith(".png") or 
-                                     x.name.endswith(".JPG")) and
-                                     x.name.startswith("mask")])
         # self.mask = self.open_image(self.mask_files[0])
         # unique_values = np.unique(self.mask) # Get the unique value in the mask
         # if len(unique_values) == 2:
@@ -91,28 +102,39 @@ class lbdDataset(Dataset):
     
 class pyramidDataset(Dataset):
     def __init__(self, train_root):
-        # read refence img
-        self.rfimage_files = np.array([x.path for x in os.scandir(train_root)
+        # # read refence img
+        # self.rfimage_files = np.array([x.path for x in os.scandir(train_root)
+        #                      if (x.name.endswith(".bmp") or
+        #                      x.name.endswith(".png") or 
+        #                      x.name.endswith(".JPG")) and 
+        #                          x.name.startswith("r")])
+        # # self.rfimage = self.open_image(self.rfimage_files[0])
+        
+        # # read deformed img
+        # self.dfimage_files = np.array([x.path for x in os.scandir(train_root)
+        #                              if (x.name.endswith(".bmp") or
+        #                              x.name.endswith(".png") or 
+        #                              x.name.endswith(".JPG")) and 
+        #                                  x.name.startswith("d")])
+        # self.dfimage_files.sort()
+        
+        # # read ROI img
+        # self.mask_files = np.array([x.path for x in os.scandir(train_root)
+        #                              if (x.name.endswith(".bmp") or
+        #                              x.name.endswith(".png") or 
+        #                              x.name.endswith(".JPG")) and
+        #                              x.name.startswith("mask")])
+        
+        image_files = np.array([x.path for x in os.scandir(train_root)
                              if (x.name.endswith(".bmp") or
                              x.name.endswith(".png") or 
-                             x.name.endswith(".JPG")) and 
-                                 x.name.startswith("r")])
-        # self.rfimage = self.open_image(self.rfimage_files[0])
+                             x.name.endswith(".JPG"))])
+        image_files.sort()
         
-        # read deformed img
-        self.dfimage_files = np.array([x.path for x in os.scandir(train_root)
-                                     if (x.name.endswith(".bmp") or
-                                     x.name.endswith(".png") or 
-                                     x.name.endswith(".JPG")) and 
-                                         x.name.startswith("d")])
-        self.dfimage_files.sort()
+        self.rfimage_files = [image_files[0]]
+        self.mask_files = [image_files[-1]]
+        self.dfimage_files = image_files[1:-1]
         
-        # read ROI img
-        self.mask_files = np.array([x.path for x in os.scandir(train_root)
-                                     if (x.name.endswith(".bmp") or
-                                     x.name.endswith(".png") or 
-                                     x.name.endswith(".JPG")) and
-                                     x.name.startswith("mask")])
         # self.mask = self.open_image(self.mask_files[0])
         # unique_values = np.unique(self.mask) # Get the unique value in the mask
         # if len(unique_values) == 2:

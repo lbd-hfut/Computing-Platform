@@ -123,7 +123,7 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI, scale_factor):
                 if model[1].early_stop:
                     model[1].freeze_all_parameters()
                 if model[0].early_stop and model[1].early_stop:
-                    print("train adam early stopping")
+                    print("warm adam early stopping")
                     break
     if config['warm_bfgs_epoch'] > config['max_iter']:
         model[0].Earlystop_set(config['patience_lbfgs']*U_PAT_FAC, config['delta_warm_lbfgs']/U_PAT_FAC)
@@ -148,7 +148,7 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI, scale_factor):
                 if model[1].early_stop:
                     model[1].freeze_all_parameters()
                 if model[0].early_stop and model[1].early_stop:
-                    print("train adam early stopping")
+                    print("warm lbfgs early stopping")
                     break
             
 def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, scale_factor):
@@ -188,7 +188,7 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, scale_factor):
         model[0].Earlystop_set(config['patience_lbfgs']*U_PAT_FAC, config['delta_train_lbfgs']/U_PAT_FAC)
         model[1].Earlystop_set(config['patience_lbfgs']*V_PAT_FAC, config['delta_train_lbfgs']/V_PAT_FAC)
         model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
-        print("warm lbfgs start:") 
+        print("train lbfgs start:") 
         for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
             def closure2_wrapper():
                 loss, mae = closure2(
@@ -207,7 +207,7 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, scale_factor):
                 if model[1].early_stop:
                     model[1].freeze_all_parameters()
                 if model[0].early_stop and model[1].early_stop:
-                    print("train adam early stopping")
+                    print("train lbfgs early stopping")
                     break
     
 def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):

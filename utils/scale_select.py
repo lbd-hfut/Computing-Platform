@@ -28,6 +28,9 @@ def sift_matching_within_roi(reference_img_path, deformed_img_path, roi_img_path
     search_params = dict(checks=50)
     flann = cv2.FlannBasedMatcher(index_params, search_params)
     
+    descriptors_ref = descriptors_ref.astype(np.float32)  
+    descriptors_def = descriptors_def.astype(np.float32)
+    
     matches = flann.knnMatch(descriptors_ref, descriptors_def, k=2)
     
     # Apply ratio test to filter good matches

@@ -84,6 +84,7 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
     if config['warm_adam_epoch'] != 0:
         model[0].Earlystop_set(config['patience_adam']*U_PAT_FAC, config['delta_warm_adam']/U_PAT_FAC)
         model[1].Earlystop_set(config['patience_adam']*V_PAT_FAC, config['delta_warm_adam']/V_PAT_FAC)
+        model[0].set_scheduler(); model[1].set_scheduler()
         model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
         print("warm adam start:")
         for iter in range(config['warm_adam_epoch']):
@@ -97,6 +98,8 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
             loss.backward()
             model[0].optimizer_adam.step()
             model[1].optimizer_adam.step()
+            model[0].scheduler.step()
+            model[1].scheduler.step()
             config['epoch'] += 1
             model[0].Earlystop(mae, model[0], i , config['epoch'])
             model[1].Earlystop(mae, model[1], i , config['epoch'])
@@ -109,7 +112,7 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
                 if model[1].early_stop:
                     model[1].freeze_all_parameters()
                 if model[0].early_stop and model[1].early_stop:
-                    print("train adam early stopping")
+                    print("warm adam early stopping")
                     break
     if config['warm_bfgs_epoch'] > config['max_iter']:
         model[0].Earlystop_set(config['patience_lbfgs']*U_PAT_FAC, config['delta_warm_lbfgs']/U_PAT_FAC)
@@ -134,13 +137,14 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
                 if model[1].early_stop:
                     model[1].freeze_all_parameters()
                 if model[0].early_stop and model[1].early_stop:
-                    print("train adam early stopping")
+                    print("warm lbfgs early stopping")
                     break
             
 def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
     if config['train_adam_epoch'] != 0:
         model[0].optimizer_adam.param_groups[0]['lr'] = config['train_lr']
         model[1].optimizer_adam.param_groups[0]['lr'] = config['train_lr']
+        model[0].set_scheduler(); model[1].set_scheduler()
         model[0].Earlystop_set(config['patience_adam']*U_PAT_FAC, config['delta_train_adam']/U_PAT_FAC)
         model[1].Earlystop_set(config['patience_adam']*V_PAT_FAC, config['delta_train_adam']/V_PAT_FAC)
         model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
@@ -156,6 +160,8 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
             loss.backward()
             model[0].optimizer_adam.step()
             model[1].optimizer_adam.step()
+            model[0].scheduler.step()
+            model[1].scheduler.step()
             config['epoch'] += 1
             model[0].Earlystop(mae, model[0], i , config['epoch'])
             model[1].Earlystop(mae, model[1], i , config['epoch'])
@@ -174,7 +180,7 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
         model[0].Earlystop_set(config['patience_lbfgs']*U_PAT_FAC, config['delta_train_lbfgs']/U_PAT_FAC)
         model[1].Earlystop_set(config['patience_lbfgs']*V_PAT_FAC, config['delta_train_lbfgs']/V_PAT_FAC)
         model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
-        print("warm lbfgs start:") 
+        print("train lbfgs start:") 
         for iter in range(config['train_bfgs_epoch']//config['max_iter']):
             def closure2_wrapper():
                 loss, mae = closure2(
@@ -193,7 +199,7 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
                 if model[1].early_stop:
                     model[1].freeze_all_parameters()
                 if model[0].early_stop and model[1].early_stop:
-                    print("train adam early stopping")
+                    print("train lbfgs early stopping")
                     break
 
 def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv):

@@ -29,27 +29,6 @@ if __name__ == '__main__':
         os.mkdir(path+'scale_information')
     directory = path +'scale_information'
     
-    # rfimage_files = np.array(
-    #         [x.path for x in os.scandir(config['data_path']) 
-    #          if (x.name.endswith(".bmp") or 
-    #          x.name.endswith(".png") or 
-    #          x.name.endswith(".JPG")) and 
-    #          x.name.startswith("r")])
-    
-    # dfimage_files = np.array(
-    #         [x.path for x in os.scandir(config['data_path']) 
-    #         if (x.name.endswith(".bmp") or 
-    #         x.name.endswith(".png") or 
-    #         x.name.endswith(".JPG")) and 
-    #         x.name.startswith("d")])
-    
-    # mask_files = np.array(
-    #         [x.path for x in os.scandir(config['data_path']) 
-    #         if (x.name.endswith(".bmp") or 
-    #         x.name.endswith(".png") or 
-    #         x.name.endswith(".JPG")) and 
-    #         x.name.startswith("mask")])
-    
     image_files = np.array([x.path for x in os.scandir(config['data_path'])
                          if (x.name.endswith(".bmp") or
                          x.name.endswith(".png") or 
@@ -80,20 +59,20 @@ if __name__ == '__main__':
                 save_dir=directory, filename=f'example{i+1:03d}_match.png'
                 )
             displacements = np.abs(data[:,4:6])
-            u_max = np.max(displacements[:,0])
-            v_max = np.max(displacements[:,1])
-            u_min = np.min(displacements[:,0])
-            v_min = np.min(displacements[:,1])
-            u_scale = int((u_max - u_min)*safety_factor/2)
-            v_scale = int((v_max - v_min)*safety_factor/2)
-            u_scale = 1 if u_scale == 0 else u_scale
-            v_scale = 1 if v_scale == 0 else v_scale
+            u_max = np.max(data[:,4])
+            v_max = np.max(data[:,5])
+            u_min = np.min(data[:,4])
+            v_min = np.min(data[:,5])
+            u_scale = ((u_max - u_min)/2) * safety_factor
+            v_scale = ((v_max - v_min)/2) * safety_factor
+            u_scale = 1 if round(u_scale) == 0 else u_scale
+            v_scale = 1 if round(v_scale) == 0 else v_scale
             # u_mean = int(np.mean(displacements[:,0]))/u_scale
             # v_mean = int(np.mean(displacements[:,1]))/v_scale
-            u_mean = int(np.mean(data[:,4:5]))/u_scale
-            v_mean = int(np.mean(data[:,5:6]))/v_scale
+            u_mean = int(np.mean(data[:,4:5]))
+            v_mean = int(np.mean(data[:,5:6]))
             for i in range(len(iLIst)):
-                SCALE_LIST.append([u_scale, v_scale, u_mean, v_mean])
+                SCALE_LIST.append([int(u_scale), int(v_scale), u_mean, v_mean])
         else:
             i = iLIst[batchframes//2]
             data = sift_matching_within_roi(
@@ -105,18 +84,18 @@ if __name__ == '__main__':
                 save_dir=directory, filename=f'example{i+1:03d}_match.png'
                 )
             displacements = np.abs(data[:,4:6])
-            u_max = np.max(displacements[:,0])
-            v_max = np.max(displacements[:,1])
-            u_min = np.min(displacements[:,0])
-            v_min = np.min(displacements[:,1])
-            u_scale = round((u_max - u_min)*safety_factor/2)
-            v_scale = round((v_max - v_min)*safety_factor/2)
-            u_scale = 1 if u_scale == 0 else u_scale 
-            v_scale = 1 if v_scale == 0 else v_scale
-            u_mean = round(np.mean(data[:,4:5]))/u_scale
-            v_mean = round(np.mean(data[:,5:6]))/v_scale
+            u_max = np.max(data[:,4])
+            v_max = np.max(data[:,5])
+            u_min = np.min(data[:,4])
+            v_min = np.min(data[:,5])
+            u_scale = ((u_max - u_min)/2) * safety_factor
+            v_scale = ((v_max - v_min)/2) * safety_factor
+            u_scale = 1 if round(u_scale) == 0 else u_scale 
+            v_scale = 1 if round(v_scale) == 0 else v_scale
+            u_mean = round(np.mean(data[:,4:5]))
+            v_mean = round(np.mean(data[:,5:6]))
             for i in range(len(iLIst)):
-                SCALE_LIST.append([u_scale, v_scale, u_mean, v_mean])
+                SCALE_LIST.append([int(u_scale), int(v_scale), u_mean, v_mean])
     
     io.savemat(directory+'/SCALE.mat',{'scale':SCALE_LIST})
     print("The scale list is saved to "+directory+'/SCALE.mat')

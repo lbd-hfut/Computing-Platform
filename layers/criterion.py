@@ -135,4 +135,4 @@ def Straincompatibility(UV, XY_roi, ROI):
     exy1 = torch.diff(exy, dim=1)[1:target_height,:] # (h-1,w-1)->(h-1,w-2)->(h-2,w-2)
     exy2 = torch.diff(exy1, dim=0)[:,1:target_width] # (h-2,w-2)->(h-3,w-2)->(h-3,w-3)
     result = torch.sum((ex2 + ey2 - exy2) ** 2)
-    return result
+    return result * 0.01

@@ -13,7 +13,7 @@ from scipy.io import loadmat
 sys.path.append("./layers")
 sys.path.append("./utils")
 
-from criterion import criterion_warmup_lgd, criterion_train_lgd
+from criterion import criterion_warmup_lgd, criterion_train_lgd, Straincompatibility
 from FCNN import DNN
 from utils import save_checkpoint
 from readData import lbdDataset, collate_fn
@@ -68,6 +68,9 @@ def closure1(model, Ixy, XY_roi, XY, Iref, Idef, ROI, scale, i):
     U = model[0](Ixy); V = model[1](Ixy)
     UV = torch.cat((U, V), dim=1)
     loss, mae = criterion_warmup_lgd(UV, XY_roi, XY, Iref, Idef, ROI, scale)
+    # loss_ce = Straincompatibility(UV, XY_roi, ROI)
+    # loss_total = loss+loss_ce
+    # loss_total.backward()
     loss.backward()
     config['epoch'] += 1
     model[0].Earlystop(mae, model[0], i , config['epoch'])
@@ -80,6 +83,9 @@ def closure2(model, Ixy, XY_roi, XY, Iref, Idef, ROI, scale, i):
     U = model[0](Ixy); V = model[1](Ixy)
     UV = torch.cat((U, V), dim=1)
     loss, mae = criterion_train_lgd(UV, XY_roi, XY, Iref, Idef, ROI, scale)
+    # loss_ce = Straincompatibility(UV, XY_roi, ROI)
+    # loss_total = loss+loss_ce
+    # loss_total.backward()
     loss.backward()
     config['epoch'] += 1
     model[0].Earlystop(mae, model[0], i , config['epoch'])
@@ -100,6 +106,9 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
             loss, mae = criterion_warmup_lgd(
                 UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
                 )
+            # loss_ce = Straincompatibility(UV, XY_roi, ROI)
+            # loss_total = loss+loss_ce
+            # loss_total.backward()
             loss.backward()
             model[0].optimizer_adam.step()
             model[1].optimizer_adam.step()
@@ -159,6 +168,9 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
             loss, mae = criterion_train_lgd(
                 UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
                 )
+            # loss_ce = Straincompatibility(UV, XY_roi, ROI)
+            # loss_total = loss+loss_ce
+            # loss_total.backward()
             loss.backward()
             model[0].optimizer_adam.step()
             model[1].optimizer_adam.step()
@@ -307,8 +319,4 @@ if __name__ == '__main__':
             to_matlab(config['data_path'], f'mat{batch*batchframes+1:03d}-{batch*batchframes+len(DGlist):03d}', uv)
             to_txt(config['data_path'], f'txt{batch*batchframes+1:03d}-{batch*batchframes+len(DGlist):03d}', xyuv)
             torch.cuda.empty_cache()
-                
-        
-        
-        
-
+            

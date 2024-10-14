@@ -10,7 +10,7 @@ config = {
     "warm_adam_epoch": 100,
     "warm_bfgs_epoch": 100,
     "train_adam_epoch": 100,
-    "train_bfgs_epoch": 200,
+    "train_bfgs_epoch": 100,
     "patience_adam": 30,
     "patience_lbfgs": 30,
     "delta_warm_adam": 0.5,

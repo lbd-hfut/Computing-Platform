@@ -72,7 +72,7 @@ if __name__ == '__main__':
             u_mean = int(np.mean(data[:,4:5]))
             v_mean = int(np.mean(data[:,5:6]))
             for i in range(len(iLIst)):
-                SCALE_LIST.append([int(u_scale), int(v_scale), u_mean, v_mean])
+                SCALE_LIST.append([round(u_scale), round(v_scale), u_mean, v_mean])
         else:
             i = iLIst[batchframes//2]
             data = sift_matching_within_roi(
@@ -95,7 +95,7 @@ if __name__ == '__main__':
             u_mean = round(np.mean(data[:,4:5]))
             v_mean = round(np.mean(data[:,5:6]))
             for i in range(len(iLIst)):
-                SCALE_LIST.append([int(u_scale), int(v_scale), u_mean, v_mean])
+                SCALE_LIST.append([round(u_scale), round(v_scale), u_mean, v_mean])
     
     io.savemat(directory+'/SCALE.mat',{'scale':SCALE_LIST})
     print("The scale list is saved to "+directory+'/SCALE.mat')

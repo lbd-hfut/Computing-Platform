@@ -82,8 +82,6 @@ def closure2(model, Ixy, XY_roi, XY, Iref, Idef, ROI, scale, i):
 
 def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
     if config['warm_adam_epoch'] != 0:
-        model[0].optimizer_adam.param_groups[0]['lr'] = config['warm_lr']
-        model[1].optimizer_adam.param_groups[0]['lr'] = config['warm_lr']
         model[0].Earlystop_set(config['patience_adam']*U_PAT_FAC, config['delta_warm_adam']/U_PAT_FAC)
         model[1].Earlystop_set(config['patience_adam']*V_PAT_FAC, config['delta_warm_adam']/V_PAT_FAC)
         # model[0].set_scheduler(); model[1].set_scheduler()
@@ -243,8 +241,8 @@ def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
 def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
     print(f"Calculate the {i+1:04d}-th deformed image start:")
     file.write(f"Calculate the {i+1:04d}-th deformed image start:\n")
-    model[0].train()
-    model[1].train()
+    model[0].train(); model[1].train()
+    model[0].reset_optim(config); model[1].reset_optim(config)
     print("warm up:")
     file.write("warm up:\n")
     warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI)
@@ -255,7 +253,6 @@ def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
     return uv, xyuv 
      
 if __name__ == '__main__':
-        
     img_dataset = lbdDataset(config['data_path'])
     RG, ROI, XY, XY_roi, Ixy = img_dataset.data_collect(device)
     train_loader = torch.utils.data.DataLoader(
@@ -270,6 +267,7 @@ if __name__ == '__main__':
     print("train start")
     file = open(config['log_path']+'training_log.txt', 'w')
     for i, DG in enumerate(train_loader):
+        # torch.cuda.empty_cache()
         uv = torch.zeros((1, 2, H, L))
         xyuv = torch.zeros((1, total, 4))
         DG = DG[0].to(device)

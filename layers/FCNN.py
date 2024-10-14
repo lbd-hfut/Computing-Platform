@@ -182,6 +182,18 @@ class DNN(torch.nn.Module):
         self.optimizer_adam = torch.optim.Adam(
             self.parameters(), lr=config['warm_lr'],  eps=1e-8, weight_decay=config['weight_decay'])
         
+    def reset_optim(self, config):
+        #Initialize LBFGS optimizer
+        max_iter=config['max_iter']; max_eval = int(1.25 * max_iter)
+        self.optimizer_lbfgs = torch.optim.LBFGS(
+            self.parameters(), lr=1, max_iter=max_iter, max_eval=max_eval,
+            history_size=50, tolerance_grad=1e-06,
+            tolerance_change=5e-06,
+            line_search_fn="strong_wolfe")
+        # Initialize Adam optimizer
+        self.optimizer_adam = torch.optim.Adam(
+            self.parameters(), lr=config['warm_lr'],  eps=1e-8, weight_decay=config['weight_decay'])
+    
     def set_scheduler(self):
         self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(self.optimizer_adam, T_max=20, eta_min=1e-6)
         

@@ -1,0 +1,4134 @@
+Calculate the 0004-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 3.05388
+Epoch [  11], MAE: 2.16470
+Epoch [  21], MAE: 1.97876
+Epoch [  31], MAE: 1.85883
+Epoch [  41], MAE: 1.86665
+Epoch [  51], MAE: 1.89840
+Epoch [  61], MAE: 1.91597
+Epoch [  71], MAE: 1.92176
+Epoch [  81], MAE: 1.92421
+Epoch [  91], MAE: 1.92476
+warm lbfgs start:
+Epoch [ 101], MAE: 1.92460
+Epoch [ 111], MAE: 1.92299
+Epoch [ 121], MAE: 1.92202
+Epoch [ 131], MAE: 1.75855
+Epoch [ 141], MAE: 1.74054
+Epoch [ 151], MAE: 1.73925
+Epoch [ 161], MAE: 1.73891
+Epoch [ 171], MAE: 1.73881
+Epoch [ 181], MAE: 1.73871
+Epoch [ 191], MAE: 1.73869
+Epoch [ 201], MAE: 1.73866
+Epoch [ 211], MAE: 1.73865
+Epoch [ 221], MAE: 1.73865
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 231], MAE: 1.73819
+Epoch [ 241], MAE: 1.73807
+Epoch [ 251], MAE: 1.73791
+Epoch [ 261], MAE: 1.73780
+Epoch [ 271], MAE: 1.73780
+Epoch [ 281], MAE: 1.73780
+Epoch [ 291], MAE: 1.73780
+Epoch [ 301], MAE: 1.73778
+Epoch [ 311], MAE: 1.73777
+train adam early stopping
+train lbfgs start:
+Epoch [ 321], MAE: 1.73775
+Epoch [ 331], MAE: 1.73778
+-------------*-------------
+Calculate the 0001-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 20.50567
+Epoch [  11], MAE: 19.71389
+Epoch [  21], MAE: 19.06299
+Epoch [  31], MAE: 18.54093
+Epoch [  41], MAE: 18.14459
+Epoch [  51], MAE: 17.87351
+Epoch [  61], MAE: 17.70184
+Epoch [  71], MAE: 17.59203
+Epoch [  81], MAE: 17.54167
+Epoch [  91], MAE: 17.57925
+warm lbfgs start:
+Epoch [ 101], MAE: 17.64743
+Epoch [ 111], MAE: 17.64764
+Epoch [ 121], MAE: 17.63966
+Epoch [ 131], MAE: 2.35450
+Epoch [ 141], MAE: 2.12998
+Epoch [ 151], MAE: 44.97682
+Epoch [ 161], MAE: 2.07300
+Epoch [ 171], MAE: 2.02471
+Epoch [ 181], MAE: 1.85308
+Epoch [ 191], MAE: 1.80550
+Epoch [ 201], MAE: 1.79737
+train:
+train adam start:
+Epoch [ 211], MAE: 1.79711
+Epoch [ 221], MAE: 1.79752
+Epoch [ 231], MAE: 1.79886
+Epoch [ 241], MAE: 1.80093
+Epoch [ 251], MAE: 1.80386
+Epoch [ 261], MAE: 1.80753
+Epoch [ 271], MAE: 1.81178
+Epoch [ 281], MAE: 1.81653
+Epoch [ 291], MAE: 1.82171
+train adam early stopping
+train lbfgs start:
+Epoch [ 301], MAE: 3.62595
+Epoch [ 311], MAE: 1.81107
+Epoch [ 321], MAE: 1.79629
+Epoch [ 331], MAE: 1.79044
+Epoch [ 341], MAE: 1.78826
+Epoch [ 351], MAE: 1.78416
+Epoch [ 361], MAE: 1.78283
+-------------*-------------
+Calculate the 0002-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 4.21789
+Epoch [  11], MAE: 3.94252
+Epoch [  21], MAE: 3.70785
+Epoch [  31], MAE: 3.51808
+Epoch [  41], MAE: 3.40070
+Epoch [  51], MAE: 3.32394
+Epoch [  61], MAE: 3.27060
+Epoch [  71], MAE: 3.23278
+Epoch [  81], MAE: 3.20553
+Epoch [  91], MAE: 3.18581
+warm lbfgs start:
+Epoch [ 101], MAE: 3.17139
+Epoch [ 111], MAE: 3.17056
+Epoch [ 121], MAE: 3.14410
+Epoch [ 131], MAE: 2.12430
+Epoch [ 141], MAE: 1.99998
+Epoch [ 151], MAE: 1.96007
+Epoch [ 161], MAE: 1.94655
+train:
+train adam start:
+Epoch [ 171], MAE: 1.94758
+Epoch [ 181], MAE: 1.95066
+Epoch [ 191], MAE: 1.95403
+Epoch [ 201], MAE: 1.95762
+Epoch [ 211], MAE: 1.96166
+Epoch [ 221], MAE: 1.96604
+Epoch [ 231], MAE: 1.97068
+Epoch [ 241], MAE: 1.97549
+Epoch [ 251], MAE: 1.98048
+train adam early stopping
+train lbfgs start:
+Epoch [ 261], MAE: 1.98402
+Epoch [ 271], MAE: 1.97665
+-------------*-------------
+Calculate the 0003-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 9.62691
+Epoch [  11], MAE: 9.34796
+Epoch [  21], MAE: 9.10810
+Epoch [  31], MAE: 8.91541
+Epoch [  41], MAE: 8.80019
+Epoch [  51], MAE: 8.72800
+Epoch [  61], MAE: 8.67903
+Epoch [  71], MAE: 8.64388
+Epoch [  81], MAE: 8.61769
+Epoch [  91], MAE: 8.59770
+warm lbfgs start:
+Epoch [ 101], MAE: 8.58224
+Epoch [ 111], MAE: 2.29842
+Epoch [ 121], MAE: 2.22431
+Epoch [ 131], MAE: 2.22420
+Epoch [ 141], MAE: 2.22037
+train:
+train adam start:
+Epoch [ 151], MAE: 2.22043
+Epoch [ 161], MAE: 2.22064
+Epoch [ 171], MAE: 2.22096
+Epoch [ 181], MAE: 2.22166
+Epoch [ 191], MAE: 2.22266
+Epoch [ 201], MAE: 2.22381
+Epoch [ 211], MAE: 2.22507
+Epoch [ 221], MAE: 2.22638
+Epoch [ 231], MAE: 2.22774
+train adam early stopping
+train lbfgs start:
+Epoch [ 241], MAE: 3.39982
+Epoch [ 251], MAE: 2.22475
+-------------*-------------
+Calculate the 0005-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 16.32755
+Epoch [  11], MAE: 16.25578
+Epoch [  21], MAE: 16.17982
+Epoch [  31], MAE: 16.11168
+Epoch [  41], MAE: 16.09032
+Epoch [  51], MAE: 16.08976
+Epoch [  61], MAE: 16.09609
+Epoch [  71], MAE: 16.10391
+Epoch [  81], MAE: 16.11104
+Epoch [  91], MAE: 16.11701
+warm lbfgs start:
+Epoch [ 101], MAE: 16.12188
+Epoch [ 111], MAE: 2.36013
+Epoch [ 121], MAE: 2.36013
+Epoch [ 131], MAE: 2.36013
+Epoch [ 141], MAE: 2.36013
+train:
+train adam start:
+Epoch [ 151], MAE: 2.35869
+Epoch [ 161], MAE: 2.35588
+Epoch [ 171], MAE: 2.35317
+Epoch [ 181], MAE: 2.35110
+Epoch [ 191], MAE: 2.34966
+Epoch [ 201], MAE: 2.34851
+Epoch [ 211], MAE: 2.34750
+Epoch [ 221], MAE: 2.34660
+Epoch [ 231], MAE: 2.34577
+train adam early stopping
+train lbfgs start:
+Epoch [ 241], MAE: 2.33117
+Epoch [ 251], MAE: 2.31625
+-------------*-------------
+Calculate the 0006-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.30135
+Epoch [  11], MAE: 8.20978
+Epoch [  21], MAE: 8.11848
+Epoch [  31], MAE: 8.03869
+Epoch [  41], MAE: 8.00476
+Epoch [  51], MAE: 7.99242
+Epoch [  61], MAE: 7.98814
+Epoch [  71], MAE: 7.98667
+Epoch [  81], MAE: 7.98617
+Epoch [  91], MAE: 7.98592
+warm lbfgs start:
+Epoch [ 101], MAE: 7.98584
+Epoch [ 111], MAE: 2.61972
+Epoch [ 121], MAE: 2.61970
+train:
+train adam start:
+Epoch [ 131], MAE: 2.61860
+Epoch [ 141], MAE: 2.61731
+Epoch [ 151], MAE: 2.61613
+Epoch [ 161], MAE: 2.61555
+Epoch [ 171], MAE: 2.61532
+Epoch [ 181], MAE: 2.61523
+Epoch [ 191], MAE: 2.61520
+Epoch [ 201], MAE: 2.61519
+Epoch [ 211], MAE: 2.61518
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 2.60562
+Epoch [ 231], MAE: 2.60562
+-------------*-------------
+Calculate the 0007-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.37268
+Epoch [  11], MAE: 7.26981
+Epoch [  21], MAE: 7.16756
+Epoch [  31], MAE: 7.07786
+Epoch [  41], MAE: 7.03844
+Epoch [  51], MAE: 7.02313
+Epoch [  61], MAE: 7.01722
+Epoch [  71], MAE: 7.01496
+Epoch [  81], MAE: 7.01414
+Epoch [  91], MAE: 7.01381
+warm lbfgs start:
+Epoch [ 101], MAE: 7.01367
+Epoch [ 111], MAE: 2.78028
+Epoch [ 121], MAE: 2.78049
+train:
+train adam start:
+Epoch [ 131], MAE: 2.77996
+Epoch [ 141], MAE: 2.77867
+Epoch [ 151], MAE: 2.77746
+Epoch [ 161], MAE: 2.77667
+Epoch [ 171], MAE: 2.77638
+Epoch [ 181], MAE: 2.77628
+Epoch [ 191], MAE: 2.77625
+Epoch [ 201], MAE: 2.77624
+Epoch [ 211], MAE: 2.77625
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 4.13800
+Epoch [ 231], MAE: 2.76821
+-------------*-------------
+Calculate the 0011-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 6.54360
+Epoch [  11], MAE: 3.63879
+Epoch [  21], MAE: 2.53415
+Epoch [  31], MAE: 2.27352
+Epoch [  41], MAE: 2.10423
+Epoch [  51], MAE: 2.02644
+Epoch [  61], MAE: 2.02484
+Epoch [  71], MAE: 2.03677
+Epoch [  81], MAE: 2.04265
+Epoch [  91], MAE: 2.04466
+warm lbfgs start:
+Epoch [ 101], MAE: 2.04501
+Epoch [ 111], MAE: 2.04315
+Epoch [ 121], MAE: 2.04062
+Epoch [ 131], MAE: 1.98914
+Epoch [ 141], MAE: 1.95543
+Epoch [ 151], MAE: 1.93871
+Epoch [ 161], MAE: 1.93817
+Epoch [ 171], MAE: 1.93792
+Epoch [ 181], MAE: 1.93783
+Epoch [ 191], MAE: 1.93769
+Epoch [ 201], MAE: 1.93763
+Epoch [ 211], MAE: 1.93753
+Epoch [ 221], MAE: 1.93752
+train:
+train adam start:
+Epoch [ 231], MAE: 1.93569
+Epoch [ 241], MAE: 1.93458
+Epoch [ 251], MAE: 1.93393
+Epoch [ 261], MAE: 1.93383
+Epoch [ 271], MAE: 1.93381
+Epoch [ 281], MAE: 1.93380
+Epoch [ 291], MAE: 1.93379
+Epoch [ 301], MAE: 1.93379
+Epoch [ 311], MAE: 1.93380
+train adam early stopping
+train lbfgs start:
+Epoch [ 321], MAE: 1.93330
+Epoch [ 331], MAE: 1.93050
+Epoch [ 341], MAE: 1.92952
+Epoch [ 351], MAE: 1.92904
+-------------*-------------
+Calculate the 0008-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 6.20238
+Epoch [  11], MAE: 6.87967
+Epoch [  21], MAE: 7.54113
+Epoch [  31], MAE: 8.20380
+Epoch [  41], MAE: 8.97343
+Epoch [  51], MAE: 9.70381
+Epoch [  61], MAE: 10.34168
+Epoch [  71], MAE: 10.87939
+Epoch [  81], MAE: 11.31743
+Epoch [  91], MAE: 11.66972
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 11.43398
+Epoch [ 111], MAE: 11.43095
+Epoch [ 121], MAE: 2.07344
+Epoch [ 131], MAE: 1.88222
+Epoch [ 141], MAE: 1.87874
+Epoch [ 151], MAE: 1.84434
+Epoch [ 161], MAE: 1.84135
+Epoch [ 171], MAE: 1.83749
+Epoch [ 181], MAE: 1.83437
+Epoch [ 191], MAE: 1.83404
+Epoch [ 201], MAE: 1.83208
+Epoch [ 211], MAE: 1.83200
+Epoch [ 221], MAE: 1.83097
+train:
+train adam start:
+Epoch [ 231], MAE: 1.83135
+Epoch [ 241], MAE: 1.83768
+Epoch [ 251], MAE: 1.85017
+Epoch [ 261], MAE: 1.86922
+Epoch [ 271], MAE: 1.89627
+Epoch [ 281], MAE: 1.93004
+Epoch [ 291], MAE: 1.96928
+Epoch [ 301], MAE: 2.01309
+Epoch [ 311], MAE: 2.06066
+train adam early stopping
+train lbfgs start:
+Epoch [ 321], MAE: 6.31677
+Epoch [ 331], MAE: 2.03946
+Epoch [ 341], MAE: 1.85043
+Epoch [ 351], MAE: 1.83792
+Epoch [ 361], MAE: 1.83708
+Epoch [ 371], MAE: 1.83685
+Epoch [ 381], MAE: 1.83685
+-------------*-------------
+Calculate the 0009-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 4.74553
+Epoch [  11], MAE: 3.62272
+Epoch [  21], MAE: 2.91815
+Epoch [  31], MAE: 2.59567
+Epoch [  41], MAE: 2.50852
+Epoch [  51], MAE: 2.52938
+Epoch [  61], MAE: 2.58348
+Epoch [  71], MAE: 2.63743
+Epoch [  81], MAE: 2.68294
+Epoch [  91], MAE: 2.71960
+warm lbfgs start:
+Epoch [ 101], MAE: 2.74902
+Epoch [ 111], MAE: 2.70581
+Epoch [ 121], MAE: 2.58742
+Epoch [ 131], MAE: 2.54567
+Epoch [ 141], MAE: 2.12336
+Epoch [ 151], MAE: 1.98647
+Epoch [ 161], MAE: 1.97800
+Epoch [ 171], MAE: 1.97368
+Epoch [ 181], MAE: 1.96648
+Epoch [ 191], MAE: 1.96061
+Epoch [ 201], MAE: 1.95881
+train:
+train adam start:
+Epoch [ 211], MAE: 1.95849
+Epoch [ 221], MAE: 1.96489
+Epoch [ 231], MAE: 1.97842
+Epoch [ 241], MAE: 1.99915
+Epoch [ 251], MAE: 2.02709
+Epoch [ 261], MAE: 2.06095
+Epoch [ 271], MAE: 2.09950
+Epoch [ 281], MAE: 2.14157
+Epoch [ 291], MAE: 2.18647
+train adam early stopping
+train lbfgs start:
+Epoch [ 301], MAE: 2.08888
+Epoch [ 311], MAE: 2.00051
+-------------*-------------
+Calculate the 0010-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.77988
+Epoch [  11], MAE: 2.37554
+Epoch [  21], MAE: 2.34287
+Epoch [  31], MAE: 2.45443
+Epoch [  41], MAE: 2.58120
+Epoch [  51], MAE: 2.68849
+Epoch [  61], MAE: 2.77346
+Epoch [  71], MAE: 2.83995
+Epoch [  81], MAE: 2.89228
+Epoch [  91], MAE: 2.93336
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.96266
+Epoch [ 111], MAE: 2.82875
+Epoch [ 121], MAE: 2.69276
+Epoch [ 131], MAE: 2.51390
+Epoch [ 141], MAE: 2.44158
+Epoch [ 151], MAE: 2.43244
+Epoch [ 161], MAE: 2.38958
+Epoch [ 171], MAE: 2.21785
+Epoch [ 181], MAE: 2.15446
+Epoch [ 191], MAE: 2.15006
+train:
+train adam start:
+Epoch [ 201], MAE: 2.15129
+Epoch [ 211], MAE: 2.15829
+Epoch [ 221], MAE: 2.16930
+Epoch [ 231], MAE: 2.18377
+Epoch [ 241], MAE: 2.20176
+Epoch [ 251], MAE: 2.22267
+Epoch [ 261], MAE: 2.24579
+Epoch [ 271], MAE: 2.27065
+Epoch [ 281], MAE: 2.29677
+train adam early stopping
+train lbfgs start:
+Epoch [ 291], MAE: 2.30871
+Epoch [ 301], MAE: 2.23435
+-------------*-------------
+Calculate the 0012-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.39005
+Epoch [  11], MAE: 2.59509
+Epoch [  21], MAE: 2.78340
+Epoch [  31], MAE: 2.91250
+Epoch [  41], MAE: 3.01265
+Epoch [  51], MAE: 3.08968
+Epoch [  61], MAE: 3.14730
+Epoch [  71], MAE: 3.19004
+Epoch [  81], MAE: 3.22156
+Epoch [  91], MAE: 3.24464
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.92341
+Epoch [ 111], MAE: 2.92341
+train:
+train adam start:
+Epoch [ 121], MAE: 2.92347
+Epoch [ 131], MAE: 2.92356
+Epoch [ 141], MAE: 2.92378
+Epoch [ 151], MAE: 2.92460
+Epoch [ 161], MAE: 2.92569
+Epoch [ 171], MAE: 2.92684
+Epoch [ 181], MAE: 2.92797
+Epoch [ 191], MAE: 2.92905
+Epoch [ 201], MAE: 2.93008
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 2.92424
+Epoch [ 221], MAE: 2.92423
+-------------*-------------
+Calculate the 0013-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.88364
+Epoch [  11], MAE: 2.88508
+Epoch [  21], MAE: 2.88488
+Epoch [  31], MAE: 2.88326
+Epoch [  41], MAE: 2.88295
+Epoch [  51], MAE: 2.88306
+Epoch [  61], MAE: 2.88313
+Epoch [  71], MAE: 2.88312
+Epoch [  81], MAE: 2.88312
+Epoch [  91], MAE: 2.88314
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.91422
+Epoch [ 111], MAE: 2.91422
+train:
+train adam start:
+Epoch [ 121], MAE: 2.91350
+Epoch [ 131], MAE: 2.91209
+Epoch [ 141], MAE: 2.91074
+Epoch [ 151], MAE: 2.90991
+Epoch [ 161], MAE: 2.90958
+Epoch [ 171], MAE: 2.90946
+Epoch [ 181], MAE: 2.90940
+Epoch [ 191], MAE: 2.90940
+Epoch [ 201], MAE: 2.90939
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 2.88482
+Epoch [ 221], MAE: 2.89946
+-------------*-------------
+Calculate the 0014-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.99022
+Epoch [  11], MAE: 2.95831
+Epoch [  21], MAE: 2.94367
+Epoch [  31], MAE: 2.93772
+Epoch [  41], MAE: 2.93323
+Epoch [  51], MAE: 2.93041
+Epoch [  61], MAE: 2.92896
+Epoch [  71], MAE: 2.92836
+Epoch [  81], MAE: 2.92816
+Epoch [  91], MAE: 2.92810
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.92309
+Epoch [ 111], MAE: 2.92309
+train:
+train adam start:
+Epoch [ 121], MAE: 2.92171
+Epoch [ 131], MAE: 2.92021
+Epoch [ 141], MAE: 2.91884
+Epoch [ 151], MAE: 2.91819
+Epoch [ 161], MAE: 2.91794
+Epoch [ 171], MAE: 2.91785
+Epoch [ 181], MAE: 2.91781
+Epoch [ 191], MAE: 2.91780
+Epoch [ 201], MAE: 2.91779
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 2.90880
+Epoch [ 221], MAE: 2.90880
+-------------*-------------
+Calculate the 0018-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 6.66873
+Epoch [  11], MAE: 3.81541
+Epoch [  21], MAE: 3.24584
+Epoch [  31], MAE: 2.99115
+Epoch [  41], MAE: 2.80763
+Epoch [  51], MAE: 2.59987
+Epoch [  61], MAE: 2.45127
+Epoch [  71], MAE: 2.40780
+Epoch [  81], MAE: 2.39468
+Epoch [  91], MAE: 2.38995
+warm lbfgs start:
+Epoch [ 101], MAE: 2.38803
+Epoch [ 111], MAE: 2.38457
+Epoch [ 121], MAE: 2.38380
+Epoch [ 131], MAE: 2.01007
+Epoch [ 141], MAE: 1.94928
+Epoch [ 151], MAE: 1.93014
+Epoch [ 161], MAE: 1.92983
+Epoch [ 171], MAE: 1.92972
+Epoch [ 181], MAE: 1.92961
+Epoch [ 191], MAE: 1.92941
+Epoch [ 201], MAE: 1.92939
+Epoch [ 211], MAE: 1.92932
+Epoch [ 221], MAE: 1.92932
+Epoch [ 231], MAE: 1.92931
+Epoch [ 241], MAE: 1.92928
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 251], MAE: 1.92536
+Epoch [ 261], MAE: 1.92392
+Epoch [ 271], MAE: 1.92290
+Epoch [ 281], MAE: 1.92272
+Epoch [ 291], MAE: 1.92266
+Epoch [ 301], MAE: 1.92262
+Epoch [ 311], MAE: 1.92262
+Epoch [ 321], MAE: 1.92262
+Epoch [ 331], MAE: 1.92261
+train adam early stopping
+train lbfgs start:
+Epoch [ 341], MAE: 1.92242
+Epoch [ 351], MAE: 1.92191
+Epoch [ 361], MAE: 1.92091
+-------------*-------------
+Calculate the 0015-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.35267
+Epoch [  11], MAE: 2.13532
+Epoch [  21], MAE: 2.22061
+Epoch [  31], MAE: 2.44815
+Epoch [  41], MAE: 2.81211
+Epoch [  51], MAE: 3.21626
+Epoch [  61], MAE: 3.60151
+Epoch [  71], MAE: 3.94433
+Epoch [  81], MAE: 4.24010
+Epoch [  91], MAE: 4.49247
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 4.63225
+Epoch [ 111], MAE: 4.56417
+Epoch [ 121], MAE: 4.55544
+Epoch [ 131], MAE: 1.94209
+Epoch [ 141], MAE: 1.92343
+Epoch [ 151], MAE: 1.91777
+Epoch [ 161], MAE: 1.90981
+Epoch [ 171], MAE: 1.90360
+Epoch [ 181], MAE: 1.89461
+Epoch [ 191], MAE: 1.89282
+Epoch [ 201], MAE: 1.89182
+Epoch [ 211], MAE: 1.88948
+Epoch [ 221], MAE: 1.88918
+Epoch [ 231], MAE: 1.88850
+train:
+train adam start:
+Epoch [ 241], MAE: 1.88961
+Epoch [ 251], MAE: 1.89523
+Epoch [ 261], MAE: 1.90497
+Epoch [ 271], MAE: 1.91972
+Epoch [ 281], MAE: 1.93957
+Epoch [ 291], MAE: 1.96374
+Epoch [ 301], MAE: 1.99154
+Epoch [ 311], MAE: 2.02231
+Epoch [ 321], MAE: 2.05543
+train adam early stopping
+train lbfgs start:
+Epoch [ 331], MAE: 2.05888
+Epoch [ 341], MAE: 1.94478
+Epoch [ 351], MAE: 1.91074
+Epoch [ 361], MAE: 1.90025
+Epoch [ 371], MAE: 1.89729
+Epoch [ 381], MAE: 1.89697
+-------------*-------------
+Calculate the 0016-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.34250
+Epoch [  11], MAE: 2.29682
+Epoch [  21], MAE: 2.54561
+Epoch [  31], MAE: 2.76473
+Epoch [  41], MAE: 2.91348
+Epoch [  51], MAE: 3.01199
+Epoch [  61], MAE: 3.08503
+Epoch [  71], MAE: 3.14734
+Epoch [  81], MAE: 3.20365
+Epoch [  91], MAE: 3.25346
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 3.17754
+Epoch [ 111], MAE: 3.10663
+Epoch [ 121], MAE: 2.60540
+Epoch [ 131], MAE: 2.20993
+Epoch [ 141], MAE: 2.06611
+Epoch [ 151], MAE: 2.03108
+Epoch [ 161], MAE: 1.98751
+Epoch [ 171], MAE: 1.97787
+Epoch [ 181], MAE: 1.97309
+Epoch [ 191], MAE: 1.97032
+Epoch [ 201], MAE: 1.97032
+Epoch [ 211], MAE: 1.97032
+train:
+train adam start:
+Epoch [ 221], MAE: 1.97211
+Epoch [ 231], MAE: 1.97907
+Epoch [ 241], MAE: 1.99085
+Epoch [ 251], MAE: 2.00787
+Epoch [ 261], MAE: 2.03000
+Epoch [ 271], MAE: 2.05661
+Epoch [ 281], MAE: 2.08685
+Epoch [ 291], MAE: 2.11993
+Epoch [ 301], MAE: 2.15522
+train adam early stopping
+train lbfgs start:
+Epoch [ 311], MAE: 2.01902
+Epoch [ 321], MAE: 2.01904
+-------------*-------------
+Calculate the 0017-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.26792
+Epoch [  11], MAE: 2.46720
+Epoch [  21], MAE: 2.74493
+Epoch [  31], MAE: 2.89426
+Epoch [  41], MAE: 2.91269
+Epoch [  51], MAE: 2.90410
+Epoch [  61], MAE: 2.91184
+Epoch [  71], MAE: 2.92438
+Epoch [  81], MAE: 2.93614
+Epoch [  91], MAE: 2.94508
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.90739
+Epoch [ 111], MAE: 2.90494
+Epoch [ 121], MAE: 2.91703
+Epoch [ 131], MAE: 2.51208
+Epoch [ 141], MAE: 2.50780
+Epoch [ 151], MAE: 2.50785
+Epoch [ 161], MAE: 2.50785
+Epoch [ 171], MAE: 2.50780
+Epoch [ 181], MAE: 2.50785
+train:
+train adam start:
+Epoch [ 191], MAE: 2.50569
+Epoch [ 201], MAE: 2.50624
+Epoch [ 211], MAE: 2.51053
+Epoch [ 221], MAE: 2.51810
+Epoch [ 231], MAE: 2.52815
+Epoch [ 241], MAE: 2.54004
+Epoch [ 251], MAE: 2.55343
+Epoch [ 261], MAE: 2.56794
+Epoch [ 271], MAE: 2.58337
+train adam early stopping
+train lbfgs start:
+Epoch [ 281], MAE: 2.58556
+Epoch [ 291], MAE: 2.58556
+-------------*-------------
+Calculate the 0019-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.67140
+Epoch [  11], MAE: 2.80817
+Epoch [  21], MAE: 2.90944
+Epoch [  31], MAE: 2.95771
+Epoch [  41], MAE: 2.97999
+Epoch [  51], MAE: 2.98796
+Epoch [  61], MAE: 2.98813
+Epoch [  71], MAE: 2.98514
+Epoch [  81], MAE: 2.98309
+Epoch [  91], MAE: 2.98217
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.91842
+Epoch [ 111], MAE: 2.91852
+train:
+train adam start:
+Epoch [ 121], MAE: 2.91752
+Epoch [ 131], MAE: 2.91613
+Epoch [ 141], MAE: 2.91485
+Epoch [ 151], MAE: 2.91426
+Epoch [ 161], MAE: 2.91412
+Epoch [ 171], MAE: 2.91414
+Epoch [ 181], MAE: 2.91423
+Epoch [ 191], MAE: 2.91432
+Epoch [ 201], MAE: 2.91441
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 2.90376
+Epoch [ 221], MAE: 2.90376
+-------------*-------------
+Calculate the 0020-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.93507
+Epoch [  11], MAE: 2.91646
+Epoch [  21], MAE: 2.90525
+Epoch [  31], MAE: 2.90098
+Epoch [  41], MAE: 2.90049
+Epoch [  51], MAE: 2.90064
+Epoch [  61], MAE: 2.90067
+Epoch [  71], MAE: 2.90060
+Epoch [  81], MAE: 2.90056
+Epoch [  91], MAE: 2.90055
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.93468
+Epoch [ 111], MAE: 2.93468
+train:
+train adam start:
+Epoch [ 121], MAE: 2.93336
+Epoch [ 131], MAE: 2.93193
+Epoch [ 141], MAE: 2.93065
+Epoch [ 151], MAE: 2.93006
+Epoch [ 161], MAE: 2.92984
+Epoch [ 171], MAE: 2.92974
+Epoch [ 181], MAE: 2.92972
+Epoch [ 191], MAE: 2.92970
+Epoch [ 201], MAE: 2.92969
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 2.91871
+Epoch [ 221], MAE: 2.91870
+-------------*-------------
+Calculate the 0021-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.94102
+Epoch [  11], MAE: 2.91357
+Epoch [  21], MAE: 2.89441
+Epoch [  31], MAE: 2.88265
+Epoch [  41], MAE: 2.87465
+Epoch [  51], MAE: 2.86921
+Epoch [  61], MAE: 2.86581
+Epoch [  71], MAE: 2.86389
+Epoch [  81], MAE: 2.86287
+Epoch [  91], MAE: 2.86238
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.88970
+Epoch [ 111], MAE: 2.88970
+train:
+train adam start:
+Epoch [ 121], MAE: 2.88848
+Epoch [ 131], MAE: 2.88701
+Epoch [ 141], MAE: 2.88566
+Epoch [ 151], MAE: 2.88501
+Epoch [ 161], MAE: 2.88475
+Epoch [ 171], MAE: 2.88464
+Epoch [ 181], MAE: 2.88461
+Epoch [ 191], MAE: 2.88459
+Epoch [ 201], MAE: 2.88459
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 2.87335
+Epoch [ 221], MAE: 2.87311
+-------------*-------------
+Calculate the 0025-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 4.90765
+Epoch [  11], MAE: 2.95985
+Epoch [  21], MAE: 2.38889
+Epoch [  31], MAE: 2.19708
+Epoch [  41], MAE: 2.06905
+Epoch [  51], MAE: 2.08323
+Epoch [  61], MAE: 2.10483
+Epoch [  71], MAE: 2.11275
+Epoch [  81], MAE: 2.11468
+Epoch [  91], MAE: 2.11401
+warm lbfgs start:
+Epoch [ 101], MAE: 2.11278
+Epoch [ 111], MAE: 2.10866
+Epoch [ 121], MAE: 2.10613
+Epoch [ 131], MAE: 1.97826
+Epoch [ 141], MAE: 1.92570
+Epoch [ 151], MAE: 1.91917
+Epoch [ 161], MAE: 1.91833
+Epoch [ 171], MAE: 1.91810
+Epoch [ 181], MAE: 1.91797
+Epoch [ 191], MAE: 1.91793
+Epoch [ 201], MAE: 1.91792
+Epoch [ 211], MAE: 1.91791
+train:
+train adam start:
+Epoch [ 221], MAE: 1.91742
+Epoch [ 231], MAE: 1.91633
+Epoch [ 241], MAE: 1.91572
+Epoch [ 251], MAE: 1.91551
+Epoch [ 261], MAE: 1.91547
+Epoch [ 271], MAE: 1.91546
+Epoch [ 281], MAE: 1.91546
+Epoch [ 291], MAE: 1.91545
+Epoch [ 301], MAE: 1.91544
+train adam early stopping
+train lbfgs start:
+Epoch [ 311], MAE: 1.91544
+Epoch [ 321], MAE: 2.11002
+Epoch [ 331], MAE: 1.91456
+Epoch [ 341], MAE: 1.91407
+-------------*-------------
+Calculate the 0022-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.77487
+Epoch [  11], MAE: 2.96822
+Epoch [  21], MAE: 3.19090
+Epoch [  31], MAE: 3.44598
+Epoch [  41], MAE: 3.80242
+Epoch [  51], MAE: 4.17136
+Epoch [  61], MAE: 4.51325
+Epoch [  71], MAE: 4.81884
+Epoch [  81], MAE: 5.08878
+Epoch [  91], MAE: 5.32530
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 5.07870
+Epoch [ 111], MAE: 5.07144
+Epoch [ 121], MAE: 2.04845
+Epoch [ 131], MAE: 2.01560
+Epoch [ 141], MAE: 1.98678
+Epoch [ 151], MAE: 1.98334
+Epoch [ 161], MAE: 1.97861
+Epoch [ 171], MAE: 1.97285
+Epoch [ 181], MAE: 1.96952
+Epoch [ 191], MAE: 1.96824
+Epoch [ 201], MAE: 1.96646
+Epoch [ 211], MAE: 1.96556
+Epoch [ 221], MAE: 1.96522
+Epoch [ 231], MAE: 1.96499
+Epoch [ 241], MAE: 1.96455
+Epoch [ 251], MAE: 1.96457
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 261], MAE: 1.96473
+Epoch [ 271], MAE: 1.96587
+Epoch [ 281], MAE: 1.96729
+Epoch [ 291], MAE: 1.96929
+Epoch [ 301], MAE: 1.97204
+Epoch [ 311], MAE: 1.97549
+Epoch [ 321], MAE: 1.97965
+Epoch [ 331], MAE: 1.98447
+Epoch [ 341], MAE: 1.98993
+train adam early stopping
+train lbfgs start:
+Epoch [ 351], MAE: 1.98930
+Epoch [ 361], MAE: 1.97522
+Epoch [ 371], MAE: 1.97423
+-------------*-------------
+Calculate the 0023-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.15882
+Epoch [  11], MAE: 2.01085
+Epoch [  21], MAE: 2.06501
+Epoch [  31], MAE: 2.18460
+Epoch [  41], MAE: 2.31099
+Epoch [  51], MAE: 2.43386
+Epoch [  61], MAE: 2.54968
+Epoch [  71], MAE: 2.65345
+Epoch [  81], MAE: 2.74228
+Epoch [  91], MAE: 2.81756
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.80619
+Epoch [ 111], MAE: 2.71138
+Epoch [ 121], MAE: 2.50593
+Epoch [ 131], MAE: 2.20514
+Epoch [ 141], MAE: 2.03975
+Epoch [ 151], MAE: 2.03925
+Epoch [ 161], MAE: 2.03685
+train:
+train adam start:
+Epoch [ 171], MAE: 2.03679
+Epoch [ 181], MAE: 2.03927
+Epoch [ 191], MAE: 2.04428
+Epoch [ 201], MAE: 2.05195
+Epoch [ 211], MAE: 2.06268
+Epoch [ 221], MAE: 2.07615
+Epoch [ 231], MAE: 2.09200
+Epoch [ 241], MAE: 2.10994
+Epoch [ 251], MAE: 2.12968
+train adam early stopping
+train lbfgs start:
+Epoch [ 261], MAE: 2.14448
+Epoch [ 271], MAE: 2.07153
+-------------*-------------
+Calculate the 0024-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.30085
+Epoch [  11], MAE: 2.19525
+Epoch [  21], MAE: 2.27679
+Epoch [  31], MAE: 2.40776
+Epoch [  41], MAE: 2.54305
+Epoch [  51], MAE: 2.67002
+Epoch [  61], MAE: 2.78071
+Epoch [  71], MAE: 2.87347
+Epoch [  81], MAE: 2.94945
+Epoch [  91], MAE: 3.01104
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.77019
+Epoch [ 111], MAE: 2.47256
+Epoch [ 121], MAE: 2.47634
+Epoch [ 131], MAE: 2.31459
+Epoch [ 141], MAE: 2.30373
+Epoch [ 151], MAE: 2.23937
+Epoch [ 161], MAE: 2.22406
+Epoch [ 171], MAE: 2.22440
+Epoch [ 181], MAE: 2.18016
+Epoch [ 191], MAE: 2.16267
+Epoch [ 201], MAE: 2.08774
+Epoch [ 211], MAE: 2.04546
+train:
+train adam start:
+Epoch [ 221], MAE: 2.02449
+Epoch [ 231], MAE: 2.02929
+Epoch [ 241], MAE: 2.03978
+Epoch [ 251], MAE: 2.05571
+Epoch [ 261], MAE: 2.07716
+Epoch [ 271], MAE: 2.10317
+Epoch [ 281], MAE: 2.13278
+Epoch [ 291], MAE: 2.16531
+Epoch [ 301], MAE: 2.20018
+train adam early stopping
+train lbfgs start:
+Epoch [ 311], MAE: 2.21977
+Epoch [ 321], MAE: 2.08845
+-------------*-------------
+Calculate the 0026-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.09302
+Epoch [  11], MAE: 2.24685
+Epoch [  21], MAE: 2.48041
+Epoch [  31], MAE: 2.65528
+Epoch [  41], MAE: 2.78858
+Epoch [  51], MAE: 2.88819
+Epoch [  61], MAE: 2.96072
+Epoch [  71], MAE: 3.01379
+Epoch [  81], MAE: 3.05212
+Epoch [  91], MAE: 3.07986
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 9.58409
+Epoch [ 111], MAE: 2.85413
+Epoch [ 121], MAE: 2.85438
+Epoch [ 131], MAE: 2.85436
+train:
+train adam start:
+Epoch [ 141], MAE: 2.85438
+Epoch [ 151], MAE: 2.85445
+Epoch [ 161], MAE: 2.85454
+Epoch [ 171], MAE: 2.85532
+Epoch [ 181], MAE: 2.85650
+Epoch [ 191], MAE: 2.85780
+Epoch [ 201], MAE: 2.85912
+Epoch [ 211], MAE: 2.86039
+Epoch [ 221], MAE: 2.86162
+train adam early stopping
+train lbfgs start:
+Epoch [ 231], MAE: 2.85345
+Epoch [ 241], MAE: 2.85346
+-------------*-------------
+Calculate the 0027-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.96364
+Epoch [  11], MAE: 2.94205
+Epoch [  21], MAE: 2.92305
+Epoch [  31], MAE: 2.90867
+Epoch [  41], MAE: 2.90555
+Epoch [  51], MAE: 2.90615
+Epoch [  61], MAE: 2.90734
+Epoch [  71], MAE: 2.90836
+Epoch [  81], MAE: 2.90919
+Epoch [  91], MAE: 2.90976
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.90980
+Epoch [ 111], MAE: 2.91217
+Epoch [ 121], MAE: 2.91217
+Epoch [ 131], MAE: 2.91217
+Epoch [ 141], MAE: 2.91217
+Epoch [ 151], MAE: 2.91217
+train:
+train adam start:
+Epoch [ 161], MAE: 2.91154
+Epoch [ 171], MAE: 2.90996
+Epoch [ 181], MAE: 2.90842
+Epoch [ 191], MAE: 2.90738
+Epoch [ 201], MAE: 2.90699
+Epoch [ 211], MAE: 2.90687
+Epoch [ 221], MAE: 2.90684
+Epoch [ 231], MAE: 2.90684
+Epoch [ 241], MAE: 2.90685
+train adam early stopping
+train lbfgs start:
+Epoch [ 251], MAE: 5.13755
+Epoch [ 261], MAE: 2.89568
+-------------*-------------
+Calculate the 0028-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 3.04215
+Epoch [  11], MAE: 3.00112
+Epoch [  21], MAE: 2.96920
+Epoch [  31], MAE: 2.94707
+Epoch [  41], MAE: 2.93548
+Epoch [  51], MAE: 2.92938
+Epoch [  61], MAE: 2.92632
+Epoch [  71], MAE: 2.92498
+Epoch [  81], MAE: 2.92453
+Epoch [  91], MAE: 2.92446
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.95889
+Epoch [ 111], MAE: 2.95874
+train:
+train adam start:
+Epoch [ 121], MAE: 2.95756
+Epoch [ 131], MAE: 2.95594
+Epoch [ 141], MAE: 2.95440
+Epoch [ 151], MAE: 2.95363
+Epoch [ 161], MAE: 2.95331
+Epoch [ 171], MAE: 2.95320
+Epoch [ 181], MAE: 2.95314
+Epoch [ 191], MAE: 2.95313
+Epoch [ 201], MAE: 2.95312
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 2.93822
+Epoch [ 221], MAE: 2.93974
+-------------*-------------
+Calculate the 0032-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 5.39894
+Epoch [  11], MAE: 2.69728
+Epoch [  21], MAE: 2.45714
+Epoch [  31], MAE: 2.04943
+Epoch [  41], MAE: 1.97271
+Epoch [  51], MAE: 1.98400
+Epoch [  61], MAE: 1.99457
+Epoch [  71], MAE: 1.99839
+Epoch [  81], MAE: 1.99928
+Epoch [  91], MAE: 1.99901
+warm lbfgs start:
+Epoch [ 101], MAE: 1.99849
+Epoch [ 111], MAE: 1.99693
+Epoch [ 121], MAE: 1.99573
+Epoch [ 131], MAE: 1.91560
+Epoch [ 141], MAE: 1.87725
+Epoch [ 151], MAE: 1.86867
+Epoch [ 161], MAE: 1.86826
+Epoch [ 171], MAE: 1.86819
+Epoch [ 181], MAE: 1.86802
+Epoch [ 191], MAE: 1.86796
+Epoch [ 201], MAE: 1.86782
+Epoch [ 211], MAE: 1.86775
+Epoch [ 221], MAE: 1.86772
+Epoch [ 231], MAE: 1.86766
+train:
+train adam start:
+Epoch [ 241], MAE: 1.86724
+Epoch [ 251], MAE: 1.86591
+Epoch [ 261], MAE: 1.86522
+Epoch [ 271], MAE: 1.86487
+Epoch [ 281], MAE: 1.86485
+Epoch [ 291], MAE: 1.86480
+Epoch [ 301], MAE: 1.86478
+Epoch [ 311], MAE: 1.86477
+Epoch [ 321], MAE: 1.86477
+train adam early stopping
+train lbfgs start:
+Epoch [ 331], MAE: 1.86477
+Epoch [ 341], MAE: 1.86455
+-------------*-------------
+Calculate the 0029-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.14021
+Epoch [  11], MAE: 1.84900
+Epoch [  21], MAE: 1.99503
+Epoch [  31], MAE: 2.11727
+Epoch [  41], MAE: 2.27607
+Epoch [  51], MAE: 2.46690
+Epoch [  61], MAE: 2.66505
+Epoch [  71], MAE: 2.85586
+Epoch [  81], MAE: 3.03206
+Epoch [  91], MAE: 3.19151
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 3.22375
+Epoch [ 111], MAE: 3.18862
+Epoch [ 121], MAE: 2.29317
+Epoch [ 131], MAE: 1.88908
+Epoch [ 141], MAE: 1.86371
+Epoch [ 151], MAE: 1.85864
+Epoch [ 161], MAE: 1.85588
+Epoch [ 171], MAE: 1.85534
+Epoch [ 181], MAE: 1.85122
+Epoch [ 191], MAE: 1.84973
+Epoch [ 201], MAE: 1.84950
+Epoch [ 211], MAE: 1.84903
+Epoch [ 221], MAE: 1.84902
+train:
+train adam start:
+Epoch [ 231], MAE: 1.84928
+Epoch [ 241], MAE: 1.85082
+Epoch [ 251], MAE: 1.85339
+Epoch [ 261], MAE: 1.85760
+Epoch [ 271], MAE: 1.86354
+Epoch [ 281], MAE: 1.87109
+Epoch [ 291], MAE: 1.88011
+Epoch [ 301], MAE: 1.89047
+Epoch [ 311], MAE: 1.90209
+train adam early stopping
+train lbfgs start:
+Epoch [ 321], MAE: 1.87141
+Epoch [ 331], MAE: 1.86167
+Epoch [ 341], MAE: 1.86167
+-------------*-------------
+Calculate the 0030-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.67453
+Epoch [  11], MAE: 2.82558
+Epoch [  21], MAE: 2.98034
+Epoch [  31], MAE: 3.12537
+Epoch [  41], MAE: 3.28545
+Epoch [  51], MAE: 3.43821
+Epoch [  61], MAE: 3.56991
+Epoch [  71], MAE: 3.67833
+Epoch [  81], MAE: 3.76522
+Epoch [  91], MAE: 3.83524
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 3.52919
+Epoch [ 111], MAE: 3.45800
+Epoch [ 121], MAE: 2.51567
+Epoch [ 131], MAE: 2.12831
+Epoch [ 141], MAE: 2.03221
+Epoch [ 151], MAE: 2.02548
+Epoch [ 161], MAE: 2.01869
+Epoch [ 171], MAE: 2.01226
+Epoch [ 181], MAE: 2.00831
+Epoch [ 191], MAE: 2.00762
+train:
+train adam start:
+Epoch [ 201], MAE: 2.00744
+Epoch [ 211], MAE: 2.01129
+Epoch [ 221], MAE: 2.01911
+Epoch [ 231], MAE: 2.03129
+Epoch [ 241], MAE: 2.04770
+Epoch [ 251], MAE: 2.06777
+Epoch [ 261], MAE: 2.09102
+Epoch [ 271], MAE: 2.11690
+Epoch [ 281], MAE: 2.14511
+train adam early stopping
+train lbfgs start:
+Epoch [ 291], MAE: 2.04154
+Epoch [ 301], MAE: 2.04154
+-------------*-------------
+Calculate the 0031-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.27685
+Epoch [  11], MAE: 2.54453
+Epoch [  21], MAE: 2.82315
+Epoch [  31], MAE: 3.05500
+Epoch [  41], MAE: 3.26184
+Epoch [  51], MAE: 3.43130
+Epoch [  61], MAE: 3.56504
+Epoch [  71], MAE: 3.66919
+Epoch [  81], MAE: 3.75007
+Epoch [  91], MAE: 3.81283
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.83248
+Epoch [ 111], MAE: 2.61026
+Epoch [ 121], MAE: 2.37476
+Epoch [ 131], MAE: 2.33885
+Epoch [ 141], MAE: 2.25644
+Epoch [ 151], MAE: 2.14909
+Epoch [ 161], MAE: 2.12451
+Epoch [ 171], MAE: 2.12431
+train:
+train adam start:
+Epoch [ 181], MAE: 2.12415
+Epoch [ 191], MAE: 2.12796
+Epoch [ 201], MAE: 2.13670
+Epoch [ 211], MAE: 2.15046
+Epoch [ 221], MAE: 2.16915
+Epoch [ 231], MAE: 2.19203
+Epoch [ 241], MAE: 2.21841
+Epoch [ 251], MAE: 2.24763
+Epoch [ 261], MAE: 2.27925
+train adam early stopping
+train lbfgs start:
+Epoch [ 271], MAE: 2.29356
+Epoch [ 281], MAE: 2.17346
+-------------*-------------
+Calculate the 0033-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.44804
+Epoch [  11], MAE: 2.44517
+Epoch [  21], MAE: 2.59106
+Epoch [  31], MAE: 2.71704
+Epoch [  41], MAE: 2.81869
+Epoch [  51], MAE: 2.89714
+Epoch [  61], MAE: 2.95882
+Epoch [  71], MAE: 3.00798
+Epoch [  81], MAE: 3.04704
+Epoch [  91], MAE: 3.07858
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.86729
+Epoch [ 111], MAE: 2.58021
+Epoch [ 121], MAE: 2.56920
+train:
+train adam start:
+Epoch [ 131], MAE: 2.56713
+Epoch [ 141], MAE: 2.56571
+Epoch [ 151], MAE: 2.56658
+Epoch [ 161], MAE: 2.56954
+Epoch [ 171], MAE: 2.57425
+Epoch [ 181], MAE: 2.58027
+Epoch [ 191], MAE: 2.58724
+Epoch [ 201], MAE: 2.59505
+Epoch [ 211], MAE: 2.60359
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 2.61459
+Epoch [ 231], MAE: 2.61459
+-------------*-------------
+Calculate the 0034-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.59946
+Epoch [  11], MAE: 2.67668
+Epoch [  21], MAE: 2.75321
+Epoch [  31], MAE: 2.80782
+Epoch [  41], MAE: 2.84290
+Epoch [  51], MAE: 2.86254
+Epoch [  61], MAE: 2.87230
+Epoch [  71], MAE: 2.87667
+Epoch [  81], MAE: 2.87842
+Epoch [  91], MAE: 2.87901
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.87903
+Epoch [ 111], MAE: 2.91789
+train:
+train adam start:
+Epoch [ 121], MAE: 2.91772
+Epoch [ 131], MAE: 2.91609
+Epoch [ 141], MAE: 2.91452
+Epoch [ 151], MAE: 2.91322
+Epoch [ 161], MAE: 2.91268
+Epoch [ 171], MAE: 2.91249
+Epoch [ 181], MAE: 2.91241
+Epoch [ 191], MAE: 2.91238
+Epoch [ 201], MAE: 2.91238
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 2.91238
+Epoch [ 221], MAE: 2.90378
+Epoch [ 231], MAE: 2.90016
+-------------*-------------
+Calculate the 0035-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.85815
+Epoch [  11], MAE: 2.85432
+Epoch [  21], MAE: 2.85488
+Epoch [  31], MAE: 2.85453
+Epoch [  41], MAE: 2.85318
+Epoch [  51], MAE: 2.85239
+Epoch [  61], MAE: 2.85221
+Epoch [  71], MAE: 2.85232
+Epoch [  81], MAE: 2.85246
+Epoch [  91], MAE: 2.85252
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.84422
+Epoch [ 111], MAE: 2.84422
+train:
+train adam start:
+Epoch [ 121], MAE: 2.84257
+Epoch [ 131], MAE: 2.84081
+Epoch [ 141], MAE: 2.83925
+Epoch [ 151], MAE: 2.83855
+Epoch [ 161], MAE: 2.83829
+Epoch [ 171], MAE: 2.83818
+Epoch [ 181], MAE: 2.83815
+Epoch [ 191], MAE: 2.83812
+Epoch [ 201], MAE: 2.83811
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 2.82120
+Epoch [ 221], MAE: 2.82120
+-------------*-------------
+Calculate the 0039-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 4.29639
+Epoch [  11], MAE: 2.92710
+Epoch [  21], MAE: 2.65058
+Epoch [  31], MAE: 2.41907
+Epoch [  41], MAE: 2.26524
+Epoch [  51], MAE: 2.20785
+Epoch [  61], MAE: 2.19009
+Epoch [  71], MAE: 2.18334
+Epoch [  81], MAE: 2.18019
+Epoch [  91], MAE: 2.17851
+warm lbfgs start:
+Epoch [ 101], MAE: 2.17751
+Epoch [ 111], MAE: 2.17456
+Epoch [ 121], MAE: 2.17260
+Epoch [ 131], MAE: 1.94594
+Epoch [ 141], MAE: 1.90527
+Epoch [ 151], MAE: 1.90338
+Epoch [ 161], MAE: 1.90275
+Epoch [ 171], MAE: 1.90256
+Epoch [ 181], MAE: 1.90225
+Epoch [ 191], MAE: 1.90218
+Epoch [ 201], MAE: 1.90212
+Epoch [ 211], MAE: 1.90210
+Epoch [ 221], MAE: 1.90209
+Epoch [ 231], MAE: 1.90207
+train:
+train adam start:
+Epoch [ 241], MAE: 1.90167
+Epoch [ 251], MAE: 1.90133
+Epoch [ 261], MAE: 1.90109
+Epoch [ 271], MAE: 1.90102
+Epoch [ 281], MAE: 1.90102
+Epoch [ 291], MAE: 1.90105
+Epoch [ 301], MAE: 1.90107
+Epoch [ 311], MAE: 1.90106
+Epoch [ 321], MAE: 1.90106
+train adam early stopping
+train lbfgs start:
+Epoch [ 331], MAE: 1.90081
+Epoch [ 341], MAE: 1.90067
+Epoch [ 351], MAE: 1.89991
+-------------*-------------
+Calculate the 0036-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 4.32615
+Epoch [  11], MAE: 3.39571
+Epoch [  21], MAE: 2.82945
+Epoch [  31], MAE: 2.55913
+Epoch [  41], MAE: 2.50329
+Epoch [  51], MAE: 2.55941
+Epoch [  61], MAE: 2.65016
+Epoch [  71], MAE: 2.73667
+Epoch [  81], MAE: 2.80841
+Epoch [  91], MAE: 2.86518
+warm lbfgs start:
+Epoch [ 101], MAE: 2.90860
+Epoch [ 111], MAE: 2.33211
+Epoch [ 121], MAE: 2.32464
+Epoch [ 131], MAE: 2.31783
+Epoch [ 141], MAE: 1.85224
+Epoch [ 151], MAE: 1.84220
+Epoch [ 161], MAE: 1.83837
+Epoch [ 171], MAE: 1.83781
+Epoch [ 181], MAE: 1.82253
+Epoch [ 191], MAE: 1.81250
+Epoch [ 201], MAE: 1.81182
+Epoch [ 211], MAE: 1.81182
+Epoch [ 221], MAE: 1.81120
+Epoch [ 231], MAE: 1.81011
+train:
+train adam start:
+Epoch [ 241], MAE: 1.81115
+Epoch [ 251], MAE: 1.81436
+Epoch [ 261], MAE: 1.81950
+Epoch [ 271], MAE: 1.82718
+Epoch [ 281], MAE: 1.83747
+Epoch [ 291], MAE: 1.84998
+Epoch [ 301], MAE: 1.86436
+Epoch [ 311], MAE: 1.88041
+Epoch [ 321], MAE: 1.89791
+train adam early stopping
+train lbfgs start:
+Epoch [ 331], MAE: 1.86580
+Epoch [ 341], MAE: 1.83190
+Epoch [ 351], MAE: 1.82597
+Epoch [ 361], MAE: 1.82211
+Epoch [ 371], MAE: 1.82079
+Epoch [ 381], MAE: 1.81771
+Epoch [ 391], MAE: 1.81727
+-------------*-------------
+Calculate the 0037-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.33997
+Epoch [  11], MAE: 2.44421
+Epoch [  21], MAE: 2.64994
+Epoch [  31], MAE: 2.87776
+Epoch [  41], MAE: 3.10610
+Epoch [  51], MAE: 3.31027
+Epoch [  61], MAE: 3.49203
+Epoch [  71], MAE: 3.65253
+Epoch [  81], MAE: 3.78950
+Epoch [  91], MAE: 3.90524
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 3.90997
+Epoch [ 111], MAE: 3.86680
+Epoch [ 121], MAE: 2.61961
+Epoch [ 131], MAE: 2.28451
+Epoch [ 141], MAE: 2.08766
+Epoch [ 151], MAE: 2.05269
+Epoch [ 161], MAE: 2.04648
+Epoch [ 171], MAE: 2.04679
+train:
+train adam start:
+Epoch [ 181], MAE: 2.05398
+Epoch [ 191], MAE: 2.06834
+Epoch [ 201], MAE: 2.08482
+Epoch [ 211], MAE: 2.10297
+Epoch [ 221], MAE: 2.12262
+Epoch [ 231], MAE: 2.14357
+Epoch [ 241], MAE: 2.16559
+Epoch [ 251], MAE: 2.18846
+Epoch [ 261], MAE: 2.21204
+train adam early stopping
+train lbfgs start:
+Epoch [ 271], MAE: 4.15515
+Epoch [ 281], MAE: 2.17726
+-------------*-------------
+Calculate the 0038-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 2.60066
+Epoch [  11], MAE: 2.49448
+Epoch [  21], MAE: 2.51299
+Epoch [  31], MAE: 2.57375
+Epoch [  41], MAE: 2.63671
+Epoch [  51], MAE: 2.69308
+Epoch [  61], MAE: 2.74001
+Epoch [  71], MAE: 2.77712
+Epoch [  81], MAE: 2.80523
+Epoch [  91], MAE: 2.82581
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 2.83312
+Epoch [ 111], MAE: 2.83303
+train:
+train adam start:
+Epoch [ 121], MAE: 2.83237
+Epoch [ 131], MAE: 2.83128
+Epoch [ 141], MAE: 2.83025
+Epoch [ 151], MAE: 2.82991
+Epoch [ 161], MAE: 2.83008
+Epoch [ 171], MAE: 2.83044
+Epoch [ 181], MAE: 2.83085
+Epoch [ 191], MAE: 2.83126
+Epoch [ 201], MAE: 2.83165
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 2.82645
+Epoch [ 221], MAE: 2.83240
+-------------*-------------
+Calculate the 0040-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.23387
+Epoch [  11], MAE: 7.07807
+Epoch [  21], MAE: 6.93665
+Epoch [  31], MAE: 6.81826
+Epoch [  41], MAE: 6.75481
+Epoch [  51], MAE: 6.71926
+Epoch [  61], MAE: 6.69638
+Epoch [  71], MAE: 6.67997
+Epoch [  81], MAE: 6.66728
+Epoch [  91], MAE: 6.65709
+warm lbfgs start:
+Epoch [ 101], MAE: 6.64867
+Epoch [ 111], MAE: 3.25395
+Epoch [ 121], MAE: 3.25380
+train:
+train adam start:
+Epoch [ 131], MAE: 3.25282
+Epoch [ 141], MAE: 3.25127
+Epoch [ 151], MAE: 3.24974
+Epoch [ 161], MAE: 3.24887
+Epoch [ 171], MAE: 3.24855
+Epoch [ 181], MAE: 3.24841
+Epoch [ 191], MAE: 3.24837
+Epoch [ 201], MAE: 3.24834
+Epoch [ 211], MAE: 3.24833
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 3.25030
+Epoch [ 231], MAE: 3.23763
+-------------*-------------
+Calculate the 0041-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 4.63699
+Epoch [  11], MAE: 4.55449
+Epoch [  21], MAE: 4.47610
+Epoch [  31], MAE: 4.41025
+Epoch [  41], MAE: 4.38161
+Epoch [  51], MAE: 4.37064
+Epoch [  61], MAE: 4.36652
+Epoch [  71], MAE: 4.36499
+Epoch [  81], MAE: 4.36438
+Epoch [  91], MAE: 4.36419
+warm lbfgs start:
+Epoch [ 101], MAE: 4.36410
+Epoch [ 111], MAE: 3.13326
+Epoch [ 121], MAE: 3.13315
+Epoch [ 131], MAE: 3.13315
+Epoch [ 141], MAE: 3.13296
+train:
+train adam start:
+Epoch [ 151], MAE: 3.13266
+Epoch [ 161], MAE: 3.13117
+Epoch [ 171], MAE: 3.12970
+Epoch [ 181], MAE: 3.12853
+Epoch [ 191], MAE: 3.12806
+Epoch [ 201], MAE: 3.12788
+Epoch [ 211], MAE: 3.12782
+Epoch [ 221], MAE: 3.12779
+Epoch [ 231], MAE: 3.12777
+train adam early stopping
+train lbfgs start:
+Epoch [ 241], MAE: 3.12777
+Epoch [ 251], MAE: 3.12155
+-------------*-------------
+Calculate the 0042-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 5.18291
+Epoch [  11], MAE: 5.09916
+Epoch [  21], MAE: 5.01926
+Epoch [  31], MAE: 4.95193
+Epoch [  41], MAE: 4.92257
+Epoch [  51], MAE: 4.91134
+Epoch [  61], MAE: 4.90715
+Epoch [  71], MAE: 4.90559
+Epoch [  81], MAE: 4.90499
+Epoch [  91], MAE: 4.90473
+warm lbfgs start:
+Epoch [ 101], MAE: 4.90466
+Epoch [ 111], MAE: 3.44686
+Epoch [ 121], MAE: 3.44686
+train:
+train adam start:
+Epoch [ 131], MAE: 3.44555
+Epoch [ 141], MAE: 3.44412
+Epoch [ 151], MAE: 3.44284
+Epoch [ 161], MAE: 3.44225
+Epoch [ 171], MAE: 3.44203
+Epoch [ 181], MAE: 3.44194
+Epoch [ 191], MAE: 3.44190
+Epoch [ 201], MAE: 3.44189
+Epoch [ 211], MAE: 3.44188
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 3.43475
+Epoch [ 231], MAE: 3.43487
+-------------*-------------
+Calculate the 0046-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.08742
+Epoch [  11], MAE: 4.21433
+Epoch [  21], MAE: 3.19382
+Epoch [  31], MAE: 2.72051
+Epoch [  41], MAE: 2.25072
+Epoch [  51], MAE: 2.12424
+Epoch [  61], MAE: 2.08110
+Epoch [  71], MAE: 2.04111
+Epoch [  81], MAE: 2.01507
+Epoch [  91], MAE: 2.00242
+warm lbfgs start:
+Epoch [ 101], MAE: 1.99281
+Epoch [ 111], MAE: 1.97376
+Epoch [ 121], MAE: 1.95689
+Epoch [ 131], MAE: 1.94781
+Epoch [ 141], MAE: 1.92462
+Epoch [ 151], MAE: 1.92238
+Epoch [ 161], MAE: 1.92198
+Epoch [ 171], MAE: 1.92155
+Epoch [ 181], MAE: 1.92133
+Epoch [ 191], MAE: 1.92119
+Epoch [ 201], MAE: 1.92115
+Epoch [ 211], MAE: 1.92103
+Epoch [ 221], MAE: 1.92102
+Epoch [ 231], MAE: 1.92098
+Epoch [ 241], MAE: 1.92088
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 251], MAE: 1.92036
+Epoch [ 261], MAE: 1.91993
+Epoch [ 271], MAE: 1.91978
+Epoch [ 281], MAE: 1.91993
+Epoch [ 291], MAE: 1.92004
+Epoch [ 301], MAE: 1.92008
+Epoch [ 311], MAE: 1.92008
+Epoch [ 321], MAE: 1.92007
+Epoch [ 331], MAE: 1.92007
+train adam early stopping
+train lbfgs start:
+Epoch [ 341], MAE: 1.91946
+Epoch [ 351], MAE: 1.91946
+Epoch [ 361], MAE: 1.91873
+Epoch [ 371], MAE: 1.91864
+-------------*-------------
+Calculate the 0043-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 21.55171
+Epoch [  11], MAE: 20.68591
+Epoch [  21], MAE: 19.99738
+Epoch [  31], MAE: 19.47066
+Epoch [  41], MAE: 19.07675
+Epoch [  51], MAE: 18.79781
+Epoch [  61], MAE: 18.63383
+Epoch [  71], MAE: 18.55670
+Epoch [  81], MAE: 18.60464
+Epoch [  91], MAE: 18.72059
+warm lbfgs start:
+Epoch [ 101], MAE: 18.85775
+Epoch [ 111], MAE: 18.29915
+Epoch [ 121], MAE: 18.29747
+Epoch [ 131], MAE: 2.17814
+Epoch [ 141], MAE: 2.07430
+Epoch [ 151], MAE: 2.03556
+Epoch [ 161], MAE: 2.03235
+Epoch [ 171], MAE: 2.01028
+Epoch [ 181], MAE: 1.99009
+Epoch [ 191], MAE: 1.96166
+Epoch [ 201], MAE: 1.95871
+Epoch [ 211], MAE: 1.95703
+Epoch [ 221], MAE: 1.95588
+Epoch [ 231], MAE: 1.95451
+Epoch [ 241], MAE: 1.95299
+train:
+train adam start:
+Epoch [ 251], MAE: 1.95469
+Epoch [ 261], MAE: 1.96021
+Epoch [ 271], MAE: 1.96879
+Epoch [ 281], MAE: 1.98126
+Epoch [ 291], MAE: 1.99781
+Epoch [ 301], MAE: 2.01793
+Epoch [ 311], MAE: 2.04119
+Epoch [ 321], MAE: 2.06726
+Epoch [ 331], MAE: 2.09579
+train adam early stopping
+train lbfgs start:
+Epoch [ 341], MAE: 2.00210
+Epoch [ 351], MAE: 1.97446
+Epoch [ 361], MAE: 1.97241
+Epoch [ 371], MAE: 1.96551
+Epoch [ 381], MAE: 1.96437
+Epoch [ 391], MAE: 1.96281
+Epoch [ 401], MAE: 1.95766
+-------------*-------------
+Calculate the 0044-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.52208
+Epoch [  11], MAE: 6.58569
+Epoch [  21], MAE: 5.89309
+Epoch [  31], MAE: 5.37902
+Epoch [  41], MAE: 5.01979
+Epoch [  51], MAE: 4.77498
+Epoch [  61], MAE: 4.60716
+Epoch [  71], MAE: 4.48945
+Epoch [  81], MAE: 4.41570
+Epoch [  91], MAE: 4.36950
+warm lbfgs start:
+Epoch [ 101], MAE: 4.33523
+Epoch [ 111], MAE: 4.24758
+Epoch [ 121], MAE: 4.05670
+Epoch [ 131], MAE: 3.29304
+Epoch [ 141], MAE: 2.69746
+Epoch [ 151], MAE: 2.28094
+Epoch [ 161], MAE: 2.16524
+Epoch [ 171], MAE: 2.15611
+Epoch [ 181], MAE: 2.13951
+Epoch [ 191], MAE: 2.09808
+Epoch [ 201], MAE: 2.09702
+Epoch [ 211], MAE: 2.09589
+Epoch [ 221], MAE: 2.09537
+train:
+train adam start:
+Epoch [ 231], MAE: 2.09807
+Epoch [ 241], MAE: 2.11167
+Epoch [ 251], MAE: 2.13494
+Epoch [ 261], MAE: 2.16790
+Epoch [ 271], MAE: 2.20947
+Epoch [ 281], MAE: 2.25813
+Epoch [ 291], MAE: 2.31262
+Epoch [ 301], MAE: 2.37164
+Epoch [ 311], MAE: 2.43408
+train adam early stopping
+train lbfgs start:
+Epoch [ 321], MAE: 2.21505
+Epoch [ 331], MAE: 2.21505
+-------------*-------------
+Calculate the 0045-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.08559
+Epoch [  11], MAE: 7.07298
+Epoch [  21], MAE: 6.35495
+Epoch [  31], MAE: 5.87164
+Epoch [  41], MAE: 5.55427
+Epoch [  51], MAE: 5.33719
+Epoch [  61], MAE: 5.18029
+Epoch [  71], MAE: 5.06190
+Epoch [  81], MAE: 4.99004
+Epoch [  91], MAE: 4.94796
+warm lbfgs start:
+Epoch [ 101], MAE: 4.92014
+Epoch [ 111], MAE: 4.90047
+Epoch [ 121], MAE: 4.85581
+Epoch [ 131], MAE: 4.85582
+Epoch [ 141], MAE: 3.74380
+Epoch [ 151], MAE: 3.63091
+Epoch [ 161], MAE: 3.55371
+train:
+train adam start:
+Epoch [ 171], MAE: 3.55452
+Epoch [ 181], MAE: 3.55806
+Epoch [ 191], MAE: 3.56279
+Epoch [ 201], MAE: 3.56873
+Epoch [ 211], MAE: 3.57592
+Epoch [ 221], MAE: 3.58390
+Epoch [ 231], MAE: 3.59243
+Epoch [ 241], MAE: 3.60138
+Epoch [ 251], MAE: 3.61062
+train adam early stopping
+train lbfgs start:
+Epoch [ 261], MAE: 4.24377
+Epoch [ 271], MAE: 3.58421
+Epoch [ 281], MAE: 3.58487
+-------------*-------------
+Calculate the 0047-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 13.96453
+Epoch [  11], MAE: 13.78870
+Epoch [  21], MAE: 13.65663
+Epoch [  31], MAE: 13.56081
+Epoch [  41], MAE: 13.52316
+Epoch [  51], MAE: 13.51098
+Epoch [  61], MAE: 13.50747
+Epoch [  71], MAE: 13.50648
+Epoch [  81], MAE: 13.50582
+Epoch [  91], MAE: 13.50514
+warm lbfgs start:
+Epoch [ 101], MAE: 13.50456
+Epoch [ 111], MAE: 4.03746
+Epoch [ 121], MAE: 4.01493
+train:
+train adam start:
+Epoch [ 131], MAE: 4.01377
+Epoch [ 141], MAE: 4.01216
+Epoch [ 151], MAE: 4.01063
+Epoch [ 161], MAE: 4.00994
+Epoch [ 171], MAE: 4.00985
+Epoch [ 181], MAE: 4.00997
+Epoch [ 191], MAE: 4.01017
+Epoch [ 201], MAE: 4.01038
+Epoch [ 211], MAE: 4.01059
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 4.00548
+Epoch [ 231], MAE: 4.00396
+-------------*-------------
+Calculate the 0048-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 6.75595
+Epoch [  11], MAE: 6.67511
+Epoch [  21], MAE: 6.59732
+Epoch [  31], MAE: 6.53110
+Epoch [  41], MAE: 6.50134
+Epoch [  51], MAE: 6.48931
+Epoch [  61], MAE: 6.48450
+Epoch [  71], MAE: 6.48261
+Epoch [  81], MAE: 6.48187
+Epoch [  91], MAE: 6.48160
+warm lbfgs start:
+Epoch [ 101], MAE: 6.48149
+Epoch [ 111], MAE: 4.19997
+Epoch [ 121], MAE: 4.19542
+train:
+train adam start:
+Epoch [ 131], MAE: 4.19422
+Epoch [ 141], MAE: 4.19256
+Epoch [ 151], MAE: 4.19097
+Epoch [ 161], MAE: 4.19015
+Epoch [ 171], MAE: 4.18984
+Epoch [ 181], MAE: 4.18973
+Epoch [ 191], MAE: 4.18969
+Epoch [ 201], MAE: 4.18968
+Epoch [ 211], MAE: 4.18967
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 4.20970
+Epoch [ 231], MAE: 4.20950
+-------------*-------------
+Calculate the 0049-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.74272
+Epoch [  11], MAE: 7.65128
+Epoch [  21], MAE: 7.56226
+Epoch [  31], MAE: 7.48578
+Epoch [  41], MAE: 7.45225
+Epoch [  51], MAE: 7.43929
+Epoch [  61], MAE: 7.43435
+Epoch [  71], MAE: 7.43252
+Epoch [  81], MAE: 7.43185
+Epoch [  91], MAE: 7.43163
+warm lbfgs start:
+Epoch [ 101], MAE: 7.43154
+Epoch [ 111], MAE: 7.43154
+Epoch [ 121], MAE: 4.29892
+train:
+train adam start:
+Epoch [ 131], MAE: 4.29892
+Epoch [ 141], MAE: 4.29721
+Epoch [ 151], MAE: 4.29555
+Epoch [ 161], MAE: 4.29412
+Epoch [ 171], MAE: 4.29349
+Epoch [ 181], MAE: 4.29324
+Epoch [ 191], MAE: 4.29314
+Epoch [ 201], MAE: 4.29311
+Epoch [ 211], MAE: 4.29310
+Epoch [ 221], MAE: 4.29309
+train adam early stopping
+train lbfgs start:
+Epoch [ 231], MAE: 4.30976
+-------------*-------------
+Calculate the 0053-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 5.51877
+Epoch [  11], MAE: 3.73835
+Epoch [  21], MAE: 2.89976
+Epoch [  31], MAE: 2.44704
+Epoch [  41], MAE: 2.15532
+Epoch [  51], MAE: 2.07304
+Epoch [  61], MAE: 2.03762
+Epoch [  71], MAE: 2.01436
+Epoch [  81], MAE: 2.00410
+Epoch [  91], MAE: 1.99717
+warm lbfgs start:
+Epoch [ 101], MAE: 1.99185
+Epoch [ 111], MAE: 1.97592
+Epoch [ 121], MAE: 1.96936
+Epoch [ 131], MAE: 1.96056
+Epoch [ 141], MAE: 1.93674
+Epoch [ 151], MAE: 1.93537
+Epoch [ 161], MAE: 1.93444
+Epoch [ 171], MAE: 1.93426
+Epoch [ 181], MAE: 1.93407
+Epoch [ 191], MAE: 1.93399
+Epoch [ 201], MAE: 1.93396
+Epoch [ 211], MAE: 1.93395
+Epoch [ 221], MAE: 1.93394
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 231], MAE: 1.93461
+Epoch [ 241], MAE: 1.93308
+Epoch [ 251], MAE: 1.93255
+Epoch [ 261], MAE: 1.93247
+Epoch [ 271], MAE: 1.93283
+Epoch [ 281], MAE: 1.93302
+Epoch [ 291], MAE: 1.93311
+Epoch [ 301], MAE: 1.93312
+Epoch [ 311], MAE: 1.93311
+train adam early stopping
+train lbfgs start:
+Epoch [ 321], MAE: 1.93311
+Epoch [ 331], MAE: 1.93223
+Epoch [ 341], MAE: 1.93185
+-------------*-------------
+Calculate the 0050-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 22.43113
+Epoch [  11], MAE: 21.12560
+Epoch [  21], MAE: 20.08911
+Epoch [  31], MAE: 19.30924
+Epoch [  41], MAE: 18.75581
+Epoch [  51], MAE: 18.38615
+Epoch [  61], MAE: 18.18224
+Epoch [  71], MAE: 18.10447
+Epoch [  81], MAE: 18.12827
+Epoch [  91], MAE: 18.29656
+warm lbfgs start:
+Epoch [ 101], MAE: 18.52934
+Epoch [ 111], MAE: 18.47222
+Epoch [ 121], MAE: 18.46484
+Epoch [ 131], MAE: 2.47478
+Epoch [ 141], MAE: 2.20407
+Epoch [ 151], MAE: 2.13850
+Epoch [ 161], MAE: 2.04837
+Epoch [ 171], MAE: 2.04164
+Epoch [ 181], MAE: 2.03689
+Epoch [ 191], MAE: 2.03545
+Epoch [ 201], MAE: 2.03373
+Epoch [ 211], MAE: 2.03303
+Epoch [ 221], MAE: 2.03411
+train:
+train adam start:
+Epoch [ 231], MAE: 2.03226
+Epoch [ 241], MAE: 2.03473
+Epoch [ 251], MAE: 2.04090
+Epoch [ 261], MAE: 2.04991
+Epoch [ 271], MAE: 2.06237
+Epoch [ 281], MAE: 2.07805
+Epoch [ 291], MAE: 2.09682
+Epoch [ 301], MAE: 2.11843
+Epoch [ 311], MAE: 2.14266
+train adam early stopping
+train lbfgs start:
+Epoch [ 321], MAE: 3.21950
+Epoch [ 331], MAE: 2.14260
+Epoch [ 341], MAE: 2.05371
+Epoch [ 351], MAE: 2.04398
+Epoch [ 361], MAE: 2.03588
+Epoch [ 371], MAE: 2.03492
+Epoch [ 381], MAE: 2.03044
+Epoch [ 391], MAE: 2.00272
+Epoch [ 401], MAE: 2.00137
+Epoch [ 411], MAE: 1.98589
+Epoch [ 421], MAE: 1.96402
+Epoch [ 431], MAE: 1.95097
+Epoch [ 441], MAE: 1.93684
+Epoch [ 451], MAE: 1.92639
+Epoch [ 461], MAE: 1.92112
+-------------*-------------
+Calculate the 0051-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.86976
+Epoch [  11], MAE: 6.83495
+Epoch [  21], MAE: 6.34652
+Epoch [  31], MAE: 5.94686
+Epoch [  41], MAE: 5.57356
+Epoch [  51], MAE: 5.25969
+Epoch [  61], MAE: 5.03692
+Epoch [  71], MAE: 4.88981
+Epoch [  81], MAE: 4.80483
+Epoch [  91], MAE: 4.76510
+warm lbfgs start:
+Epoch [ 101], MAE: 4.74540
+Epoch [ 111], MAE: 4.45833
+Epoch [ 121], MAE: 4.34137
+Epoch [ 131], MAE: 3.76126
+Epoch [ 141], MAE: 2.72144
+Epoch [ 151], MAE: 2.28437
+Epoch [ 161], MAE: 2.17157
+Epoch [ 171], MAE: 2.16229
+Epoch [ 181], MAE: 2.13165
+Epoch [ 191], MAE: 2.09225
+Epoch [ 201], MAE: 2.08533
+Epoch [ 211], MAE: 2.08207
+Epoch [ 221], MAE: 2.07558
+train:
+train adam start:
+Epoch [ 231], MAE: 2.07514
+Epoch [ 241], MAE: 2.08530
+Epoch [ 251], MAE: 2.10746
+Epoch [ 261], MAE: 2.14091
+Epoch [ 271], MAE: 2.18522
+Epoch [ 281], MAE: 2.23875
+Epoch [ 291], MAE: 2.29992
+Epoch [ 301], MAE: 2.36756
+Epoch [ 311], MAE: 2.44069
+train adam early stopping
+train lbfgs start:
+Epoch [ 321], MAE: 8.80514
+Epoch [ 331], MAE: 2.21978
+-------------*-------------
+Calculate the 0052-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.66008
+Epoch [  11], MAE: 7.52051
+Epoch [  21], MAE: 6.70925
+Epoch [  31], MAE: 6.18954
+Epoch [  41], MAE: 5.87273
+Epoch [  51], MAE: 5.67629
+Epoch [  61], MAE: 5.54588
+Epoch [  71], MAE: 5.46044
+Epoch [  81], MAE: 5.40968
+Epoch [  91], MAE: 5.37668
+warm lbfgs start:
+Epoch [ 101], MAE: 5.35450
+Epoch [ 111], MAE: 4.71100
+Epoch [ 121], MAE: 3.89024
+Epoch [ 131], MAE: 3.78672
+Epoch [ 141], MAE: 3.77385
+Epoch [ 151], MAE: 3.76072
+Epoch [ 161], MAE: 3.73277
+Epoch [ 171], MAE: 3.53493
+Epoch [ 181], MAE: 3.35271
+Epoch [ 191], MAE: 3.17484
+Epoch [ 201], MAE: 3.14176
+Epoch [ 211], MAE: 3.01439
+Epoch [ 221], MAE: 2.76112
+train:
+train adam start:
+Epoch [ 231], MAE: 2.76518
+Epoch [ 241], MAE: 2.79580
+Epoch [ 251], MAE: 2.84181
+Epoch [ 261], MAE: 2.90032
+Epoch [ 271], MAE: 2.96830
+Epoch [ 281], MAE: 3.04386
+Epoch [ 291], MAE: 3.12548
+Epoch [ 301], MAE: 3.21124
+Epoch [ 311], MAE: 3.30045
+train adam early stopping
+train lbfgs start:
+Epoch [ 321], MAE: 3.38294
+Epoch [ 331], MAE: 3.21495
+-------------*-------------
+Calculate the 0054-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 15.76229
+Epoch [  11], MAE: 14.43155
+Epoch [  21], MAE: 13.50185
+Epoch [  31], MAE: 12.89058
+Epoch [  41], MAE: 12.48154
+Epoch [  51], MAE: 12.19221
+Epoch [  61], MAE: 11.96658
+Epoch [  71], MAE: 11.79113
+Epoch [  81], MAE: 11.67685
+Epoch [  91], MAE: 11.60876
+warm lbfgs start:
+Epoch [ 101], MAE: 11.56486
+Epoch [ 111], MAE: 5.16971
+Epoch [ 121], MAE: 5.16143
+Epoch [ 131], MAE: 4.99573
+Epoch [ 141], MAE: 4.99573
+Epoch [ 151], MAE: 4.99573
+train:
+train adam start:
+Epoch [ 161], MAE: 4.99523
+Epoch [ 171], MAE: 4.99078
+Epoch [ 181], MAE: 4.98746
+Epoch [ 191], MAE: 4.98534
+Epoch [ 201], MAE: 4.98480
+Epoch [ 211], MAE: 4.98520
+Epoch [ 221], MAE: 4.98625
+Epoch [ 231], MAE: 4.98782
+Epoch [ 241], MAE: 4.98981
+train adam early stopping
+train lbfgs start:
+Epoch [ 251], MAE: 4.99211
+Epoch [ 261], MAE: 5.02032
+Epoch [ 271], MAE: 5.02067
+-------------*-------------
+Calculate the 0055-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.23723
+Epoch [  11], MAE: 7.03943
+Epoch [  21], MAE: 6.91056
+Epoch [  31], MAE: 6.82595
+Epoch [  41], MAE: 6.78585
+Epoch [  51], MAE: 6.76741
+Epoch [  61], MAE: 6.75722
+Epoch [  71], MAE: 6.74991
+Epoch [  81], MAE: 6.74449
+Epoch [  91], MAE: 6.74043
+warm lbfgs start:
+Epoch [ 101], MAE: 6.73730
+Epoch [ 111], MAE: 5.41426
+Epoch [ 121], MAE: 5.41426
+train:
+train adam start:
+Epoch [ 131], MAE: 5.41256
+Epoch [ 141], MAE: 5.41071
+Epoch [ 151], MAE: 5.40903
+Epoch [ 161], MAE: 5.40825
+Epoch [ 171], MAE: 5.40794
+Epoch [ 181], MAE: 5.40783
+Epoch [ 191], MAE: 5.40780
+Epoch [ 201], MAE: 5.40780
+Epoch [ 211], MAE: 5.40780
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 5.47022
+Epoch [ 231], MAE: 5.47002
+-------------*-------------
+Calculate the 0056-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.16317
+Epoch [  11], MAE: 7.10329
+Epoch [  21], MAE: 7.04599
+Epoch [  31], MAE: 6.99724
+Epoch [  41], MAE: 6.97461
+Epoch [  51], MAE: 6.96478
+Epoch [  61], MAE: 6.96046
+Epoch [  71], MAE: 6.95852
+Epoch [  81], MAE: 6.95765
+Epoch [  91], MAE: 6.95727
+warm lbfgs start:
+Epoch [ 101], MAE: 6.95711
+Epoch [ 111], MAE: 5.56457
+Epoch [ 121], MAE: 5.56442
+train:
+train adam start:
+Epoch [ 131], MAE: 5.56310
+Epoch [ 141], MAE: 5.56147
+Epoch [ 151], MAE: 5.55994
+Epoch [ 161], MAE: 5.55920
+Epoch [ 171], MAE: 5.55893
+Epoch [ 181], MAE: 5.55884
+Epoch [ 191], MAE: 5.55882
+Epoch [ 201], MAE: 5.55883
+Epoch [ 211], MAE: 5.55884
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 5.63561
+Epoch [ 231], MAE: 5.63597
+-------------*-------------
+Calculate the 0060-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.02051
+Epoch [  11], MAE: 6.33015
+Epoch [  21], MAE: 5.14428
+Epoch [  31], MAE: 4.27810
+Epoch [  41], MAE: 3.30163
+Epoch [  51], MAE: 2.65655
+Epoch [  61], MAE: 2.45549
+Epoch [  71], MAE: 2.26449
+Epoch [  81], MAE: 2.17423
+Epoch [  91], MAE: 2.13228
+warm lbfgs start:
+Epoch [ 101], MAE: 2.11614
+Epoch [ 111], MAE: 2.07215
+Epoch [ 121], MAE: 2.04739
+Epoch [ 131], MAE: 2.01234
+Epoch [ 141], MAE: 1.96067
+Epoch [ 151], MAE: 1.95676
+Epoch [ 161], MAE: 1.95517
+Epoch [ 171], MAE: 1.95473
+Epoch [ 181], MAE: 1.95445
+Epoch [ 191], MAE: 1.95427
+Epoch [ 201], MAE: 1.95424
+Epoch [ 211], MAE: 1.95419
+Epoch [ 221], MAE: 1.95414
+Epoch [ 231], MAE: 1.95409
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 241], MAE: 1.95409
+Epoch [ 251], MAE: 1.95201
+Epoch [ 261], MAE: 1.95104
+Epoch [ 271], MAE: 1.95034
+Epoch [ 281], MAE: 1.95048
+Epoch [ 291], MAE: 1.95060
+Epoch [ 301], MAE: 1.95063
+Epoch [ 311], MAE: 1.95063
+Epoch [ 321], MAE: 1.95062
+Epoch [ 331], MAE: 1.95060
+train adam early stopping
+train lbfgs start:
+Epoch [ 341], MAE: 1.94965
+Epoch [ 351], MAE: 1.94792
+Epoch [ 361], MAE: 1.94751
+-------------*-------------
+Calculate the 0057-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 21.80091
+Epoch [  11], MAE: 20.02810
+Epoch [  21], MAE: 18.70535
+Epoch [  31], MAE: 17.79728
+Epoch [  41], MAE: 17.24288
+Epoch [  51], MAE: 16.95114
+Epoch [  61], MAE: 16.82305
+Epoch [  71], MAE: 16.80824
+Epoch [  81], MAE: 16.91006
+Epoch [  91], MAE: 17.10899
+warm lbfgs start:
+Epoch [ 101], MAE: 17.33581
+Epoch [ 111], MAE: 16.01595
+Epoch [ 121], MAE: 16.00959
+Epoch [ 131], MAE: 2.74302
+Epoch [ 141], MAE: 2.31340
+Epoch [ 151], MAE: 2.23338
+Epoch [ 161], MAE: 2.21923
+Epoch [ 171], MAE: 2.18557
+Epoch [ 181], MAE: 2.11012
+Epoch [ 191], MAE: 2.09929
+Epoch [ 201], MAE: 2.09292
+Epoch [ 211], MAE: 2.08982
+Epoch [ 221], MAE: 2.08850
+Epoch [ 231], MAE: 2.08715
+Epoch [ 241], MAE: 2.08663
+Epoch [ 251], MAE: 2.08596
+train:
+train adam start:
+Epoch [ 261], MAE: 2.08687
+Epoch [ 271], MAE: 2.09719
+Epoch [ 281], MAE: 2.11513
+Epoch [ 291], MAE: 2.13999
+Epoch [ 301], MAE: 2.17238
+Epoch [ 311], MAE: 2.21124
+Epoch [ 321], MAE: 2.25579
+Epoch [ 331], MAE: 2.30501
+Epoch [ 341], MAE: 2.35827
+train adam early stopping
+train lbfgs start:
+Epoch [ 351], MAE: 5.37913
+Epoch [ 361], MAE: 2.30819
+Epoch [ 371], MAE: 2.17844
+Epoch [ 381], MAE: 2.13675
+Epoch [ 391], MAE: 2.13081
+Epoch [ 401], MAE: 2.09984
+Epoch [ 411], MAE: 2.09022
+Epoch [ 421], MAE: 2.07722
+Epoch [ 431], MAE: 2.07030
+Epoch [ 441], MAE: 2.06894
+Epoch [ 451], MAE: 2.06759
+-------------*-------------
+Calculate the 0058-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.26456
+Epoch [  11], MAE: 7.83794
+Epoch [  21], MAE: 7.49941
+Epoch [  31], MAE: 7.19087
+Epoch [  41], MAE: 6.91690
+Epoch [  51], MAE: 6.69047
+Epoch [  61], MAE: 6.52018
+Epoch [  71], MAE: 6.40923
+Epoch [  81], MAE: 6.34805
+Epoch [  91], MAE: 6.31157
+warm lbfgs start:
+Epoch [ 101], MAE: 6.28896
+Epoch [ 111], MAE: 6.21630
+Epoch [ 121], MAE: 5.67080
+Epoch [ 131], MAE: 4.69298
+Epoch [ 141], MAE: 3.47231
+Epoch [ 151], MAE: 2.75508
+Epoch [ 161], MAE: 2.65296
+Epoch [ 171], MAE: 2.63239
+Epoch [ 181], MAE: 2.42367
+Epoch [ 191], MAE: 2.38530
+Epoch [ 201], MAE: 2.38342
+Epoch [ 211], MAE: 2.37801
+Epoch [ 221], MAE: 2.36768
+Epoch [ 231], MAE: 2.36736
+train:
+train adam start:
+Epoch [ 241], MAE: 2.36262
+Epoch [ 251], MAE: 2.37961
+Epoch [ 261], MAE: 2.42511
+Epoch [ 271], MAE: 2.49543
+Epoch [ 281], MAE: 2.58859
+Epoch [ 291], MAE: 2.70056
+Epoch [ 301], MAE: 2.82696
+Epoch [ 311], MAE: 2.96480
+Epoch [ 321], MAE: 3.11131
+train adam early stopping
+train lbfgs start:
+Epoch [ 331], MAE: 3.20216
+Epoch [ 341], MAE: 2.63564
+-------------*-------------
+Calculate the 0059-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.44300
+Epoch [  11], MAE: 6.90453
+Epoch [  21], MAE: 6.10985
+Epoch [  31], MAE: 5.81718
+Epoch [  41], MAE: 5.74554
+Epoch [  51], MAE: 5.75975
+Epoch [  61], MAE: 5.80338
+Epoch [  71], MAE: 5.85056
+Epoch [  81], MAE: 5.89204
+Epoch [  91], MAE: 5.92552
+warm lbfgs start:
+Epoch [ 101], MAE: 5.95148
+Epoch [ 111], MAE: 5.88476
+Epoch [ 121], MAE: 5.91276
+Epoch [ 131], MAE: 5.20481
+Epoch [ 141], MAE: 5.20486
+train:
+train adam start:
+Epoch [ 151], MAE: 5.20077
+Epoch [ 161], MAE: 5.19744
+Epoch [ 171], MAE: 5.19678
+Epoch [ 181], MAE: 5.19917
+Epoch [ 191], MAE: 5.20402
+Epoch [ 201], MAE: 5.21067
+Epoch [ 211], MAE: 5.21886
+Epoch [ 221], MAE: 5.22831
+Epoch [ 231], MAE: 5.23879
+train adam early stopping
+train lbfgs start:
+Epoch [ 241], MAE: 5.35404
+Epoch [ 251], MAE: 5.35374
+-------------*-------------
+Calculate the 0061-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 13.21235
+Epoch [  11], MAE: 12.57592
+Epoch [  21], MAE: 12.10077
+Epoch [  31], MAE: 11.74282
+Epoch [  41], MAE: 11.46955
+Epoch [  51], MAE: 11.26336
+Epoch [  61], MAE: 11.10316
+Epoch [  71], MAE: 10.97402
+Epoch [  81], MAE: 10.88596
+Epoch [  91], MAE: 10.84433
+warm lbfgs start:
+Epoch [ 101], MAE: 10.82351
+Epoch [ 111], MAE: 6.39071
+Epoch [ 121], MAE: 6.38829
+train:
+train adam start:
+Epoch [ 131], MAE: 6.38746
+Epoch [ 141], MAE: 6.38625
+Epoch [ 151], MAE: 6.38507
+Epoch [ 161], MAE: 6.38465
+Epoch [ 171], MAE: 6.38470
+Epoch [ 181], MAE: 6.38493
+Epoch [ 191], MAE: 6.38519
+Epoch [ 201], MAE: 6.38543
+Epoch [ 211], MAE: 6.38571
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 6.49167
+Epoch [ 231], MAE: 6.49164
+-------------*-------------
+Calculate the 0062-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.19673
+Epoch [  11], MAE: 8.14281
+Epoch [  21], MAE: 8.09075
+Epoch [  31], MAE: 8.04602
+Epoch [  41], MAE: 8.02647
+Epoch [  51], MAE: 8.01887
+Epoch [  61], MAE: 8.01597
+Epoch [  71], MAE: 8.01489
+Epoch [  81], MAE: 8.01445
+Epoch [  91], MAE: 8.01431
+warm lbfgs start:
+Epoch [ 101], MAE: 8.01425
+Epoch [ 111], MAE: 6.64534
+Epoch [ 121], MAE: 6.64533
+Epoch [ 131], MAE: 6.64533
+train:
+train adam start:
+Epoch [ 141], MAE: 6.64499
+Epoch [ 151], MAE: 6.64328
+Epoch [ 161], MAE: 6.64158
+Epoch [ 171], MAE: 6.64024
+Epoch [ 181], MAE: 6.63970
+Epoch [ 191], MAE: 6.63949
+Epoch [ 201], MAE: 6.63940
+Epoch [ 211], MAE: 6.63936
+Epoch [ 221], MAE: 6.63936
+train adam early stopping
+train lbfgs start:
+Epoch [ 231], MAE: 6.63936
+Epoch [ 241], MAE: 6.65808
+Epoch [ 251], MAE: 6.65808
+-------------*-------------
+Calculate the 0063-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.16494
+Epoch [  11], MAE: 8.10322
+Epoch [  21], MAE: 8.04341
+Epoch [  31], MAE: 7.99110
+Epoch [  41], MAE: 7.96260
+Epoch [  51], MAE: 7.94618
+Epoch [  61], MAE: 7.93519
+Epoch [  71], MAE: 7.92702
+Epoch [  81], MAE: 7.92050
+Epoch [  91], MAE: 7.91525
+warm lbfgs start:
+Epoch [ 101], MAE: 7.91091
+Epoch [ 111], MAE: 6.76390
+Epoch [ 121], MAE: 6.76390
+Epoch [ 131], MAE: 6.76390
+Epoch [ 141], MAE: 6.76390
+train:
+train adam start:
+Epoch [ 151], MAE: 6.76369
+Epoch [ 161], MAE: 6.76174
+Epoch [ 171], MAE: 6.75983
+Epoch [ 181], MAE: 6.75821
+Epoch [ 191], MAE: 6.75748
+Epoch [ 201], MAE: 6.75713
+Epoch [ 211], MAE: 6.75696
+Epoch [ 221], MAE: 6.75684
+Epoch [ 231], MAE: 6.75677
+train adam early stopping
+train lbfgs start:
+Epoch [ 241], MAE: 6.75672
+Epoch [ 251], MAE: 6.97844
+Epoch [ 261], MAE: 6.97209
+-------------*-------------
+Calculate the 0067-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.63002
+Epoch [  11], MAE: 5.45490
+Epoch [  21], MAE: 4.20294
+Epoch [  31], MAE: 3.56668
+Epoch [  41], MAE: 3.09730
+Epoch [  51], MAE: 2.66896
+Epoch [  61], MAE: 2.42635
+Epoch [  71], MAE: 2.27648
+Epoch [  81], MAE: 2.19775
+Epoch [  91], MAE: 2.16738
+warm lbfgs start:
+Epoch [ 101], MAE: 2.15014
+Epoch [ 111], MAE: 2.10058
+Epoch [ 121], MAE: 2.08591
+Epoch [ 131], MAE: 1.98902
+Epoch [ 141], MAE: 1.92998
+Epoch [ 151], MAE: 1.92202
+Epoch [ 161], MAE: 1.92050
+Epoch [ 171], MAE: 1.92015
+Epoch [ 181], MAE: 1.91963
+Epoch [ 191], MAE: 1.91948
+Epoch [ 201], MAE: 1.91940
+Epoch [ 211], MAE: 1.91933
+Epoch [ 221], MAE: 1.91929
+Epoch [ 231], MAE: 1.91923
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 241], MAE: 1.92015
+Epoch [ 251], MAE: 1.91796
+Epoch [ 261], MAE: 1.91669
+Epoch [ 271], MAE: 1.91812
+Epoch [ 281], MAE: 1.92073
+Epoch [ 291], MAE: 1.92201
+Epoch [ 301], MAE: 1.92253
+Epoch [ 311], MAE: 1.92273
+Epoch [ 321], MAE: 1.92279
+train adam early stopping
+train lbfgs start:
+Epoch [ 331], MAE: 1.92302
+Epoch [ 341], MAE: 1.91566
+Epoch [ 351], MAE: 1.91377
+Epoch [ 361], MAE: 1.92772
+Epoch [ 371], MAE: 1.91287
+-------------*-------------
+Calculate the 0064-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 22.34500
+Epoch [  11], MAE: 21.19432
+Epoch [  21], MAE: 20.30034
+Epoch [  31], MAE: 19.62156
+Epoch [  41], MAE: 19.14732
+Epoch [  51], MAE: 18.89210
+Epoch [  61], MAE: 18.80207
+Epoch [  71], MAE: 18.82405
+Epoch [  81], MAE: 19.02915
+Epoch [  91], MAE: 19.35025
+warm lbfgs start:
+Epoch [ 101], MAE: 19.67571
+Epoch [ 111], MAE: 19.55563
+Epoch [ 121], MAE: 19.55106
+Epoch [ 131], MAE: 3.68739
+Epoch [ 141], MAE: 2.28690
+Epoch [ 151], MAE: 2.24127
+Epoch [ 161], MAE: 2.17235
+Epoch [ 171], MAE: 2.13739
+Epoch [ 181], MAE: 2.06152
+Epoch [ 191], MAE: 2.01815
+Epoch [ 201], MAE: 2.00895
+Epoch [ 211], MAE: 2.00540
+Epoch [ 221], MAE: 1.96732
+Epoch [ 231], MAE: 1.94658
+Epoch [ 241], MAE: 1.94039
+Epoch [ 251], MAE: 1.93855
+Epoch [ 261], MAE: 1.93749
+Epoch [ 271], MAE: 1.93513
+Epoch [ 281], MAE: 1.93458
+train:
+train adam start:
+Epoch [ 291], MAE: 1.93517
+Epoch [ 301], MAE: 1.94251
+Epoch [ 311], MAE: 1.95538
+Epoch [ 321], MAE: 1.97483
+Epoch [ 331], MAE: 2.00189
+Epoch [ 341], MAE: 2.03589
+Epoch [ 351], MAE: 2.07600
+Epoch [ 361], MAE: 2.12144
+Epoch [ 371], MAE: 2.17155
+train adam early stopping
+train lbfgs start:
+Epoch [ 381], MAE: 2.19017
+Epoch [ 391], MAE: 2.15974
+Epoch [ 401], MAE: 2.01187
+Epoch [ 411], MAE: 2.00789
+Epoch [ 421], MAE: 2.00642
+Epoch [ 431], MAE: 2.00245
+Epoch [ 441], MAE: 1.99552
+Epoch [ 451], MAE: 1.99014
+Epoch [ 461], MAE: 1.98661
+Epoch [ 471], MAE: 1.98605
+-------------*-------------
+Calculate the 0065-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.21894
+Epoch [  11], MAE: 7.12126
+Epoch [  21], MAE: 6.39389
+Epoch [  31], MAE: 6.07178
+Epoch [  41], MAE: 6.01785
+Epoch [  51], MAE: 6.09229
+Epoch [  61], MAE: 6.23306
+Epoch [  71], MAE: 6.38715
+Epoch [  81], MAE: 6.52265
+Epoch [  91], MAE: 6.62757
+warm lbfgs start:
+Epoch [ 101], MAE: 6.70615
+Epoch [ 111], MAE: 6.34457
+Epoch [ 121], MAE: 5.81410
+Epoch [ 131], MAE: 4.13507
+Epoch [ 141], MAE: 2.85566
+Epoch [ 151], MAE: 2.86076
+Epoch [ 161], MAE: 2.80766
+Epoch [ 171], MAE: 2.74402
+Epoch [ 181], MAE: 2.59747
+Epoch [ 191], MAE: 2.56439
+Epoch [ 201], MAE: 2.53481
+Epoch [ 211], MAE: 2.52204
+Epoch [ 221], MAE: 2.50758
+Epoch [ 231], MAE: 2.50747
+Epoch [ 241], MAE: 2.49443
+Epoch [ 251], MAE: 2.49434
+train:
+train adam start:
+Epoch [ 261], MAE: 2.48765
+Epoch [ 271], MAE: 2.49663
+Epoch [ 281], MAE: 2.54301
+Epoch [ 291], MAE: 2.62133
+Epoch [ 301], MAE: 2.73141
+Epoch [ 311], MAE: 2.86824
+Epoch [ 321], MAE: 3.02604
+Epoch [ 331], MAE: 3.19935
+Epoch [ 341], MAE: 3.38338
+train adam early stopping
+train lbfgs start:
+Epoch [ 351], MAE: 3.55549
+Epoch [ 361], MAE: 16.92734
+Epoch [ 371], MAE: 2.80018
+Epoch [ 381], MAE: 2.80018
+Epoch [ 391], MAE: 2.80018
+Epoch [ 401], MAE: 2.80018
+-------------*-------------
+Calculate the 0066-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.52529
+Epoch [  11], MAE: 6.83035
+Epoch [  21], MAE: 6.24922
+Epoch [  31], MAE: 6.19498
+Epoch [  41], MAE: 6.32275
+Epoch [  51], MAE: 6.49786
+Epoch [  61], MAE: 6.66370
+Epoch [  71], MAE: 6.80432
+Epoch [  81], MAE: 6.91603
+Epoch [  91], MAE: 7.00133
+warm lbfgs start:
+Epoch [ 101], MAE: 7.05816
+Epoch [ 111], MAE: 7.05898
+Epoch [ 121], MAE: 7.00365
+Epoch [ 131], MAE: 7.00421
+Epoch [ 141], MAE: 7.18085
+Epoch [ 151], MAE: 6.82519
+Epoch [ 161], MAE: 5.57107
+Epoch [ 171], MAE: 5.57107
+Epoch [ 181], MAE: 5.57107
+Epoch [ 191], MAE: 5.57107
+train:
+train adam start:
+Epoch [ 201], MAE: 5.56451
+Epoch [ 211], MAE: 5.53872
+Epoch [ 221], MAE: 5.52427
+Epoch [ 231], MAE: 5.52008
+Epoch [ 241], MAE: 5.52499
+Epoch [ 251], MAE: 5.53806
+Epoch [ 261], MAE: 5.55849
+Epoch [ 271], MAE: 5.58534
+Epoch [ 281], MAE: 5.61776
+Epoch [ 291], MAE: 5.65480
+train lbfgs start:
+Epoch [ 301], MAE: 6.29957
+Epoch [ 311], MAE: 5.79899
+Epoch [ 321], MAE: 5.79921
+-------------*-------------
+Calculate the 0068-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 14.52742
+Epoch [  11], MAE: 13.23776
+Epoch [  21], MAE: 12.38087
+Epoch [  31], MAE: 11.87233
+Epoch [  41], MAE: 11.54892
+Epoch [  51], MAE: 11.31811
+Epoch [  61], MAE: 11.14831
+Epoch [  71], MAE: 11.05963
+Epoch [  81], MAE: 11.01693
+Epoch [  91], MAE: 10.99316
+warm lbfgs start:
+Epoch [ 101], MAE: 10.97902
+Epoch [ 111], MAE: 7.61250
+Epoch [ 121], MAE: 7.61250
+Epoch [ 131], MAE: 7.61250
+Epoch [ 141], MAE: 7.61250
+train:
+train adam start:
+Epoch [ 151], MAE: 7.60972
+Epoch [ 161], MAE: 7.60629
+Epoch [ 171], MAE: 7.60308
+Epoch [ 181], MAE: 7.60157
+Epoch [ 191], MAE: 7.60103
+Epoch [ 201], MAE: 7.60089
+Epoch [ 211], MAE: 7.60092
+Epoch [ 221], MAE: 7.60101
+Epoch [ 231], MAE: 7.60115
+train adam early stopping
+train lbfgs start:
+Epoch [ 241], MAE: 7.80159
+Epoch [ 251], MAE: 7.90774
+Epoch [ 261], MAE: 7.90489
+-------------*-------------
+Calculate the 0069-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.39220
+Epoch [  11], MAE: 8.32539
+Epoch [  21], MAE: 8.26216
+Epoch [  31], MAE: 8.21001
+Epoch [  41], MAE: 8.18774
+Epoch [  51], MAE: 8.17914
+Epoch [  61], MAE: 8.17585
+Epoch [  71], MAE: 8.17461
+Epoch [  81], MAE: 8.17415
+Epoch [  91], MAE: 8.17397
+warm lbfgs start:
+Epoch [ 101], MAE: 8.17392
+Epoch [ 111], MAE: 18.54117
+Epoch [ 121], MAE: 7.80313
+Epoch [ 131], MAE: 7.80313
+Epoch [ 141], MAE: 7.80313
+train:
+train adam start:
+Epoch [ 151], MAE: 7.79994
+Epoch [ 161], MAE: 7.79645
+Epoch [ 171], MAE: 7.79332
+Epoch [ 181], MAE: 7.79185
+Epoch [ 191], MAE: 7.79125
+Epoch [ 201], MAE: 7.79103
+Epoch [ 211], MAE: 7.79096
+Epoch [ 221], MAE: 7.79096
+Epoch [ 231], MAE: 7.79097
+train adam early stopping
+train lbfgs start:
+Epoch [ 241], MAE: 8.06289
+Epoch [ 251], MAE: 8.05546
+-------------*-------------
+Calculate the 0070-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.59877
+Epoch [  11], MAE: 8.52528
+Epoch [  21], MAE: 8.46035
+Epoch [  31], MAE: 8.40959
+Epoch [  41], MAE: 8.38626
+Epoch [  51], MAE: 8.37648
+Epoch [  61], MAE: 8.37256
+Epoch [  71], MAE: 8.37115
+Epoch [  81], MAE: 8.37072
+Epoch [  91], MAE: 8.37062
+warm lbfgs start:
+Epoch [ 101], MAE: 8.37060
+Epoch [ 111], MAE: 8.37059
+Epoch [ 121], MAE: 7.94321
+Epoch [ 131], MAE: 7.94321
+Epoch [ 141], MAE: 7.94321
+Epoch [ 151], MAE: 7.94321
+train:
+train adam start:
+Epoch [ 161], MAE: 7.94077
+Epoch [ 171], MAE: 7.93734
+Epoch [ 181], MAE: 7.93407
+Epoch [ 191], MAE: 7.93236
+Epoch [ 201], MAE: 7.93172
+Epoch [ 211], MAE: 7.93149
+Epoch [ 221], MAE: 7.93144
+Epoch [ 231], MAE: 7.93143
+Epoch [ 241], MAE: 7.93145
+train adam early stopping
+train lbfgs start:
+Epoch [ 251], MAE: 8.14791
+Epoch [ 261], MAE: 8.15961
+-------------*-------------
+Calculate the 0074-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 9.53543
+Epoch [  11], MAE: 6.75041
+Epoch [  21], MAE: 4.99024
+Epoch [  31], MAE: 3.56023
+Epoch [  41], MAE: 2.64715
+Epoch [  51], MAE: 2.37139
+Epoch [  61], MAE: 2.25198
+Epoch [  71], MAE: 2.14193
+Epoch [  81], MAE: 2.11551
+Epoch [  91], MAE: 2.10180
+warm lbfgs start:
+Epoch [ 101], MAE: 2.09209
+Epoch [ 111], MAE: 2.05357
+Epoch [ 121], MAE: 2.02321
+Epoch [ 131], MAE: 1.98987
+Epoch [ 141], MAE: 1.94599
+Epoch [ 151], MAE: 1.93923
+Epoch [ 161], MAE: 1.93514
+Epoch [ 171], MAE: 1.93402
+Epoch [ 181], MAE: 1.93340
+Epoch [ 191], MAE: 1.93305
+Epoch [ 201], MAE: 1.93291
+Epoch [ 211], MAE: 1.93277
+Epoch [ 221], MAE: 1.93262
+Epoch [ 231], MAE: 1.93249
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 241], MAE: 1.93280
+Epoch [ 251], MAE: 1.93156
+Epoch [ 261], MAE: 1.93066
+Epoch [ 271], MAE: 1.93061
+Epoch [ 281], MAE: 1.93113
+Epoch [ 291], MAE: 1.93144
+Epoch [ 301], MAE: 1.93155
+Epoch [ 311], MAE: 1.93160
+Epoch [ 321], MAE: 1.93162
+train adam early stopping
+train lbfgs start:
+Epoch [ 331], MAE: 1.93162
+Epoch [ 341], MAE: 1.92964
+Epoch [ 351], MAE: 1.92858
+Epoch [ 361], MAE: 1.92814
+-------------*-------------
+Calculate the 0071-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 22.91373
+Epoch [  11], MAE: 20.83015
+Epoch [  21], MAE: 19.18699
+Epoch [  31], MAE: 18.02241
+Epoch [  41], MAE: 17.27304
+Epoch [  51], MAE: 16.84160
+Epoch [  61], MAE: 16.64160
+Epoch [  71], MAE: 16.62528
+Epoch [  81], MAE: 16.75426
+Epoch [  91], MAE: 17.06352
+warm lbfgs start:
+Epoch [ 101], MAE: 17.42190
+Epoch [ 111], MAE: 15.85919
+Epoch [ 121], MAE: 15.76966
+Epoch [ 131], MAE: 3.02497
+Epoch [ 141], MAE: 2.60263
+Epoch [ 151], MAE: 2.53668
+Epoch [ 161], MAE: 2.47887
+Epoch [ 171], MAE: 2.44855
+Epoch [ 181], MAE: 2.36494
+Epoch [ 191], MAE: 2.29929
+Epoch [ 201], MAE: 2.27057
+Epoch [ 211], MAE: 2.25449
+Epoch [ 221], MAE: 2.22203
+Epoch [ 231], MAE: 2.19986
+Epoch [ 241], MAE: 2.19519
+Epoch [ 251], MAE: 2.19078
+Epoch [ 261], MAE: 2.19129
+Epoch [ 271], MAE: 2.18721
+Epoch [ 281], MAE: 2.18567
+train:
+train adam start:
+Epoch [ 291], MAE: 2.19104
+Epoch [ 301], MAE: 2.20660
+Epoch [ 311], MAE: 2.22943
+Epoch [ 321], MAE: 2.25897
+Epoch [ 331], MAE: 2.29493
+Epoch [ 341], MAE: 2.33643
+Epoch [ 351], MAE: 2.38309
+Epoch [ 361], MAE: 2.43461
+Epoch [ 371], MAE: 2.49021
+train adam early stopping
+train lbfgs start:
+Epoch [ 381], MAE: 2.47782
+Epoch [ 391], MAE: 2.43717
+Epoch [ 401], MAE: 2.31229
+-------------*-------------
+Calculate the 0072-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.74423
+Epoch [  11], MAE: 6.95162
+Epoch [  21], MAE: 6.53714
+Epoch [  31], MAE: 6.33014
+Epoch [  41], MAE: 6.27758
+Epoch [  51], MAE: 6.34968
+Epoch [  61], MAE: 6.52424
+Epoch [  71], MAE: 6.74101
+Epoch [  81], MAE: 6.95524
+Epoch [  91], MAE: 7.14912
+warm lbfgs start:
+Epoch [ 101], MAE: 7.31646
+Epoch [ 111], MAE: 6.51206
+Epoch [ 121], MAE: 6.40290
+Epoch [ 131], MAE: 6.51349
+Epoch [ 141], MAE: 4.51789
+Epoch [ 151], MAE: 3.69019
+Epoch [ 161], MAE: 3.68359
+Epoch [ 171], MAE: 3.66136
+Epoch [ 181], MAE: 3.55155
+Epoch [ 191], MAE: 2.81698
+Epoch [ 201], MAE: 2.81108
+Epoch [ 211], MAE: 2.76960
+Epoch [ 221], MAE: 2.74370
+Epoch [ 231], MAE: 2.74370
+Epoch [ 241], MAE: 2.74301
+Epoch [ 251], MAE: 2.72935
+train:
+train adam start:
+Epoch [ 261], MAE: 2.74085
+Epoch [ 271], MAE: 2.83232
+Epoch [ 281], MAE: 2.98811
+Epoch [ 291], MAE: 3.19579
+Epoch [ 301], MAE: 3.44099
+Epoch [ 311], MAE: 3.71011
+Epoch [ 321], MAE: 3.99236
+Epoch [ 331], MAE: 4.28054
+Epoch [ 341], MAE: 4.56966
+train adam early stopping
+train lbfgs start:
+Epoch [ 351], MAE: 15.90562
+Epoch [ 361], MAE: 3.23424
+-------------*-------------
+Calculate the 0073-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 10.02801
+Epoch [  11], MAE: 8.17120
+Epoch [  21], MAE: 7.63593
+Epoch [  31], MAE: 7.61630
+Epoch [  41], MAE: 7.71720
+Epoch [  51], MAE: 7.85744
+Epoch [  61], MAE: 7.98181
+Epoch [  71], MAE: 8.08144
+Epoch [  81], MAE: 8.15835
+Epoch [  91], MAE: 8.21558
+warm lbfgs start:
+Epoch [ 101], MAE: 8.25700
+Epoch [ 111], MAE: 8.31238
+Epoch [ 121], MAE: 8.31238
+Epoch [ 131], MAE: 8.32453
+Epoch [ 141], MAE: 7.21662
+Epoch [ 151], MAE: 6.78927
+train:
+train adam start:
+Epoch [ 161], MAE: 6.77832
+Epoch [ 171], MAE: 6.76691
+Epoch [ 181], MAE: 6.77701
+Epoch [ 191], MAE: 6.80500
+Epoch [ 201], MAE: 6.84785
+Epoch [ 211], MAE: 6.90241
+Epoch [ 221], MAE: 6.96570
+Epoch [ 231], MAE: 7.03527
+Epoch [ 241], MAE: 7.11089
+Epoch [ 251], MAE: 7.19202
+train adam early stopping
+train lbfgs start:
+Epoch [ 261], MAE: 7.17857
+Epoch [ 271], MAE: 7.17857
+-------------*-------------
+Calculate the 0075-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 13.48410
+Epoch [  11], MAE: 12.11300
+Epoch [  21], MAE: 11.38477
+Epoch [  31], MAE: 11.02131
+Epoch [  41], MAE: 10.82499
+Epoch [  51], MAE: 10.70057
+Epoch [  61], MAE: 10.60330
+Epoch [  71], MAE: 10.52632
+Epoch [  81], MAE: 10.49209
+Epoch [  91], MAE: 10.47900
+warm lbfgs start:
+Epoch [ 101], MAE: 10.47402
+Epoch [ 111], MAE: 8.75902
+Epoch [ 121], MAE: 8.75902
+train:
+train adam start:
+Epoch [ 131], MAE: 8.75639
+Epoch [ 141], MAE: 8.75311
+Epoch [ 151], MAE: 8.75010
+Epoch [ 161], MAE: 8.74862
+Epoch [ 171], MAE: 8.74806
+Epoch [ 181], MAE: 8.74784
+Epoch [ 191], MAE: 8.74776
+Epoch [ 201], MAE: 8.74774
+Epoch [ 211], MAE: 8.74772
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 9.04166
+Epoch [ 231], MAE: 9.04168
+-------------*-------------
+Calculate the 0076-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 9.52585
+Epoch [  11], MAE: 9.46996
+Epoch [  21], MAE: 9.41754
+Epoch [  31], MAE: 9.37450
+Epoch [  41], MAE: 9.35616
+Epoch [  51], MAE: 9.34911
+Epoch [  61], MAE: 9.34638
+Epoch [  71], MAE: 9.34536
+Epoch [  81], MAE: 9.34499
+Epoch [  91], MAE: 9.34484
+warm lbfgs start:
+Epoch [ 101], MAE: 9.34478
+Epoch [ 111], MAE: 9.34478
+Epoch [ 121], MAE: 9.08679
+Epoch [ 131], MAE: 9.08679
+Epoch [ 141], MAE: 9.08679
+Epoch [ 151], MAE: 9.08679
+train:
+train adam start:
+Epoch [ 161], MAE: 9.08615
+Epoch [ 171], MAE: 9.08300
+Epoch [ 181], MAE: 9.07994
+Epoch [ 191], MAE: 9.07750
+Epoch [ 201], MAE: 9.07652
+Epoch [ 211], MAE: 9.07611
+Epoch [ 221], MAE: 9.07595
+Epoch [ 231], MAE: 9.07589
+Epoch [ 241], MAE: 9.07588
+train adam early stopping
+train lbfgs start:
+Epoch [ 251], MAE: 9.07587
+Epoch [ 261], MAE: 9.19201
+-------------*-------------
+Calculate the 0077-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 9.62149
+Epoch [  11], MAE: 9.54428
+Epoch [  21], MAE: 9.47401
+Epoch [  31], MAE: 9.41660
+Epoch [  41], MAE: 9.38438
+Epoch [  51], MAE: 9.36553
+Epoch [  61], MAE: 9.35357
+Epoch [  71], MAE: 9.34567
+Epoch [  81], MAE: 9.34036
+Epoch [  91], MAE: 9.33687
+warm lbfgs start:
+Epoch [ 101], MAE: 9.33456
+Epoch [ 111], MAE: 9.17956
+Epoch [ 121], MAE: 9.17956
+train:
+train adam start:
+Epoch [ 131], MAE: 9.17640
+Epoch [ 141], MAE: 9.17293
+Epoch [ 151], MAE: 9.16981
+Epoch [ 161], MAE: 9.16835
+Epoch [ 171], MAE: 9.16777
+Epoch [ 181], MAE: 9.16755
+Epoch [ 191], MAE: 9.16746
+Epoch [ 201], MAE: 9.16743
+Epoch [ 211], MAE: 9.16742
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 9.40507
+Epoch [ 231], MAE: 9.40625
+-------------*-------------
+Calculate the 0081-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 9.47958
+Epoch [  11], MAE: 7.36085
+Epoch [  21], MAE: 5.51899
+Epoch [  31], MAE: 4.41738
+Epoch [  41], MAE: 3.49897
+Epoch [  51], MAE: 2.92806
+Epoch [  61], MAE: 2.61971
+Epoch [  71], MAE: 2.40651
+Epoch [  81], MAE: 2.31008
+Epoch [  91], MAE: 2.24355
+warm lbfgs start:
+Epoch [ 101], MAE: 2.18754
+Epoch [ 111], MAE: 2.10985
+Epoch [ 121], MAE: 2.07716
+Epoch [ 131], MAE: 2.03856
+Epoch [ 141], MAE: 1.99027
+Epoch [ 151], MAE: 1.98310
+Epoch [ 161], MAE: 1.98039
+Epoch [ 171], MAE: 1.97973
+Epoch [ 181], MAE: 1.97939
+Epoch [ 191], MAE: 1.97910
+Epoch [ 201], MAE: 1.97902
+Epoch [ 211], MAE: 1.97889
+Epoch [ 221], MAE: 1.97881
+Epoch [ 231], MAE: 1.97873
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 241], MAE: 1.97864
+Epoch [ 251], MAE: 1.97691
+Epoch [ 261], MAE: 1.97522
+Epoch [ 271], MAE: 1.97547
+Epoch [ 281], MAE: 1.97719
+Epoch [ 291], MAE: 1.97813
+Epoch [ 301], MAE: 1.97854
+Epoch [ 311], MAE: 1.97871
+Epoch [ 321], MAE: 1.97877
+Epoch [ 331], MAE: 1.97880
+train adam early stopping
+train lbfgs start:
+Epoch [ 341], MAE: 1.97378
+Epoch [ 351], MAE: 1.97356
+Epoch [ 361], MAE: 1.97066
+Epoch [ 371], MAE: 1.96973
+-------------*-------------
+Calculate the 0078-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 22.49175
+Epoch [  11], MAE: 20.96641
+Epoch [  21], MAE: 19.80130
+Epoch [  31], MAE: 18.99003
+Epoch [  41], MAE: 18.48763
+Epoch [  51], MAE: 18.23049
+Epoch [  61], MAE: 18.18167
+Epoch [  71], MAE: 18.32087
+Epoch [  81], MAE: 18.68420
+Epoch [  91], MAE: 19.12058
+warm lbfgs start:
+Epoch [ 101], MAE: 19.54651
+Epoch [ 111], MAE: 19.32003
+Epoch [ 121], MAE: 19.29845
+Epoch [ 131], MAE: 5.30821
+Epoch [ 141], MAE: 2.61416
+Epoch [ 151], MAE: 2.35203
+Epoch [ 161], MAE: 2.31587
+Epoch [ 171], MAE: 2.27823
+Epoch [ 181], MAE: 2.18029
+Epoch [ 191], MAE: 2.14117
+Epoch [ 201], MAE: 2.12617
+Epoch [ 211], MAE: 2.11907
+Epoch [ 221], MAE: 2.09464
+Epoch [ 231], MAE: 2.06402
+Epoch [ 241], MAE: 2.05654
+Epoch [ 251], MAE: 2.05104
+Epoch [ 261], MAE: 2.04725
+Epoch [ 271], MAE: 2.04687
+Epoch [ 281], MAE: 2.04658
+train:
+train adam start:
+Epoch [ 291], MAE: 2.04760
+Epoch [ 301], MAE: 2.08700
+Epoch [ 311], MAE: 2.16322
+Epoch [ 321], MAE: 2.26853
+Epoch [ 331], MAE: 2.40058
+Epoch [ 341], MAE: 2.55008
+Epoch [ 351], MAE: 2.70993
+Epoch [ 361], MAE: 2.87602
+Epoch [ 371], MAE: 3.04566
+train adam early stopping
+train lbfgs start:
+Epoch [ 381], MAE: 3.21748
+Epoch [ 391], MAE: 3.16197
+Epoch [ 401], MAE: 11.26519
+Epoch [ 411], MAE: 2.23646
+Epoch [ 421], MAE: 2.22164
+Epoch [ 431], MAE: 2.21794
+Epoch [ 441], MAE: 2.21740
+Epoch [ 451], MAE: 2.21498
+-------------*-------------
+Calculate the 0079-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.31956
+Epoch [  11], MAE: 6.39738
+Epoch [  21], MAE: 5.58197
+Epoch [  31], MAE: 5.56781
+Epoch [  41], MAE: 5.91736
+Epoch [  51], MAE: 6.43369
+Epoch [  61], MAE: 6.96460
+Epoch [  71], MAE: 7.41765
+Epoch [  81], MAE: 7.81202
+Epoch [  91], MAE: 8.14970
+warm lbfgs start:
+Epoch [ 101], MAE: 8.43367
+Epoch [ 111], MAE: 7.63031
+Epoch [ 121], MAE: 7.38323
+Epoch [ 131], MAE: 7.28388
+Epoch [ 141], MAE: 3.60029
+Epoch [ 151], MAE: 3.32678
+Epoch [ 161], MAE: 3.28260
+Epoch [ 171], MAE: 3.27875
+Epoch [ 181], MAE: 3.25868
+Epoch [ 191], MAE: 3.00872
+Epoch [ 201], MAE: 2.99004
+Epoch [ 211], MAE: 2.98371
+Epoch [ 221], MAE: 2.97881
+Epoch [ 231], MAE: 2.97882
+Epoch [ 241], MAE: 2.96260
+Epoch [ 251], MAE: 2.95171
+Epoch [ 261], MAE: 2.93182
+train:
+train adam start:
+Epoch [ 271], MAE: 2.92691
+Epoch [ 281], MAE: 2.95153
+Epoch [ 291], MAE: 3.04600
+Epoch [ 301], MAE: 3.19826
+Epoch [ 311], MAE: 3.40417
+Epoch [ 321], MAE: 3.65335
+Epoch [ 331], MAE: 3.93295
+Epoch [ 341], MAE: 4.23365
+Epoch [ 351], MAE: 4.54743
+train adam early stopping
+train lbfgs start:
+Epoch [ 361], MAE: 4.83520
+Epoch [ 371], MAE: 3.53255
+Epoch [ 381], MAE: 3.44321
+Epoch [ 391], MAE: 3.38843
+Epoch [ 401], MAE: 3.27741
+Epoch [ 411], MAE: 3.01318
+Epoch [ 421], MAE: 3.00250
+-------------*-------------
+Calculate the 0080-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.60166
+Epoch [  11], MAE: 5.39255
+Epoch [  21], MAE: 5.77554
+Epoch [  31], MAE: 6.84823
+Epoch [  41], MAE: 7.76546
+Epoch [  51], MAE: 8.40691
+Epoch [  61], MAE: 8.88140
+Epoch [  71], MAE: 9.23020
+Epoch [  81], MAE: 9.48451
+Epoch [  91], MAE: 9.67188
+warm lbfgs start:
+Epoch [ 101], MAE: 9.81005
+Epoch [ 111], MAE: 9.61906
+Epoch [ 121], MAE: 9.61880
+Epoch [ 131], MAE: 9.33919
+Epoch [ 141], MAE: 8.98684
+Epoch [ 151], MAE: 5.79643
+Epoch [ 161], MAE: 5.03455
+Epoch [ 171], MAE: 4.91741
+Epoch [ 181], MAE: 4.44832
+Epoch [ 191], MAE: 4.34296
+Epoch [ 201], MAE: 4.12577
+Epoch [ 211], MAE: 3.74964
+Epoch [ 221], MAE: 3.70019
+Epoch [ 231], MAE: 3.65237
+Epoch [ 241], MAE: 3.50413
+train:
+train adam start:
+Epoch [ 251], MAE: 3.49355
+Epoch [ 261], MAE: 3.57866
+Epoch [ 271], MAE: 3.79360
+Epoch [ 281], MAE: 4.11024
+Epoch [ 291], MAE: 4.50410
+Epoch [ 301], MAE: 4.94744
+Epoch [ 311], MAE: 5.41413
+Epoch [ 321], MAE: 5.88761
+Epoch [ 331], MAE: 6.35738
+train adam early stopping
+train lbfgs start:
+Epoch [ 341], MAE: 6.68026
+Epoch [ 351], MAE: 4.71190
+Epoch [ 361], MAE: 4.71190
+-------------*-------------
+Calculate the 0082-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 14.20797
+Epoch [  11], MAE: 11.66506
+Epoch [  21], MAE: 11.08879
+Epoch [  31], MAE: 11.04629
+Epoch [  41], MAE: 11.01036
+Epoch [  51], MAE: 10.96540
+Epoch [  61], MAE: 10.95031
+Epoch [  71], MAE: 10.93878
+Epoch [  81], MAE: 10.93117
+Epoch [  91], MAE: 10.92885
+warm lbfgs start:
+Epoch [ 101], MAE: 10.92831
+Epoch [ 111], MAE: 9.97656
+Epoch [ 121], MAE: 9.97489
+Epoch [ 131], MAE: 9.97489
+Epoch [ 141], MAE: 9.97489
+Epoch [ 151], MAE: 9.97489
+train:
+train adam start:
+Epoch [ 161], MAE: 9.97308
+Epoch [ 171], MAE: 9.97008
+Epoch [ 181], MAE: 9.96713
+Epoch [ 191], MAE: 9.96550
+Epoch [ 201], MAE: 9.96488
+Epoch [ 211], MAE: 9.96462
+Epoch [ 221], MAE: 9.96450
+Epoch [ 231], MAE: 9.96444
+Epoch [ 241], MAE: 9.96442
+train adam early stopping
+train lbfgs start:
+Epoch [ 251], MAE: 10.35445
+Epoch [ 261], MAE: 10.35445
+-------------*-------------
+Calculate the 0083-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 10.24356
+Epoch [  11], MAE: 10.19223
+Epoch [  21], MAE: 10.15008
+Epoch [  31], MAE: 10.12082
+Epoch [  41], MAE: 10.08913
+Epoch [  51], MAE: 10.06539
+Epoch [  61], MAE: 10.05015
+Epoch [  71], MAE: 10.04136
+Epoch [  81], MAE: 10.03669
+Epoch [  91], MAE: 10.03458
+warm lbfgs start:
+Epoch [ 101], MAE: 10.03386
+Epoch [ 111], MAE: 10.04335
+Epoch [ 121], MAE: 10.04335
+Epoch [ 131], MAE: 10.04335
+Epoch [ 141], MAE: 10.04335
+train:
+train adam start:
+Epoch [ 151], MAE: 10.04300
+Epoch [ 161], MAE: 10.03961
+Epoch [ 171], MAE: 10.03628
+Epoch [ 181], MAE: 10.03352
+Epoch [ 191], MAE: 10.03232
+Epoch [ 201], MAE: 10.03182
+Epoch [ 211], MAE: 10.03164
+Epoch [ 221], MAE: 10.03159
+Epoch [ 231], MAE: 10.03159
+train adam early stopping
+train lbfgs start:
+Epoch [ 241], MAE: 10.03160
+Epoch [ 251], MAE: 10.62623
+Epoch [ 261], MAE: 10.64360
+-------------*-------------
+Calculate the 0084-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 10.30971
+Epoch [  11], MAE: 10.26229
+Epoch [  21], MAE: 10.22639
+Epoch [  31], MAE: 10.20613
+Epoch [  41], MAE: 10.19849
+Epoch [  51], MAE: 10.19616
+Epoch [  61], MAE: 10.19568
+Epoch [  71], MAE: 10.19564
+Epoch [  81], MAE: 10.19559
+Epoch [  91], MAE: 10.19549
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 10.21063
+Epoch [ 111], MAE: 10.21063
+train:
+train adam start:
+Epoch [ 121], MAE: 10.20823
+Epoch [ 131], MAE: 10.20485
+Epoch [ 141], MAE: 10.20161
+Epoch [ 151], MAE: 10.19987
+Epoch [ 161], MAE: 10.19914
+Epoch [ 171], MAE: 10.19882
+Epoch [ 181], MAE: 10.19869
+Epoch [ 191], MAE: 10.19861
+Epoch [ 201], MAE: 10.19860
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 10.35219
+Epoch [ 221], MAE: 10.60913
+-------------*-------------
+Calculate the 0088-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 12.53964
+Epoch [  11], MAE: 8.79437
+Epoch [  21], MAE: 6.13539
+Epoch [  31], MAE: 4.14785
+Epoch [  41], MAE: 3.29448
+Epoch [  51], MAE: 2.76788
+Epoch [  61], MAE: 2.56739
+Epoch [  71], MAE: 2.45457
+Epoch [  81], MAE: 2.37871
+Epoch [  91], MAE: 2.33167
+warm lbfgs start:
+Epoch [ 101], MAE: 2.30834
+Epoch [ 111], MAE: 2.11514
+Epoch [ 121], MAE: 2.08983
+Epoch [ 131], MAE: 2.06613
+Epoch [ 141], MAE: 1.99885
+Epoch [ 151], MAE: 1.99396
+Epoch [ 161], MAE: 1.99154
+Epoch [ 171], MAE: 1.99059
+Epoch [ 181], MAE: 1.98974
+Epoch [ 191], MAE: 1.98951
+Epoch [ 201], MAE: 1.98924
+Epoch [ 211], MAE: 1.98907
+Epoch [ 221], MAE: 1.98898
+Epoch [ 231], MAE: 1.98889
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 241], MAE: 1.98971
+Epoch [ 251], MAE: 1.98597
+Epoch [ 261], MAE: 1.98413
+Epoch [ 271], MAE: 1.98455
+Epoch [ 281], MAE: 1.98641
+Epoch [ 291], MAE: 1.98741
+Epoch [ 301], MAE: 1.98782
+Epoch [ 311], MAE: 1.98798
+Epoch [ 321], MAE: 1.98803
+train adam early stopping
+train lbfgs start:
+Epoch [ 331], MAE: 1.98804
+Epoch [ 341], MAE: 1.98388
+Epoch [ 351], MAE: 1.98099
+Epoch [ 361], MAE: 1.97884
+Epoch [ 371], MAE: 1.97884
+-------------*-------------
+Calculate the 0085-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 21.47975
+Epoch [  11], MAE: 18.34632
+Epoch [  21], MAE: 15.71354
+Epoch [  31], MAE: 13.84638
+Epoch [  41], MAE: 12.65286
+Epoch [  51], MAE: 11.94464
+Epoch [  61], MAE: 11.60324
+Epoch [  71], MAE: 11.53469
+Epoch [  81], MAE: 11.70952
+Epoch [  91], MAE: 12.16160
+warm lbfgs start:
+Epoch [ 101], MAE: 12.72267
+Epoch [ 111], MAE: 12.34826
+Epoch [ 121], MAE: 12.34684
+Epoch [ 131], MAE: 4.96731
+Epoch [ 141], MAE: 2.65602
+Epoch [ 151], MAE: 2.54457
+Epoch [ 161], MAE: 2.48192
+Epoch [ 171], MAE: 2.45826
+Epoch [ 181], MAE: 2.36474
+Epoch [ 191], MAE: 2.32442
+Epoch [ 201], MAE: 2.30278
+Epoch [ 211], MAE: 2.29433
+Epoch [ 221], MAE: 2.24353
+Epoch [ 231], MAE: 2.21724
+Epoch [ 241], MAE: 2.21296
+Epoch [ 251], MAE: 2.20922
+Epoch [ 261], MAE: 2.20776
+Epoch [ 271], MAE: 2.20190
+Epoch [ 281], MAE: 2.19607
+train:
+train adam start:
+Epoch [ 291], MAE: 2.20024
+Epoch [ 301], MAE: 2.26814
+Epoch [ 311], MAE: 2.38655
+Epoch [ 321], MAE: 2.54839
+Epoch [ 331], MAE: 2.75141
+Epoch [ 341], MAE: 2.98104
+Epoch [ 351], MAE: 3.22631
+Epoch [ 361], MAE: 3.47957
+Epoch [ 371], MAE: 3.73597
+train adam early stopping
+train lbfgs start:
+Epoch [ 381], MAE: 3.91559
+Epoch [ 391], MAE: 3.88230
+Epoch [ 401], MAE: 2.48180
+Epoch [ 411], MAE: 2.44047
+Epoch [ 421], MAE: 2.43161
+Epoch [ 431], MAE: 2.42713
+Epoch [ 441], MAE: 2.40886
+Epoch [ 451], MAE: 2.37842
+Epoch [ 461], MAE: 2.34865
+Epoch [ 471], MAE: 2.34804
+-------------*-------------
+Calculate the 0086-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.58347
+Epoch [  11], MAE: 6.31611
+Epoch [  21], MAE: 5.66854
+Epoch [  31], MAE: 5.84892
+Epoch [  41], MAE: 6.32179
+Epoch [  51], MAE: 6.91261
+Epoch [  61], MAE: 7.54123
+Epoch [  71], MAE: 8.15719
+Epoch [  81], MAE: 8.66861
+Epoch [  91], MAE: 9.06450
+warm lbfgs start:
+Epoch [ 101], MAE: 9.38635
+Epoch [ 111], MAE: 9.31523
+Epoch [ 121], MAE: 8.55203
+Epoch [ 131], MAE: 8.24225
+Epoch [ 141], MAE: 3.74911
+Epoch [ 151], MAE: 3.74011
+Epoch [ 161], MAE: 3.54379
+Epoch [ 171], MAE: 3.45731
+Epoch [ 181], MAE: 3.40788
+Epoch [ 191], MAE: 3.36053
+Epoch [ 201], MAE: 3.27460
+Epoch [ 211], MAE: 3.23522
+Epoch [ 221], MAE: 3.21798
+Epoch [ 231], MAE: 3.18367
+Epoch [ 241], MAE: 3.18382
+Epoch [ 251], MAE: 3.18382
+Epoch [ 261], MAE: 3.18382
+train:
+train adam start:
+Epoch [ 271], MAE: 3.17104
+Epoch [ 281], MAE: 3.20558
+Epoch [ 291], MAE: 3.30264
+Epoch [ 301], MAE: 3.45474
+Epoch [ 311], MAE: 3.65763
+Epoch [ 321], MAE: 3.90174
+Epoch [ 331], MAE: 4.17810
+Epoch [ 341], MAE: 4.47748
+Epoch [ 351], MAE: 4.79161
+train adam early stopping
+train lbfgs start:
+Epoch [ 361], MAE: 4.98429
+Epoch [ 371], MAE: 3.80043
+-------------*-------------
+Calculate the 0087-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.36513
+Epoch [  11], MAE: 6.41708
+Epoch [  21], MAE: 7.02485
+Epoch [  31], MAE: 7.93769
+Epoch [  41], MAE: 8.72788
+Epoch [  51], MAE: 9.34586
+Epoch [  61], MAE: 9.81543
+Epoch [  71], MAE: 10.15239
+Epoch [  81], MAE: 10.38443
+Epoch [  91], MAE: 10.54268
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 10.62930
+Epoch [ 111], MAE: 10.36135
+Epoch [ 121], MAE: 7.25327
+Epoch [ 131], MAE: 7.25032
+Epoch [ 141], MAE: 7.24111
+Epoch [ 151], MAE: 6.43971
+Epoch [ 161], MAE: 6.43605
+Epoch [ 171], MAE: 6.33741
+Epoch [ 181], MAE: 6.33745
+Epoch [ 191], MAE: 6.33750
+Epoch [ 201], MAE: 6.33751
+Epoch [ 211], MAE: 6.33750
+Epoch [ 221], MAE: 6.33750
+train:
+train adam start:
+Epoch [ 231], MAE: 6.33534
+Epoch [ 241], MAE: 6.34311
+Epoch [ 251], MAE: 6.39650
+Epoch [ 261], MAE: 6.48907
+Epoch [ 271], MAE: 6.61903
+Epoch [ 281], MAE: 6.78116
+Epoch [ 291], MAE: 6.96861
+Epoch [ 301], MAE: 7.17542
+Epoch [ 311], MAE: 7.39727
+train adam early stopping
+train lbfgs start:
+Epoch [ 321], MAE: 7.63016
+Epoch [ 331], MAE: 6.77975
+Epoch [ 341], MAE: 6.77975
+-------------*-------------
+Calculate the 0089-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 14.80795
+Epoch [  11], MAE: 12.34613
+Epoch [  21], MAE: 11.33332
+Epoch [  31], MAE: 11.00276
+Epoch [  41], MAE: 10.96810
+Epoch [  51], MAE: 11.02217
+Epoch [  61], MAE: 11.08871
+Epoch [  71], MAE: 11.14027
+Epoch [  81], MAE: 11.17476
+Epoch [  91], MAE: 11.19626
+warm lbfgs start:
+Epoch [ 101], MAE: 11.20885
+Epoch [ 111], MAE: 11.22400
+train:
+train adam start:
+Epoch [ 121], MAE: 11.22400
+Epoch [ 131], MAE: 11.22124
+Epoch [ 141], MAE: 11.21851
+Epoch [ 151], MAE: 11.21629
+Epoch [ 161], MAE: 11.21594
+Epoch [ 171], MAE: 11.21641
+Epoch [ 181], MAE: 11.21714
+Epoch [ 191], MAE: 11.21792
+Epoch [ 201], MAE: 11.21865
+Epoch [ 211], MAE: 11.21932
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 11.27005
+Epoch [ 231], MAE: 11.27357
+-------------*-------------
+Calculate the 0090-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 11.33903
+Epoch [  11], MAE: 11.34307
+Epoch [  21], MAE: 11.33487
+Epoch [  31], MAE: 11.30894
+Epoch [  41], MAE: 11.29103
+Epoch [  51], MAE: 11.28035
+Epoch [  61], MAE: 11.27444
+Epoch [  71], MAE: 11.27138
+Epoch [  81], MAE: 11.27000
+Epoch [  91], MAE: 11.26950
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 11.26390
+Epoch [ 111], MAE: 11.26390
+train:
+train adam start:
+Epoch [ 121], MAE: 11.26036
+Epoch [ 131], MAE: 11.25603
+Epoch [ 141], MAE: 11.25204
+Epoch [ 151], MAE: 11.25012
+Epoch [ 161], MAE: 11.24943
+Epoch [ 171], MAE: 11.24921
+Epoch [ 181], MAE: 11.24921
+Epoch [ 191], MAE: 11.24926
+Epoch [ 201], MAE: 11.24934
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 13.20337
+Epoch [ 221], MAE: 11.46399
+-------------*-------------
+Calculate the 0091-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 11.10726
+Epoch [  11], MAE: 11.12556
+Epoch [  21], MAE: 11.15184
+Epoch [  31], MAE: 11.17554
+Epoch [  41], MAE: 11.18589
+Epoch [  51], MAE: 11.19015
+Epoch [  61], MAE: 11.19210
+Epoch [  71], MAE: 11.19293
+Epoch [  81], MAE: 11.19311
+Epoch [  91], MAE: 11.19316
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 11.27931
+Epoch [ 111], MAE: 11.27931
+train:
+train adam start:
+Epoch [ 121], MAE: 11.27504
+Epoch [ 131], MAE: 11.27041
+Epoch [ 141], MAE: 11.26624
+Epoch [ 151], MAE: 11.26431
+Epoch [ 161], MAE: 11.26360
+Epoch [ 171], MAE: 11.26336
+Epoch [ 181], MAE: 11.26334
+Epoch [ 191], MAE: 11.26344
+Epoch [ 201], MAE: 11.26359
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 12.82238
+Epoch [ 221], MAE: 11.58695
+Epoch [ 231], MAE: 11.58669
+-------------*-------------
+Calculate the 0095-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 11.90131
+Epoch [  11], MAE: 8.78191
+Epoch [  21], MAE: 6.76168
+Epoch [  31], MAE: 4.95548
+Epoch [  41], MAE: 3.68951
+Epoch [  51], MAE: 2.87037
+Epoch [  61], MAE: 2.60377
+Epoch [  71], MAE: 2.47512
+Epoch [  81], MAE: 2.40193
+Epoch [  91], MAE: 2.35385
+warm lbfgs start:
+Epoch [ 101], MAE: 2.31500
+Epoch [ 111], MAE: 2.20183
+Epoch [ 121], MAE: 2.17162
+Epoch [ 131], MAE: 2.08041
+Epoch [ 141], MAE: 1.99202
+Epoch [ 151], MAE: 1.97517
+Epoch [ 161], MAE: 1.97040
+Epoch [ 171], MAE: 1.96477
+Epoch [ 181], MAE: 1.95892
+Epoch [ 191], MAE: 1.95708
+Epoch [ 201], MAE: 1.95603
+Epoch [ 211], MAE: 1.95541
+Epoch [ 221], MAE: 1.95524
+Epoch [ 231], MAE: 1.95493
+Epoch [ 241], MAE: 1.95480
+Epoch [ 251], MAE: 1.95458
+warm lbfgs early stopping
+train:
+train adam start:
+Epoch [ 261], MAE: 1.95906
+Epoch [ 271], MAE: 1.95481
+Epoch [ 281], MAE: 1.95400
+Epoch [ 291], MAE: 1.95987
+Epoch [ 301], MAE: 1.96660
+Epoch [ 311], MAE: 1.96981
+Epoch [ 321], MAE: 1.97109
+Epoch [ 331], MAE: 1.97156
+Epoch [ 341], MAE: 1.97172
+train adam early stopping
+train lbfgs start:
+Epoch [ 351], MAE: 1.98338
+Epoch [ 361], MAE: 1.95350
+Epoch [ 371], MAE: 1.95339
+-------------*-------------
+Calculate the 0092-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 20.70451
+Epoch [  11], MAE: 18.56227
+Epoch [  21], MAE: 16.87068
+Epoch [  31], MAE: 15.63855
+Epoch [  41], MAE: 14.81588
+Epoch [  51], MAE: 14.32093
+Epoch [  61], MAE: 14.10534
+Epoch [  71], MAE: 14.09453
+Epoch [  81], MAE: 14.31741
+Epoch [  91], MAE: 14.74700
+warm lbfgs start:
+Epoch [ 101], MAE: 15.25090
+Epoch [ 111], MAE: 14.96830
+Epoch [ 121], MAE: 14.95813
+Epoch [ 131], MAE: 5.86154
+Epoch [ 141], MAE: 3.00609
+Epoch [ 151], MAE: 2.87955
+Epoch [ 161], MAE: 2.83002
+Epoch [ 171], MAE: 2.79788
+Epoch [ 181], MAE: 2.72455
+Epoch [ 191], MAE: 2.42078
+Epoch [ 201], MAE: 2.40826
+Epoch [ 211], MAE: 2.38328
+Epoch [ 221], MAE: 2.37492
+Epoch [ 231], MAE: 2.46901
+Epoch [ 241], MAE: 2.36572
+Epoch [ 251], MAE: 2.36120
+Epoch [ 261], MAE: 2.35483
+train:
+train adam start:
+Epoch [ 271], MAE: 2.36558
+Epoch [ 281], MAE: 2.41047
+Epoch [ 291], MAE: 2.47768
+Epoch [ 301], MAE: 2.56749
+Epoch [ 311], MAE: 2.67935
+Epoch [ 321], MAE: 2.80892
+Epoch [ 331], MAE: 2.95333
+Epoch [ 341], MAE: 3.10969
+Epoch [ 351], MAE: 3.27512
+train adam early stopping
+train lbfgs start:
+Epoch [ 361], MAE: 3.11106
+Epoch [ 371], MAE: 2.97834
+Epoch [ 381], MAE: 2.97186
+Epoch [ 391], MAE: 2.59992
+Epoch [ 401], MAE: 2.56011
+Epoch [ 411], MAE: 2.55435
+Epoch [ 421], MAE: 2.54599
+Epoch [ 431], MAE: 2.51710
+Epoch [ 441], MAE: 2.47207
+Epoch [ 451], MAE: 2.46285
+Epoch [ 461], MAE: 2.44626
+Epoch [ 471], MAE: 2.40642
+Epoch [ 481], MAE: 2.39315
+Epoch [ 491], MAE: 2.63104
+Epoch [ 501], MAE: 2.37234
+-------------*-------------
+Calculate the 0093-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 7.72963
+Epoch [  11], MAE: 5.34713
+Epoch [  21], MAE: 5.32103
+Epoch [  31], MAE: 6.25857
+Epoch [  41], MAE: 7.32371
+Epoch [  51], MAE: 8.29786
+Epoch [  61], MAE: 9.20860
+Epoch [  71], MAE: 10.00433
+Epoch [  81], MAE: 10.66712
+Epoch [  91], MAE: 11.19338
+warm lbfgs start:
+Epoch [ 101], MAE: 11.60865
+Epoch [ 111], MAE: 11.41522
+Epoch [ 121], MAE: 10.55818
+Epoch [ 131], MAE: 8.91035
+Epoch [ 141], MAE: 5.06463
+Epoch [ 151], MAE: 4.46241
+Epoch [ 161], MAE: 4.34637
+Epoch [ 171], MAE: 4.05570
+Epoch [ 181], MAE: 3.83752
+Epoch [ 191], MAE: 3.82399
+Epoch [ 201], MAE: 3.75127
+Epoch [ 211], MAE: 3.65745
+Epoch [ 221], MAE: 3.57122
+Epoch [ 231], MAE: 3.54531
+Epoch [ 241], MAE: 3.53662
+Epoch [ 251], MAE: 3.51791
+Epoch [ 261], MAE: 3.49645
+Epoch [ 271], MAE: 3.47420
+train:
+train adam start:
+Epoch [ 281], MAE: 3.44943
+Epoch [ 291], MAE: 3.48814
+Epoch [ 301], MAE: 3.61804
+Epoch [ 311], MAE: 3.82298
+Epoch [ 321], MAE: 4.09498
+Epoch [ 331], MAE: 4.42029
+Epoch [ 341], MAE: 4.78485
+Epoch [ 351], MAE: 5.17360
+Epoch [ 361], MAE: 5.57475
+train adam early stopping
+train lbfgs start:
+Epoch [ 371], MAE: 5.85838
+Epoch [ 381], MAE: 5.78361
+Epoch [ 391], MAE: 4.13841
+Epoch [ 401], MAE: 4.03082
+-------------*-------------
+Calculate the 0094-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 6.93772
+Epoch [  11], MAE: 6.36341
+Epoch [  21], MAE: 7.49421
+Epoch [  31], MAE: 8.77769
+Epoch [  41], MAE: 9.69589
+Epoch [  51], MAE: 10.38334
+Epoch [  61], MAE: 10.90743
+Epoch [  71], MAE: 11.29233
+Epoch [  81], MAE: 11.56971
+Epoch [  91], MAE: 11.76819
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 11.84661
+Epoch [ 111], MAE: 11.84002
+Epoch [ 121], MAE: 11.79344
+Epoch [ 131], MAE: 11.28267
+Epoch [ 141], MAE: 7.64841
+Epoch [ 151], MAE: 6.97264
+Epoch [ 161], MAE: 6.89883
+Epoch [ 171], MAE: 6.21891
+Epoch [ 181], MAE: 6.03446
+Epoch [ 191], MAE: 5.72878
+Epoch [ 201], MAE: 5.49293
+Epoch [ 211], MAE: 5.04984
+Epoch [ 221], MAE: 5.04983
+Epoch [ 231], MAE: 5.04979
+Epoch [ 241], MAE: 5.04979
+train:
+train adam start:
+Epoch [ 251], MAE: 5.06757
+Epoch [ 261], MAE: 5.19733
+Epoch [ 271], MAE: 5.41944
+Epoch [ 281], MAE: 5.71468
+Epoch [ 291], MAE: 6.06393
+Epoch [ 301], MAE: 6.45039
+Epoch [ 311], MAE: 6.86015
+Epoch [ 321], MAE: 7.28402
+Epoch [ 331], MAE: 7.71475
+train adam early stopping
+train lbfgs start:
+Epoch [ 341], MAE: 6.29589
+Epoch [ 351], MAE: 6.31025
+-------------*-------------
+Calculate the 0096-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 14.18242
+Epoch [  11], MAE: 12.04145
+Epoch [  21], MAE: 11.69507
+Epoch [  31], MAE: 11.74915
+Epoch [  41], MAE: 11.81496
+Epoch [  51], MAE: 11.90248
+Epoch [  61], MAE: 11.97234
+Epoch [  71], MAE: 12.02050
+Epoch [  81], MAE: 12.05167
+Epoch [  91], MAE: 12.07184
+warm lbfgs start:
+Epoch [ 101], MAE: 12.08430
+Epoch [ 111], MAE: 11.91215
+Epoch [ 121], MAE: 11.91210
+train:
+train adam start:
+Epoch [ 131], MAE: 11.91008
+Epoch [ 141], MAE: 11.90753
+Epoch [ 151], MAE: 11.90518
+Epoch [ 161], MAE: 11.90483
+Epoch [ 171], MAE: 11.90563
+Epoch [ 181], MAE: 11.90683
+Epoch [ 191], MAE: 11.90815
+Epoch [ 201], MAE: 11.90948
+Epoch [ 211], MAE: 11.91077
+train adam early stopping
+train lbfgs start:
+Epoch [ 221], MAE: 13.81716
+Epoch [ 231], MAE: 12.27464
+-------------*-------------
+Calculate the 0097-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 11.75748
+Epoch [  11], MAE: 11.77962
+Epoch [  21], MAE: 11.80093
+Epoch [  31], MAE: 11.82010
+Epoch [  41], MAE: 11.82886
+Epoch [  51], MAE: 11.83244
+Epoch [  61], MAE: 11.83385
+Epoch [  71], MAE: 11.83438
+Epoch [  81], MAE: 11.83459
+Epoch [  91], MAE: 11.83466
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 11.97578
+Epoch [ 111], MAE: 11.97578
+train:
+train adam start:
+Epoch [ 121], MAE: 11.97183
+Epoch [ 131], MAE: 11.96750
+Epoch [ 141], MAE: 11.96356
+Epoch [ 151], MAE: 11.96174
+Epoch [ 161], MAE: 11.96101
+Epoch [ 171], MAE: 11.96074
+Epoch [ 181], MAE: 11.96064
+Epoch [ 191], MAE: 11.96060
+Epoch [ 201], MAE: 11.96060
+train adam early stopping
+train lbfgs start:
+Epoch [ 211], MAE: 12.37152
+Epoch [ 221], MAE: 12.37675
+-------------*-------------
+Calculate the 0098-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 11.89835
+Epoch [  11], MAE: 11.92419
+Epoch [  21], MAE: 11.95614
+Epoch [  31], MAE: 11.98354
+Epoch [  41], MAE: 11.99539
+Epoch [  51], MAE: 11.99997
+Epoch [  61], MAE: 12.00180
+Epoch [  71], MAE: 12.00258
+Epoch [  81], MAE: 12.00287
+Epoch [  91], MAE: 12.00296
+warm adam early stopping
+warm lbfgs start:
+Epoch [ 101], MAE: 12.01408
+Epoch [ 111], MAE: 12.01409
+Epoch [ 121], MAE: 12.01408
+Epoch [ 131], MAE: 12.01408
+train:
+train adam start:
+Epoch [ 141], MAE: 12.01186
+Epoch [ 151], MAE: 12.00747
+Epoch [ 161], MAE: 12.00319
+Epoch [ 171], MAE: 12.00058
+Epoch [ 181], MAE: 11.99963
+Epoch [ 191], MAE: 11.99933
+Epoch [ 201], MAE: 11.99927
+Epoch [ 211], MAE: 11.99930
+Epoch [ 221], MAE: 11.99935
+train adam early stopping
+train lbfgs start:
+Epoch [ 231], MAE: 12.30452
+Epoch [ 241], MAE: 12.54319
+-------------*-------------
+Calculate the 0101-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 14.80657
+Epoch [  11], MAE: 10.83136
+Epoch [  21], MAE: 8.08928
+Epoch [  31], MAE: 5.93375
+Epoch [  41], MAE: 4.06031
+Epoch [  51], MAE: 3.41789
+Epoch [  61], MAE: 2.91075
+Epoch [  71], MAE: 2.67758
+Epoch [  81], MAE: 2.54784
+Epoch [  91], MAE: 2.42860
+warm lbfgs start:
+Epoch [ 101], MAE: 2.37357
+Epoch [ 111], MAE: 2.23559
+Epoch [ 121], MAE: 2.21206
+Epoch [ 131], MAE: 2.18856
+Epoch [ 141], MAE: 2.04086
+Epoch [ 151], MAE: 2.02088
+Epoch [ 161], MAE: 2.01621
+Epoch [ 171], MAE: 2.01433
+Epoch [ 181], MAE: 2.01374
+Epoch [ 191], MAE: 2.01283
+Epoch [ 201], MAE: 2.01256
+Epoch [ 211], MAE: 2.01218
+Epoch [ 221], MAE: 2.01184
+Epoch [ 231], MAE: 2.01177
+Epoch [ 241], MAE: 2.01157
+train:
+train adam start:
+Epoch [ 251], MAE: 2.01238
+Epoch [ 261], MAE: 2.00700
+Epoch [ 271], MAE: 2.00427
+Epoch [ 281], MAE: 2.00786
+Epoch [ 291], MAE: 2.01169
+Epoch [ 301], MAE: 2.01348
+Epoch [ 311], MAE: 2.01421
+Epoch [ 321], MAE: 2.01447
+Epoch [ 331], MAE: 2.01454
+train adam early stopping
+train lbfgs start:
+Epoch [ 341], MAE: 2.01455
+Epoch [ 351], MAE: 2.00236
+Epoch [ 361], MAE: 1.99783
+Epoch [ 371], MAE: 1.99678
+Epoch [ 381], MAE: 1.99393
+Epoch [ 391], MAE: 1.99234
+Epoch [ 401], MAE: 1.99231
+-------------*-------------
+Calculate the 0099-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 15.52302
+Epoch [  11], MAE: 10.54981
+Epoch [  21], MAE: 6.65618
+Epoch [  31], MAE: 4.22851
+Epoch [  41], MAE: 3.79007
+Epoch [  51], MAE: 4.59625
+Epoch [  61], MAE: 5.49925
+Epoch [  71], MAE: 6.30819
+Epoch [  81], MAE: 7.01334
+Epoch [  91], MAE: 7.63288
+warm lbfgs start:
+Epoch [ 101], MAE: 8.18890
+Epoch [ 111], MAE: 6.96760
+Epoch [ 121], MAE: 6.91185
+Epoch [ 131], MAE: 3.54650
+Epoch [ 141], MAE: 3.08869
+Epoch [ 151], MAE: 2.79919
+Epoch [ 161], MAE: 2.76649
+Epoch [ 171], MAE: 2.65448
+Epoch [ 181], MAE: 2.46276
+Epoch [ 191], MAE: 2.46038
+Epoch [ 201], MAE: 2.41495
+Epoch [ 211], MAE: 2.40328
+Epoch [ 221], MAE: 2.35477
+Epoch [ 231], MAE: 2.32844
+Epoch [ 241], MAE: 2.32896
+Epoch [ 251], MAE: 2.32347
+Epoch [ 261], MAE: 2.31587
+Epoch [ 271], MAE: 2.31444
+Epoch [ 281], MAE: 2.31245
+train:
+train adam start:
+Epoch [ 291], MAE: 2.31706
+Epoch [ 301], MAE: 2.36799
+Epoch [ 311], MAE: 2.45161
+Epoch [ 321], MAE: 2.56777
+Epoch [ 331], MAE: 2.71849
+Epoch [ 341], MAE: 2.89579
+Epoch [ 351], MAE: 3.09145
+Epoch [ 361], MAE: 3.29996
+Epoch [ 371], MAE: 3.51724
+train adam early stopping
+train lbfgs start:
+Epoch [ 381], MAE: 3.61989
+Epoch [ 391], MAE: 3.59640
+Epoch [ 401], MAE: 3.58504
+Epoch [ 411], MAE: 2.60200
+Epoch [ 421], MAE: 2.57442
+Epoch [ 431], MAE: 2.55906
+Epoch [ 441], MAE: 2.55803
+Epoch [ 451], MAE: 2.55193
+Epoch [ 461], MAE: 2.55183
+-------------*-------------
+Calculate the 0100-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 8.02252
+Epoch [  11], MAE: 6.07897
+Epoch [  21], MAE: 6.13051
+Epoch [  31], MAE: 6.91564
+Epoch [  41], MAE: 7.86468
+Epoch [  51], MAE: 8.75081
+Epoch [  61], MAE: 9.51266
+Epoch [  71], MAE: 10.15257
+Epoch [  81], MAE: 10.66941
+Epoch [  91], MAE: 11.06262
+warm lbfgs start:
+Epoch [ 101], MAE: 11.36935
+Epoch [ 111], MAE: 11.12975
+Epoch [ 121], MAE: 10.28762
+Epoch [ 131], MAE: 10.10741
+Epoch [ 141], MAE: 7.71187
+Epoch [ 151], MAE: 4.73037
+Epoch [ 161], MAE: 4.63478
+Epoch [ 171], MAE: 4.60798
+Epoch [ 181], MAE: 4.33309
+Epoch [ 191], MAE: 3.83032
+Epoch [ 201], MAE: 3.73228
+Epoch [ 211], MAE: 3.71038
+Epoch [ 221], MAE: 3.69962
+Epoch [ 231], MAE: 3.62226
+Epoch [ 241], MAE: 3.62373
+Epoch [ 251], MAE: 3.60320
+Epoch [ 261], MAE: 3.57813
+Epoch [ 271], MAE: 3.58118
+Epoch [ 281], MAE: 3.57246
+Epoch [ 291], MAE: 3.57303
+train:
+train adam start:
+Epoch [ 301], MAE: 3.56329
+Epoch [ 311], MAE: 3.67314
+Epoch [ 321], MAE: 3.88382
+Epoch [ 331], MAE: 4.17908
+Epoch [ 341], MAE: 4.54101
+Epoch [ 351], MAE: 4.94884
+Epoch [ 361], MAE: 5.38334
+Epoch [ 371], MAE: 5.82967
+Epoch [ 381], MAE: 6.27709
+train adam early stopping
+train lbfgs start:
+Epoch [ 391], MAE: 6.54269
+Epoch [ 401], MAE: 4.67003
+-------------*-------------

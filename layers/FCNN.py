@@ -19,42 +19,35 @@ class DNN(torch.nn.Module):
         self.hidden_lns = nn.ModuleList()  
         for i in range(self.num_layers-1):  
             self.hidden_layers.append(nn.Linear(self.width[i], self.width[i+1]))  
-            self.hidden_lns.append(nn.LayerNorm(self.width[i+1]))
         
         # Define output layer
         self.output_layer = nn.Linear(self.width[-1], self.output_size)
         
         # Define activation function parameter 'a'
-        self.a = nn.Parameter(torch.tensor([0.2] * (self.num_layers + 1)))
+        # self.a = nn.Parameter(torch.tensor([0.2] * (self.num_layers + 1)))
 
     def forward(self, x):
         # Input layer
         x = self.input_layer(x)
-        # x = self.input_ln(x)
-        # x = 5 * self.a[0] * x
         x = torch.tanh(x)
         # Hidden layers (MLP)
         for i in range(self.num_layers-1):
             x = self.hidden_layers[i](x)
-            # x = self.hidden_lns[i](x)
-            # x = 5 * self.a[i + 1] * x
             x = torch.relu(x)
         # Output layer
-        # x = 5 * self.a[-1] * x
         x = self.output_layer(x)
         return x
     
     # Freeze Specified Layers
     def freeze_layers(self):
-        # for param in self.input_layer.parameters():
-        #     param.requires_grad = False
+        for param in self.input_layer.parameters():
+            param.requires_grad = False
         for i in range(self.num_layers-1):
             for param in self.hidden_layers[i].parameters():
                 param.requires_grad = False
-        # self.a[:-2].detach()
-        self.a[:-1].detach()
+
         
-    def perturbation(self, perturbation_scale=0.05):
+    def perturbation(self, perturbation_scale=0.01):
         with torch.no_grad():
             ksi_weight = torch.zeros_like(self.output_layer.weight)
             nn.init.normal_(ksi_weight, mean=0.0, std=perturbation_scale)
@@ -192,7 +185,7 @@ class DNN(torch.nn.Module):
             line_search_fn="strong_wolfe")
         # Initialize Adam optimizer
         self.optimizer_adam = torch.optim.Adam(
-            self.parameters(), lr=config['warm_lr'],  eps=1e-8, weight_decay=config['weight_decay'])
+            self.parameters(), lr=config['train_lr'],  eps=1e-8, weight_decay=config['weight_decay'])
     
     def set_scheduler(self):
         self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(self.optimizer_adam, T_max=20, eta_min=1e-6)

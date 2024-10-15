@@ -17,6 +17,8 @@ from result_plot import to_matlab, to_txt
 from configs.config import config
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+from debug_until_fun import debug_plot
+
 def count_parameters(model):
     '''Calculate the memory size of the model'''
     return sum(p.numel() for p in model.parameters() if p.requires_grad)
@@ -51,12 +53,6 @@ modelu = DNN(config['layers']).to(device)
 modelv = DNN(config['layers']).to(device)
 model = [modelu, modelv]
 
-# set the optimizer
-model[0].get_optimizer(config)
-model[1].get_optimizer(config)
-
-
-
 def closure1(model, Ixy, XY_roi, XY, Iref, Idef, ROI, scale, i):
     model[0].optimizer_lbfgs.zero_grad()
     model[1].optimizer_lbfgs.zero_grad()
@@ -85,13 +81,22 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
     if config['warm_adam_epoch'] != 0:
         model[0].Earlystop_set(config['patience_adam']*U_PAT_FAC, config['delta_warm_adam']/U_PAT_FAC)
         model[1].Earlystop_set(config['patience_adam']*V_PAT_FAC, config['delta_warm_adam']/V_PAT_FAC)
-        model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+        if Keyframe_FALG:
+            model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+            epoch_optim = config['warm_adam_epoch']
+        else:
+            model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+            epoch_optim = config['warm_adam_epoch']//2
+            # model[0].freeze_layers(); model[1].freeze_layers()
         print("warm adam start:")
-        for iter in range(config['warm_adam_epoch']):
+        file.write("warm adam start:\n")
+        for iter in range(epoch_optim):
             model[0].optimizer_adam.zero_grad()
             model[1].optimizer_adam.zero_grad()
             U = model[0](Ixy); V = model[1](Ixy)
             UV = torch.cat((U, V), dim=1)
+            # if i != 2:
+            #     debug_plot(model, Ixy, XY_roi, ROI, SCALE, i)
             loss, mae = criterion_warmup(
                 UV, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i]
                 )
@@ -104,6 +109,7 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
             if config['epoch']%config['print_feq'] == 1:
                 epoch =  config['epoch'] 
                 print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+                file.write(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}\n")
             if model[0].early_stop or model[1].early_stop:
                 if model[0].early_stop:
                     model[0].freeze_all_parameters()
@@ -111,13 +117,21 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
                     model[1].freeze_all_parameters()
                 if model[0].early_stop and model[1].early_stop:
                     print("warm adam early stopping")
+                    file.write("warm adam early stopping\n")
                     break
     if config['warm_bfgs_epoch'] > config['max_iter']:
         model[0].Earlystop_set(config['patience_lbfgs']*U_PAT_FAC, config['delta_warm_lbfgs']/U_PAT_FAC)
         model[1].Earlystop_set(config['patience_lbfgs']*V_PAT_FAC, config['delta_warm_lbfgs']/V_PAT_FAC)
-        model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+        if Keyframe_FALG:
+            model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+            epoch_optim = config['warm_bfgs_epoch']
+        else:
+            model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+            epoch_optim = config['warm_bfgs_epoch']//2
+            # model[0].freeze_layers(); model[1].freeze_layers()
         print("warm lbfgs start:") 
-        for iter in range(config['warm_bfgs_epoch']//config['max_iter']):
+        file.write("warm lbfgs start:\n")
+        for iter in range(epoch_optim//config['max_iter']):
             def closure1_wrapper():
                 loss, mae = closure1(
                     model, Ixy, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i], i
@@ -125,6 +139,7 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
                 if config['epoch']%config['print_feq'] == 1:
                     epoch =  config['epoch'] 
                     print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+                    file.write(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}\n")
                 return loss
             loss = closure1_wrapper()
             model[0].optimizer_lbfgs.step(closure1_wrapper)
@@ -136,17 +151,26 @@ def warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI):
                     model[1].freeze_all_parameters()
                 if model[0].early_stop and model[1].early_stop:
                     print("warm lbfgs early stopping")
+                    file.write("warm lbfgs early stopping\n")
                     break
             
 def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
     if config['train_adam_epoch'] != 0:
-        model[0].optimizer_adam.param_groups[0]['lr'] = config['train_lr']
-        model[1].optimizer_adam.param_groups[0]['lr'] = config['train_lr']
+        # model[0].optimizer_adam.param_groups[0]['lr'] = config['train_lr']
+        # model[1].optimizer_adam.param_groups[0]['lr'] = config['train_lr']
+        model[0].reset_optim(config); model[1].reset_optim(config)
         model[0].Earlystop_set(config['patience_adam']*U_PAT_FAC, config['delta_train_adam']/U_PAT_FAC)
         model[1].Earlystop_set(config['patience_adam']*V_PAT_FAC, config['delta_train_adam']/V_PAT_FAC)
-        model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+        if Keyframe_FALG:
+            model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+            epoch_optim = config['train_adam_epoch']
+        else:
+            model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+            epoch_optim = config['train_adam_epoch']//2
+            # model[0].freeze_layers(); model[1].freeze_layers()
         print("train adam start:")
-        for iter in range(config['train_adam_epoch']):
+        file.write("train adam start:\n")
+        for iter in range(epoch_optim):
             model[0].optimizer_adam.zero_grad()
             model[1].optimizer_adam.zero_grad()
             U = model[0](Ixy); V = model[1](Ixy)
@@ -163,6 +187,7 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
             if config['epoch']%config['print_feq'] == 1:
                 epoch =  config['epoch'] 
                 print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+                file.write(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}\n")
             if model[0].early_stop or model[1].early_stop:
                 if model[0].early_stop:
                     model[0].freeze_all_parameters()
@@ -170,13 +195,21 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
                     model[1].freeze_all_parameters()
                 if model[0].early_stop and model[1].early_stop:
                     print("train adam early stopping")
+                    file.write("train adam early stopping\n")
                     break
     if config['train_bfgs_epoch'] > config['max_iter']:
         model[0].Earlystop_set(config['patience_lbfgs']*U_PAT_FAC, config['delta_train_lbfgs']/U_PAT_FAC)
         model[1].Earlystop_set(config['patience_lbfgs']*V_PAT_FAC, config['delta_train_lbfgs']/V_PAT_FAC)
-        model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+        if Keyframe_FALG:
+            model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+            epoch_optim = config['train_bfgs_epoch']
+        else:
+            model[0].unfreeze_all_parameters(); model[1].unfreeze_all_parameters()
+            epoch_optim = config['train_bfgs_epoch']//2
+            # model[0].freeze_layers(); model[1].freeze_layers()
         print("train lbfgs start:") 
-        for iter in range(config['train_bfgs_epoch']//config['max_iter']):
+        file.write("train lbfgs start:\n")
+        for iter in range(epoch_optim//config['max_iter']):
             def closure2_wrapper():
                 loss, mae = closure2(
                     model, Ixy, XY_roi, XY, RG, DG, ROI, SCALE['scale'][i], i
@@ -184,6 +217,7 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
                 if config['epoch']%config['print_feq'] == 1:
                     epoch =  config['epoch']
                     print(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}")
+                    file.write(f"Epoch [{epoch:4d}], MAE: {mae.item():.5f}\n")
                 return loss
             loss= closure2_wrapper()
             model[0].optimizer_lbfgs.step(closure2_wrapper)
@@ -194,7 +228,8 @@ def train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI):
                 if model[1].early_stop:
                     model[1].freeze_all_parameters()
                 if model[0].early_stop and model[1].early_stop:
-                    print("train adam early stopping")
+                    print("train lbfgs early stopping")
+                    file.write("train lbfgs early stopping\n")
                     break
 
 def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
@@ -223,11 +258,14 @@ def predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
 
 def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
     print(f"Calculate the {i+1:04d}-th deformed image start:")
-    model[0].train()
-    model[1].train()
+    file.write(f"Calculate the {i+1:04d}-th deformed image start:\n")
+    model[0].train(); model[1].train()
+    model[0].get_optimizer(config); model[1].get_optimizer(config)
     print("warm up:")
+    file.write("warm up:\n")
     warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI)
     print("train:")
+    file.write("train:\n")
     train_stage(i, Ixy, XY_roi, XY, RG, DG, ROI)
     uv, xyuv = predict_stage(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j)
     return uv, xyuv 
@@ -248,29 +286,34 @@ if __name__ == '__main__':
     H, L = RG.shape; N = len(img_dataset)
     total = XY_roi.shape[0]
     BATCH = math.floor(N / batchframes)
+    Keyframe_FALG = True
     
     print("train start")
-    
+    file = open(config['log_path']+'training_log.txt', 'w')
     for batch, DGlist in enumerate(train_loader):
         if batch == BATCH:
             uv = torch.zeros((len(DGlist), 2, H, L))
             xyuv = torch.zeros((len(DGlist), total, 4))
             DG = DGlist[-1].to(device)
+            Keyframe_FALG = True
             model[0].unfreeze_and_initialize(init_type='xavier')
             model[1].unfreeze_and_initialize(init_type='xavier')
             i = batch*batchframes + len(DGlist) - 1
             config['epoch'] = 0
             uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, len(DGlist)-1)
             print("-------------*-------------")
+            file.write("-------------*-------------\n")
             torch.cuda.empty_cache()
+            Keyframe_FALG = False
             for j, DG in enumerate(DGlist[:-1]):
                 DG = DG.to(device)
-                model[0].perturbation(perturbation_scale=0.02)
-                model[1].perturbation(perturbation_scale=0.02) 
+                # model[0].perturbation(perturbation_scale=0.001)
+                # model[1].perturbation(perturbation_scale=0.001)
                 i = batch*batchframes + j
                 config['epoch'] = 0
                 uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j)
                 print("-------------*-------------")
+                file.write("-------------*-------------\n")
                 torch.cuda.empty_cache()
             uv = uv.cpu().detach().numpy()
             xyuv = xyuv.cpu().detach().numpy()
@@ -281,27 +324,32 @@ if __name__ == '__main__':
             uv = torch.zeros((len(DGlist), 2, H, L))
             xyuv = torch.zeros((len(DGlist), total, 4))
             DG = DGlist[batchframes//2].to(device)
+            Keyframe_FALG = True
             model[0].unfreeze_and_initialize(init_type='xavier')
             model[1].unfreeze_and_initialize(init_type='xavier')                   
             i = batch*batchframes + batchframes//2
             config['epoch'] = 0
             uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, batchframes//2)
             print("-------------*-------------")
+            file.write("-------------*-------------\n")
             torch.cuda.empty_cache()
+            Keyframe_FALG = False
             for j in frames_list:
                 DG = DGlist[j].to(device)
-                model[0].perturbation(perturbation_scale=0.02)
-                model[1].perturbation(perturbation_scale=0.02) 
+                # model[0].perturbation(perturbation_scale=0.001)
+                # model[1].perturbation(perturbation_scale=0.001)
                 i = batch*batchframes + j
                 config['epoch'] = 0
                 uv, xyuv = frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j)
                 print("-------------*-------------")
+                file.write("-------------*-------------\n")
                 torch.cuda.empty_cache()
             uv = uv.cpu().detach().numpy()
             xyuv = xyuv.cpu().detach().numpy()
             to_matlab(config['data_path'], f'mat{batch*batchframes+1:03d}-{batch*batchframes+len(DGlist):03d}', uv)
             to_txt(config['data_path'], f'txt{batch*batchframes+1:03d}-{batch*batchframes+len(DGlist):03d}', xyuv)
             torch.cuda.empty_cache()
+    file.close()
         
         
         

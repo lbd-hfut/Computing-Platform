@@ -2,7 +2,7 @@ config = {
     "checkpoint_path": "./weights/checkpoint/",
     "model_path": "./weights/models/",
     "log_path": "./logs/",
-    "data_path": "./data/train2/",
+    "data_path": "./data/train4/",
     "warm_lr": 0.001,
     "train_lr": 0.0001,
     "max_iter": 20,
@@ -20,5 +20,5 @@ config = {
     "delta_train_lbfgs": 0.01,
     "epoch": 0,
     "print_feq": 10,
-    "Batchframes": 1
+    "Batchframes": 5
 }

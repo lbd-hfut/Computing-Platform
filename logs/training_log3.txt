@@ -1,0 +1,57 @@
+Calculate the 0001-th deformed image start:
+warm up:
+warm adam start:
+Epoch [   1], MAE: 53.31252
+Epoch [  11], MAE: 24.38282
+Epoch [  21], MAE: 19.09909
+Epoch [  31], MAE: 16.32873
+Epoch [  41], MAE: 14.51010
+Epoch [  51], MAE: 12.83737
+Epoch [  61], MAE: 10.83986
+Epoch [  71], MAE: 9.16636
+Epoch [  81], MAE: 8.00381
+Epoch [  91], MAE: 7.53957
+warm lbfgs start:
+Epoch [ 101], MAE: 7.08582
+Epoch [ 111], MAE: 7.04364
+Epoch [ 121], MAE: 6.97666
+Epoch [ 131], MAE: 6.80710
+Epoch [ 141], MAE: 6.11666
+Epoch [ 151], MAE: 5.64596
+Epoch [ 161], MAE: 5.61529
+Epoch [ 171], MAE: 5.60472
+Epoch [ 181], MAE: 5.59569
+Epoch [ 191], MAE: 5.58791
+Epoch [ 201], MAE: 5.58205
+Epoch [ 211], MAE: 5.57874
+Epoch [ 221], MAE: 5.57708
+Epoch [ 231], MAE: 5.57420
+train:
+train adam start:
+Epoch [ 241], MAE: 5.57316
+Epoch [ 251], MAE: 5.57755
+Epoch [ 261], MAE: 5.57646
+Epoch [ 271], MAE: 5.57389
+Epoch [ 281], MAE: 5.57287
+Epoch [ 291], MAE: 5.57247
+Epoch [ 301], MAE: 5.57229
+Epoch [ 311], MAE: 5.57222
+Epoch [ 321], MAE: 5.57219
+train adam early stopping
+train lbfgs start:
+Epoch [ 331], MAE: 5.57219
+Epoch [ 341], MAE: 5.51923
+Epoch [ 351], MAE: 5.43346
+Epoch [ 361], MAE: 5.33115
+Epoch [ 371], MAE: 5.33637
+Epoch [ 381], MAE: 5.33846
+Epoch [ 391], MAE: 5.22998
+Epoch [ 401], MAE: 5.11521
+Epoch [ 411], MAE: 5.11645
+Epoch [ 421], MAE: 5.12540
+Epoch [ 431], MAE: 5.12459
+Epoch [ 441], MAE: 5.12509
+Epoch [ 451], MAE: 5.12642
+Epoch [ 461], MAE: 5.12611
+Epoch [ 471], MAE: 5.12630
+-------------*-------------

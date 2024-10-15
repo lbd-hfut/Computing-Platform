@@ -22,8 +22,6 @@ if __name__ == '__main__':
     '''
     threshold = 3
     
-    device = torch.device('cpu')
-    
     path = config['data_path']
     if not os.path.exists(path+'scale_information'):
         os.mkdir(path+'scale_information')

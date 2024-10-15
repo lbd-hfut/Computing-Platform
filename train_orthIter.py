@@ -51,8 +51,8 @@ modelv = DNN(config['layers']).to(device)
 model = [modelu, modelv]
 
 # set the optimizer
-model[0].get_optimizer(config)
-model[1].get_optimizer(config)
+# model[0].get_optimizer(config)
+# model[1].get_optimizer(config)
 
 
 
@@ -242,7 +242,7 @@ def frame_calculate(i, Ixy, XY_roi, XY, RG, DG, ROI, uv, xyuv, j):
     print(f"Calculate the {i+1:04d}-th deformed image start:")
     file.write(f"Calculate the {i+1:04d}-th deformed image start:\n")
     model[0].train(); model[1].train()
-    model[0].reset_optim(config); model[1].reset_optim(config)
+    model[0].get_optimizer(config); model[1].get_optimizer(config)
     print("warm up:")
     file.write("warm up:\n")
     warm_up(i, Ixy, XY_roi, XY, RG, DG, ROI)

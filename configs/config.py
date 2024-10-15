@@ -2,7 +2,7 @@ config = {
     "checkpoint_path": "./weights/checkpoint/",
     "model_path": "./weights/models/",
     "log_path": "./logs/",
-    "data_path": "./data/train5/",
+    "data_path": "./data/train2/",
     "warm_lr": 0.001,
     "train_lr": 0.0001,
     "max_iter": 20,

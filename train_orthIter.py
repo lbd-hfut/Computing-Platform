@@ -263,7 +263,7 @@ if __name__ == '__main__':
     total = XY_roi.shape[0]
     
     print("train start")
-    file = open(config['log_path']+'training_log.txt', 'w')
+    file = open(config['data_path']+'training_log.txt', 'w')
     for i, DG in enumerate(train_loader):
         # torch.cuda.empty_cache()
         uv = torch.zeros((1, 2, H, L))

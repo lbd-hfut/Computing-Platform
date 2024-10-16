@@ -8,47 +8,19 @@ import scipy.io as sio
 
 class lbdDataset(Dataset):
     def __init__(self, train_root):
-        # # read refence img
-        # self.rfimage_files = np.array([x.path for x in os.scandir(train_root)
-        #                      if (x.name.endswith(".bmp") or
-        #                      x.name.endswith(".png") or 
-        #                      x.name.endswith(".JPG")) and 
-        #                          x.name.startswith("r")])
-        # # self.rfimage = self.open_image(self.rfimage_files[0])
-        
-        # # read deformed img
-        # self.dfimage_files = np.array([x.path for x in os.scandir(train_root)
-        #                              if (x.name.endswith(".bmp") or
-        #                              x.name.endswith(".png") or 
-        #                              x.name.endswith(".JPG")) and 
-        #                                  x.name.startswith("d")])
-        # self.dfimage_files.sort()
-        
-        # # read ROI img
-        # self.mask_files = np.array([x.path for x in os.scandir(train_root)
-        #                              if (x.name.endswith(".bmp") or
-        #                              x.name.endswith(".png") or 
-        #                              x.name.endswith(".JPG")) and
-        #                              x.name.startswith("mask")])
         
         image_files = np.array([x.path for x in os.scandir(train_root)
                              if (x.name.endswith(".bmp") or
                              x.name.endswith(".png") or 
-                             x.name.endswith(".JPG"))])
+                             x.name.endswith(".JPG") or 
+                             x.name.endswith(".tiff"))
+                             ])
         image_files.sort()
         
         self.rfimage_files = [image_files[0]]
         self.mask_files = [image_files[-1]]
         self.dfimage_files = image_files[1:-1]
         
-        # self.mask = self.open_image(self.mask_files[0])
-        # unique_values = np.unique(self.mask) # Get the unique value in the mask
-        # if len(unique_values) == 2:
-        #     # If there are only two values ??in the mask matrix
-        #     self.mask = (self.mask > 0)  # Set values ??greater than 0 to 1, and the rest to 0
-        # else:
-        #     # If there are multiple values ??in the mask matrix
-        #     self.mask = (self.mask == 255)  # Set the value equal to 255 to 1, and the rest to 0
     
     def __len__(self):
         return len(self.dfimage_files)
@@ -102,33 +74,13 @@ class lbdDataset(Dataset):
     
 class pyramidDataset(Dataset):
     def __init__(self, train_root):
-        # # read refence img
-        # self.rfimage_files = np.array([x.path for x in os.scandir(train_root)
-        #                      if (x.name.endswith(".bmp") or
-        #                      x.name.endswith(".png") or 
-        #                      x.name.endswith(".JPG")) and 
-        #                          x.name.startswith("r")])
-        # # self.rfimage = self.open_image(self.rfimage_files[0])
-        
-        # # read deformed img
-        # self.dfimage_files = np.array([x.path for x in os.scandir(train_root)
-        #                              if (x.name.endswith(".bmp") or
-        #                              x.name.endswith(".png") or 
-        #                              x.name.endswith(".JPG")) and 
-        #                                  x.name.startswith("d")])
-        # self.dfimage_files.sort()
-        
-        # # read ROI img
-        # self.mask_files = np.array([x.path for x in os.scandir(train_root)
-        #                              if (x.name.endswith(".bmp") or
-        #                              x.name.endswith(".png") or 
-        #                              x.name.endswith(".JPG")) and
-        #                              x.name.startswith("mask")])
         
         image_files = np.array([x.path for x in os.scandir(train_root)
                              if (x.name.endswith(".bmp") or
                              x.name.endswith(".png") or 
-                             x.name.endswith(".JPG"))])
+                             x.name.endswith(".JPG") or 
+                             x.name.endswith(".tiff"))
+                             ])
         image_files.sort()
         
         self.rfimage_files = [image_files[0]]

@@ -30,7 +30,9 @@ if __name__ == '__main__':
     image_files = np.array([x.path for x in os.scandir(config['data_path'])
                          if (x.name.endswith(".bmp") or
                          x.name.endswith(".png") or 
-                         x.name.endswith(".JPG"))])
+                         x.name.endswith(".JPG") or 
+                         x.name.endswith(".tiff"))
+                         ])
     image_files.sort()
     
     rfimage_files = [image_files[0]]

@@ -10,5 +10,5 @@ steps:
   - name: build
     image: nvidia/cuda:12.6.2-base-ubuntu24.04
     commands:
-      - apt update && apt install -y libopencv-dev
+      - apt update && apt install -y libopencv-dev python3 python3-pip
       - pip install torch numpy opencv-python matplotlib scipy
